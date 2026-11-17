@@ -20,7 +20,7 @@ async function safe(page){assert.equal(await page.evaluate(()=>document.document
  await person.fill('bunuel');await page.getByRole('option',{name:/Luis Buñuel/}).click();
  assert.equal(await page.locator('.chips>span').count(),2);
  await page.getByRole('combobox',{name:'País de origen o producción'}).fill('Francia');await page.getByRole('option',{name:'Francia',exact:true}).click();
- await page.getByRole('combobox',{name:'Idioma original'}).fill('francés');await page.getByRole('option',{name:'francés',exact:true}).click();
+ await page.getByRole('combobox',{name:'Idioma original'}).fill('francés');await page.getByRole('option',{name:'francés',exact:true}).click();assert.equal(await page.locator('.suggestions').count(),0,'autocomplete must stay closed after selection');
  await page.getByRole('button',{name:'Experto',exact:true}).click();await safe(page);
  await page.getByRole('button',{name:'EMPEZAR PARTIDA',exact:true}).click();await ready(page);
  assert.equal(await page.locator('.movie-label').count(),0);

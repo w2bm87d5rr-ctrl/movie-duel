@@ -40,7 +40,7 @@ function Picker({label,options=[],value,onChange,placeholder='Buscar…',multipl
  const clean=s=>s.normalize('NFD').replace(/\p{Diacritic}/gu,'').toLocaleLowerCase('es');
  const shown=source.filter(option=>(remote||clean(option.name).includes(clean(query)))&&!selected.some(p=>p.id===option.id)).slice(0,60);
  const current=multiple?'':options.find(o=>o.id===value)?.name||'';
- function pick(option){onChange(multiple?[...selected,option]:option.id);setQuery('');setActive(-1);setOpen(false);input.current?.focus();}
+ function pick(option){onChange(multiple?[...selected,option]:option.id);setQuery('');setActive(-1);input.current?.focus();setOpen(false);}
  return <div className="field picker" ref={wrapper}>
   <label htmlFor={uid}>{label}</label>
   {multiple&&selected.length>0&&<div className="chips">{selected.map(person=><span key={person.id}>{person.name}<button type="button" aria-label={`Quitar ${person.name}`} onClick={()=>onChange(selected.filter(p=>p.id!==person.id))}>×</button></span>)}</div>}
