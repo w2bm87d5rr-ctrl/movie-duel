@@ -48,7 +48,7 @@ El runner usa Chromium instalado en `/usr/bin/chromium`, `CHROMIUM_PATH` si se p
 
 ## Preview y publicación
 
-Crear un despliegue mediante archivos en el proyecto Vercel existente con `target: preview`; conservar los dominios, configuración de protección y despliegue de producción. La Preview puede solicitar iniciar sesión con la cuenta propietaria de Vercel.
+Crear un despliegue mediante archivos en el proyecto Vercel existente en el entorno Preview (`target: staging` en la API de Vercel); conservar los dominios, configuración de protección y despliegue de producción. La Preview puede solicitar iniciar sesión con la cuenta propietaria de Vercel.
 
 Para producción, luego de aprobación expresa: verificar las variables del entorno productivo, generar un despliegue de producción con estos mismos archivos, comprobar el resultado y asignar los dominios existentes. Estos pasos **no se ejecutan** al preparar la Preview.
 
