@@ -1,0 +1,175 @@
+MOVIE DUEL 2.0 — Especificación integral para Codex
+
+Objetivo
+
+Evolucionar la aplicación existente Movie Duel a una versión 2.0, manteniendo su identidad y mejorando la personalización, selección de películas, experiencia de juego y diseño responsive.
+
+Condición obligatoria: no modificar ni reemplazar la versión actualmente publicada en producción. Trabajar en una rama o entorno independiente y preparar una versión Preview para revisión. No promover a producción sin aprobación expresa.
+
+Antes de implementar, inspeccionar el proyecto existente, su estructura, dependencias, integración con TMDB y configuración de despliegue. Reutilizar lo que funcione correctamente.
+
+1. Pantalla de inicio
+
+* Mantener la identidad MOVIEDUEL y el lema «EL CINE SE ELIGE».
+* Interfaz en español.
+* Texto introductorio: «Elegí entre dos películas. Tu favorita sigue en juego hasta encontrar a la campeona».
+* Botón principal: «JUGAR AHORA».
+* Botón secundario: «PERSONALIZAR PARTIDA».
+* Selector rápido de duelos: 10 / 20 / 40, con 20 por defecto.
+* Jugar ahora utiliza los filtros predeterminados o la configuración que el usuario haya elegido.
+* Sin tarjetas de resumen innecesarias.
+* Si existe una partida activa, mostrar «CONTINUAR PARTIDA» sin eliminarla.
+
+2. Personalizar partida
+
+Configuración principal
+
+* Género: selección única; predeterminado «Todos». Excluir Documental.
+* Década: selección única; predeterminado «Todas». Cada década comprende sus diez años correspondientes.
+* Duelos: mínimo 5, máximo 40, predeterminado 20. Incorporar slider y botones −/+.
+* Dificultad: «Normal» / «Experto», predeterminado Normal.
+* Normal: películas reconocibles y representativas.
+* Experto: películas menos conocidas, de autor, internacionales o de culto; no confundir dificultad con baja valoración.
+
+Opciones avanzadas
+
+Sección desplegable, cerrada inicialmente, con indicador de filtros activos.
+
+Tres campos independientes con búsqueda y autocompletado:
+
+1. Actor, actriz o director: búsqueda de personas en TMDB, mostrando nombre, fotografía y profesión cuando estén disponibles. Permitir hasta cinco personas seleccionadas, con etiquetas eliminables.
+2. País de origen o producción: selector con nombres localizados en español.
+3. Idioma original: selector con nombres en español; distinguir idioma original de país de producción.
+
+Las personas seleccionadas se combinan mediante OR: una película puede pertenecer a cualquiera de las filmografías elegidas. Los distintos tipos de filtros se combinan mediante AND.
+
+Ejemplo: Woody Allen O Luis Buñuel, Y década de 1980, Y género Comedia.
+
+Los enfrentamientos deben poder mezclar películas de las personas seleccionadas. Procurar una distribución equilibrada cuando haya suficientes títulos.
+
+Acciones
+
+* «EMPEZAR PARTIDA»: botón principal fijo o sticky en la zona inferior de la pantalla móvil.
+* «RESTABLECER CONFIGURACIÓN»: devuelve todos los valores a sus predeterminados, sin confirmación.
+* Conservar las selecciones al navegar entre inicio y personalización.
+* Sin tarjeta «TU PARTIDA».
+
+3. Selección inteligente de películas
+
+Seleccionar antes de iniciar todos los títulos necesarios para la partida: cantidad de duelos + 1.
+
+* No repetir películas dentro de la partida.
+* Respetar filtros y dificultad.
+* Introducir variación entre partidas con la misma configuración.
+* Buscar diversidad de películas y una progresión equilibrada de los enfrentamientos.
+* No reservar sistemáticamente los títulos más famosos para el final.
+* Utilizar popularidad y otros metadatos como señales, no como reglas absolutas.
+* Preparar candidatos de reserva para posibles errores de carga.
+
+4. Insuficiencia de películas y afiches
+
+* Excluir películas sin afiche.
+* Si faltan títulos, ampliar automáticamente primero la década y luego el género, priorizando resultados cercanos a las preferencias originales.
+* No informar cuántos títulos se incorporaron mediante esta ampliación.
+* No relajar silenciosamente los filtros avanzados de personas, país o idioma.
+* Si siguen faltando películas, ofrecer jugar menos duelos o modificar los filtros.
+* Mantener el mínimo de cinco duelos.
+* Si hay menos de seis películas válidas, solicitar modificar filtros.
+* Conservar las selecciones cuando el usuario regrese a personalización.
+* Controlar errores reales de carga de afiches y reemplazar películas cuando haya reservas válidas.
+* No mostrar afiches rotos ni descontar duelos por errores técnicos.
+
+5. Pantalla de duelo
+
+* Mostrar dos películas lado a lado también en iPhone.
+* Afiches con contenedores uniformes de proporción 2:3.
+* Conservar las imágenes completas sin recortarlas ni deformarlas; utilizar object-fit: contain.
+* Afiches grandes y visualmente protagonistas.
+* Cada afiche debe ser seleccionable.
+* Debajo de cada película: título, año y botón «ELEGIR».
+* Botones discretos de color gris grafito, con texto blanco. No utilizar fondos verde lima.
+* Eliminar el texto «Primeros favoritos».
+* Mostrar «DUELO 06 / 20» y una barra de progreso.
+* Encabezado: «¿Cuál se queda?».
+* Desde el segundo duelo: «SELECCIÓN ACTUAL» y «NUEVA PELÍCULA».
+* En el primer duelo, omitir esas etiquetas.
+* Evitar subtítulos redundantes.
+* Mantener los títulos y botones alineados incluso cuando haya títulos extensos.
+* Transiciones breves y fluidas.
+* El verde lima debe limitarse a pequeños acentos de identidad y retroalimentación visual.
+
+6. Controles y continuidad
+
+* «DESHACER» permite retroceder múltiples duelos, restaurando correctamente los enfrentamientos anteriores.
+* Permitir regresar al inicio sin perder la partida.
+* Guardar automáticamente el progreso para continuar después de cerrar la página, bloquear el teléfono o cambiar de aplicación.
+* Mostrar «CONTINUAR PARTIDA» cuando corresponda.
+* Si el usuario inicia otra partida mientras existe una activa, solicitar confirmación antes de reemplazarla.
+* Conservar la última configuración elegida.
+
+7. Pantalla de campeona
+
+* Fondo negro o gris grafito.
+* Encabezado «¡TENEMOS CAMPEONA!» en blanco.
+* Trofeo pequeño y discreto, preferentemente dorado tenue.
+* Afiche ganador como elemento visual principal.
+* Mostrar título, año y cantidad de duelos completados.
+* «JUGAR OTRA VEZ»: nueva selección de películas con la misma configuración.
+* «NUEVA PARTIDA»: volver a personalización conservando la configuración anterior.
+* Botones oscuros, sin fondos verde lima.
+* No agregar estadísticas, rankings ni porcentajes.
+* No implementar compartir resultados en esta versión.
+
+8. Sistema visual
+
+Aplicar una identidad coherente a todas las pantallas:
+
+* Fondo negro o gris grafito.
+* Textos principales blancos.
+* Textos secundarios grises.
+* Verde lima reservado para pequeños acentos, marca y progreso.
+* Los afiches deben ser los elementos más llamativos durante el juego y en la pantalla final.
+* No utilizar resplandores verdes permanentes.
+* Interfaz limpia, moderna y cinematográfica.
+* Priorizar experiencia mobile-first y dispositivos iPhone.
+* Mantener controles cómodos para uso táctil y respetar las áreas seguras de iOS.
+
+9. Idioma y contenido
+
+* Toda la interfaz en español.
+* Géneros, países e idiomas con nombres localizados.
+* Mantener nombres propios de actores y directores.
+* Utilizar títulos de películas localizados al español cuando TMDB disponga de ellos, con una alternativa razonable cuando no existan.
+* No mostrar códigos técnicos de idioma o país.
+
+10. Requisitos técnicos y pruebas
+
+* Mantener TMDB como fuente de películas y afiches.
+* Revisar paginación, deduplicación, filtrado, límites de consultas y manejo de errores.
+* Evitar solicitudes innecesarias y optimizar la carga de imágenes.
+* Garantizar que la configuración y el estado de partida se mantengan sincronizados.
+* Verificar funcionamiento con 5, 10, 20 y 40 duelos.
+* Probar filtros individuales y combinados, incluyendo varias personas.
+* Probar dificultades Normal y Experto.
+* Probar ausencia de resultados, afiches fallidos, Deshacer, continuidad y reinicio.
+* Comprobar que la interfaz funcione en pantallas móviles pequeñas.
+* Ejecutar las verificaciones disponibles de compilación, tipos, lint y pruebas.
+* No incorporar funcionalidades adicionales no solicitadas.
+
+11. Entrega y publicación
+
+Implementar toda la versión 2.0 en una rama independiente.
+
+Preparar una versión Preview de Vercel, si los permisos e integraciones existentes lo permiten, sin afectar el dominio de producción.
+
+No fusionar cambios con la rama productiva ni publicar en producción.
+
+Al finalizar, informar:
+
+1. Qué se implementó.
+2. Qué pruebas se ejecutaron y sus resultados.
+3. Qué limitaciones o problemas quedan pendientes.
+4. Enlace de Preview, si está disponible.
+5. Qué pasos serían necesarios para publicar, sin ejecutarlos todavía.
+
+Prioridad final: una experiencia de juego sencilla, rápida, visualmente atractiva y centrada en las películas.

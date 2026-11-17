@@ -1,0 +1,9114 @@
+[
+  {
+    "id": 65731,
+    "name": "Sam Worthington",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8691,
+    "name": "Zoe Saldaña",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10205,
+    "name": "Sigourney Weaver",
+    "department": "Interpretación"
+  },
+  {
+    "id": 32747,
+    "name": "Stephen Lang",
+    "department": "Interpretación"
+  },
+  {
+    "id": 17647,
+    "name": "Michelle Rodriguez",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1771,
+    "name": "Giovanni Ribisi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 59231,
+    "name": "Joel David Moore",
+    "department": "Interpretación"
+  },
+  {
+    "id": 30485,
+    "name": "CCH Pounder",
+    "department": "Interpretación"
+  },
+  {
+    "id": 15853,
+    "name": "Wes Studi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2710,
+    "name": "James Cameron",
+    "department": "Dirección"
+  },
+  {
+    "id": 4783,
+    "name": "Sam Neill",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4784,
+    "name": "Laura Dern",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4785,
+    "name": "Jeff Goldblum",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4786,
+    "name": "Richard Attenborough",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4789,
+    "name": "Bob Peck",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4790,
+    "name": "Martin Ferrero",
+    "department": "Interpretación"
+  },
+  {
+    "id": 14592,
+    "name": "BD Wong",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4787,
+    "name": "Joseph Mazzello",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4788,
+    "name": "Ariana Richards",
+    "department": "Interpretación"
+  },
+  {
+    "id": 488,
+    "name": "Steven Spielberg",
+    "department": "Dirección"
+  },
+  {
+    "id": 3223,
+    "name": "Robert Downey Jr.",
+    "department": "Interpretación"
+  },
+  {
+    "id": 16828,
+    "name": "Chris Evans",
+    "department": "Interpretación"
+  },
+  {
+    "id": 103,
+    "name": "Mark Ruffalo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 74568,
+    "name": "Chris Hemsworth",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1245,
+    "name": "Scarlett Johansson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 17604,
+    "name": "Jeremy Renner",
+    "department": "Interpretación"
+  },
+  {
+    "id": 91606,
+    "name": "Tom Hiddleston",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9048,
+    "name": "Clark Gregg",
+    "department": "Interpretación"
+  },
+  {
+    "id": 71189,
+    "name": "Cobie Smulders",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12891,
+    "name": "Joss Whedon",
+    "department": "Dirección"
+  },
+  {
+    "id": 5469,
+    "name": "Ralph Fiennes",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1164,
+    "name": "F. Murray Abraham",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1291350,
+    "name": "Tony Revolori",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3490,
+    "name": "Adrien Brody",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5293,
+    "name": "Willem Dafoe",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8789,
+    "name": "Mathieu Amalric",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1037,
+    "name": "Harvey Keitel",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9642,
+    "name": "Jude Law",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5655,
+    "name": "Wes Anderson",
+    "department": "Dirección"
+  },
+  {
+    "id": 934,
+    "name": "Russell Crowe",
+    "department": "Interpretación"
+  },
+  {
+    "id": 73421,
+    "name": "Joaquin Phoenix",
+    "department": "Interpretación"
+  },
+  {
+    "id": 935,
+    "name": "Connie Nielsen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 936,
+    "name": "Oliver Reed",
+    "department": "Interpretación"
+  },
+  {
+    "id": 194,
+    "name": "Richard Harris",
+    "department": "Interpretación"
+  },
+  {
+    "id": 937,
+    "name": "Derek Jacobi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 938,
+    "name": "Djimon Hounsou",
+    "department": "Interpretación"
+  },
+  {
+    "id": 939,
+    "name": "David Schofield",
+    "department": "Interpretación"
+  },
+  {
+    "id": 940,
+    "name": "John Shrapnel",
+    "department": "Interpretación"
+  },
+  {
+    "id": 578,
+    "name": "Ridley Scott",
+    "department": "Dirección"
+  },
+  {
+    "id": 8654,
+    "name": "Matthew Modine",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2059,
+    "name": "Adam Baldwin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7132,
+    "name": "Vincent D'Onofrio",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8655,
+    "name": "R. Lee Ermey",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8656,
+    "name": "Dorian Harewood",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8657,
+    "name": "Kevyn Major Howard",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3229,
+    "name": "Arliss Howard",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8658,
+    "name": "Ed O'Ross",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8659,
+    "name": "John Terry",
+    "department": "Interpretación"
+  },
+  {
+    "id": 240,
+    "name": "Stanley Kubrick",
+    "department": "Dirección"
+  },
+  {
+    "id": 521,
+    "name": "Michael J. Fox",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1062,
+    "name": "Christopher Lloyd",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1064,
+    "name": "Crispin Glover",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1063,
+    "name": "Lea Thompson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1066,
+    "name": "Claudia Wells",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1065,
+    "name": "Thomas F. Wilson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1067,
+    "name": "Marc McClure",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1068,
+    "name": "Wendie Jo Sperber",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1069,
+    "name": "George DiCenzo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 24,
+    "name": "Robert Zemeckis",
+    "department": "Dirección"
+  },
+  {
+    "id": 206,
+    "name": "Jim Carrey",
+    "department": "Interpretación"
+  },
+  {
+    "id": 204,
+    "name": "Kate Winslet",
+    "department": "Interpretación"
+  },
+  {
+    "id": 205,
+    "name": "Kirsten Dunst",
+    "department": "Interpretación"
+  },
+  {
+    "id": 109,
+    "name": "Elijah Wood",
+    "department": "Interpretación"
+  },
+  {
+    "id": 207,
+    "name": "Tom Wilkinson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 209,
+    "name": "Jane Adams",
+    "department": "Interpretación"
+  },
+  {
+    "id": 212,
+    "name": "David Cross",
+    "department": "Interpretación"
+  },
+  {
+    "id": 77013,
+    "name": "Deirdre O'Connell",
+    "department": "Interpretación"
+  },
+  {
+    "id": 201,
+    "name": "Michel Gondry",
+    "department": "Dirección"
+  },
+  {
+    "id": 16851,
+    "name": "Josh Brolin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1896,
+    "name": "Don Cheadle",
+    "department": "Interpretación"
+  },
+  {
+    "id": 22226,
+    "name": "Paul Rudd",
+    "department": "Interpretación"
+  },
+  {
+    "id": 19271,
+    "name": "Anthony Russo",
+    "department": "Dirección"
+  },
+  {
+    "id": 19272,
+    "name": "Joe Russo",
+    "department": "Dirección"
+  },
+  {
+    "id": 2,
+    "name": "Mark Hamill",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3,
+    "name": "Harrison Ford",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4,
+    "name": "Carrie Fisher",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5,
+    "name": "Peter Cushing",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12248,
+    "name": "Alec Guinness",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6,
+    "name": "Anthony Daniels",
+    "department": "Interpretación"
+  },
+  {
+    "id": 130,
+    "name": "Kenny Baker",
+    "department": "Interpretación"
+  },
+  {
+    "id": 24343,
+    "name": "Peter Mayhew",
+    "department": "Interpretación"
+  },
+  {
+    "id": 24342,
+    "name": "David Prowse",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1,
+    "name": "George Lucas",
+    "department": "Dirección"
+  },
+  {
+    "id": 31,
+    "name": "Tom Hanks",
+    "department": "Interpretación"
+  },
+  {
+    "id": 32,
+    "name": "Robin Wright",
+    "department": "Interpretación"
+  },
+  {
+    "id": 33,
+    "name": "Gary Sinise",
+    "department": "Interpretación"
+  },
+  {
+    "id": 35,
+    "name": "Sally Field",
+    "department": "Interpretación"
+  },
+  {
+    "id": 34,
+    "name": "Mykelti Williamson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 37821,
+    "name": "Michael Conner Humphreys",
+    "department": "Interpretación"
+  },
+  {
+    "id": 204997,
+    "name": "Hanna Hall",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9640,
+    "name": "Haley Joel Osment",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6751,
+    "name": "Siobhan Fallon Hogan",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10297,
+    "name": "Matthew McConaughey",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1813,
+    "name": "Anne Hathaway",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3895,
+    "name": "Michael Caine",
+    "department": "Interpretación"
+  },
+  {
+    "id": 83002,
+    "name": "Jessica Chastain",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1893,
+    "name": "Casey Affleck",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8210,
+    "name": "Wes Bentley",
+    "department": "Interpretación"
+  },
+  {
+    "id": 17052,
+    "name": "Topher Grace",
+    "department": "Interpretación"
+  },
+  {
+    "id": 851784,
+    "name": "Mackenzie Foy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9560,
+    "name": "Ellen Burstyn",
+    "department": "Interpretación"
+  },
+  {
+    "id": 525,
+    "name": "Christopher Nolan",
+    "department": "Dirección"
+  },
+  {
+    "id": 6193,
+    "name": "Leonardo DiCaprio",
+    "department": "Interpretación"
+  },
+  {
+    "id": 24045,
+    "name": "Joseph Gordon-Levitt",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3899,
+    "name": "Ken Watanabe",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2524,
+    "name": "Tom Hardy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 27578,
+    "name": "Elliot Page",
+    "department": "Interpretación"
+  },
+  {
+    "id": 95697,
+    "name": "Dileep Rao",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2037,
+    "name": "Cillian Murphy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 13022,
+    "name": "Tom Berenger",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8293,
+    "name": "Marion Cotillard",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6384,
+    "name": "Keanu Reeves",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2975,
+    "name": "Laurence Fishburne",
+    "department": "Interpretación"
+  },
+  {
+    "id": 530,
+    "name": "Carrie-Anne Moss",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1331,
+    "name": "Hugo Weaving",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9364,
+    "name": "Gloria Foster",
+    "department": "Interpretación"
+  },
+  {
+    "id": 532,
+    "name": "Joe Pantoliano",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9372,
+    "name": "Marcus Chong",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7244,
+    "name": "Julian Arahanga",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9374,
+    "name": "Matt Doran",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9340,
+    "name": "Lana Wachowski",
+    "department": "Dirección"
+  },
+  {
+    "id": 9339,
+    "name": "Lilly Wachowski",
+    "department": "Dirección"
+  },
+  {
+    "id": 819,
+    "name": "Edward Norton",
+    "department": "Interpretación"
+  },
+  {
+    "id": 287,
+    "name": "Brad Pitt",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1283,
+    "name": "Helena Bonham Carter",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7470,
+    "name": "Meat Loaf",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7499,
+    "name": "Jared Leto",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7471,
+    "name": "Zach Grenier",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7497,
+    "name": "Holt McCallany",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7498,
+    "name": "Eion Bailey",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7472,
+    "name": "Richmond Arquette",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7467,
+    "name": "David Fincher",
+    "department": "Dirección"
+  },
+  {
+    "id": 19587,
+    "name": "Rumi Hiiragi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 19588,
+    "name": "Miyu Irino",
+    "department": "Interpretación"
+  },
+  {
+    "id": 19589,
+    "name": "Mari Natsuki",
+    "department": "Interpretación"
+  },
+  {
+    "id": 19590,
+    "name": "Takashi Naito",
+    "department": "Interpretación"
+  },
+  {
+    "id": 19591,
+    "name": "Yasuko Sawaguchi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 19592,
+    "name": "Tatsuya Gashuin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 225730,
+    "name": "Ryunosuke Kamiki",
+    "department": "Interpretación"
+  },
+  {
+    "id": 19594,
+    "name": "Yumi Tamai",
+    "department": "Interpretación"
+  },
+  {
+    "id": 40450,
+    "name": "Yo Oizumi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 608,
+    "name": "Hayao Miyazaki",
+    "department": "Dirección"
+  },
+  {
+    "id": 20738,
+    "name": "Song Kang-ho",
+    "department": "Interpretación"
+  },
+  {
+    "id": 115290,
+    "name": "Lee Sun-kyun",
+    "department": "Interpretación"
+  },
+  {
+    "id": 556435,
+    "name": "Cho Yeo-jeong",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1255881,
+    "name": "Choi Woo-shik",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1442583,
+    "name": "Park So-dam",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1572354,
+    "name": "Lee Jung-eun",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2158882,
+    "name": "Jang Hye-jin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1694435,
+    "name": "Park Myung-hoon",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1418762,
+    "name": "Jung Zi-so",
+    "department": "Interpretación"
+  },
+  {
+    "id": 21684,
+    "name": "Bong Joon Ho",
+    "department": "Dirección"
+  },
+  {
+    "id": 8891,
+    "name": "John Travolta",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2231,
+    "name": "Samuel L. Jackson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 139,
+    "name": "Uma Thurman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 62,
+    "name": "Bruce Willis",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10182,
+    "name": "Ving Rhames",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7036,
+    "name": "Eric Stoltz",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3129,
+    "name": "Tim Roth",
+    "department": "Interpretación"
+  },
+  {
+    "id": 99,
+    "name": "Amanda Plummer",
+    "department": "Interpretación"
+  },
+  {
+    "id": 138,
+    "name": "Quentin Tarantino",
+    "department": "Dirección"
+  },
+  {
+    "id": 3894,
+    "name": "Christian Bale",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1810,
+    "name": "Heath Ledger",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6383,
+    "name": "Aaron Eckhart",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1579,
+    "name": "Maggie Gyllenhaal",
+    "department": "Interpretación"
+  },
+  {
+    "id": 64,
+    "name": "Gary Oldman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 192,
+    "name": "Morgan Freeman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 53651,
+    "name": "Monique Gabriela Curnen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 57597,
+    "name": "Ron Dean",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1327,
+    "name": "Ian McKellen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 110,
+    "name": "Viggo Mortensen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1328,
+    "name": "Sean Astin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1333,
+    "name": "Andy Serkis",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1330,
+    "name": "Dominic Monaghan",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1329,
+    "name": "Billy Boyd",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1381,
+    "name": "John Noble",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1371,
+    "name": "David Wenham",
+    "department": "Interpretación"
+  },
+  {
+    "id": 108,
+    "name": "Peter Jackson",
+    "department": "Dirección"
+  },
+  {
+    "id": 3084,
+    "name": "Marlon Brando",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1158,
+    "name": "Al Pacino",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3085,
+    "name": "James Caan",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3087,
+    "name": "Robert Duvall",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3086,
+    "name": "Richard S. Castellano",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3092,
+    "name": "Diane Keaton",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3094,
+    "name": "Talia Shire",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3095,
+    "name": "Gianni Russo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3088,
+    "name": "Sterling Hayden",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1776,
+    "name": "Francis Ford Coppola",
+    "department": "Dirección"
+  },
+  {
+    "id": 504,
+    "name": "Tim Robbins",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4029,
+    "name": "Bob Gunton",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6573,
+    "name": "William Sadler",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6574,
+    "name": "Clancy Brown",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6575,
+    "name": "Gil Bellows",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6577,
+    "name": "James Whitmore",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6576,
+    "name": "Mark Rolston",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12645,
+    "name": "Jeffrey DeMunn",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4027,
+    "name": "Frank Darabont",
+    "department": "Dirección"
+  },
+  {
+    "id": 380,
+    "name": "Robert De Niro",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3096,
+    "name": "John Cazale",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3171,
+    "name": "Lee Strasberg",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3172,
+    "name": "Michael V. Gazzo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3173,
+    "name": "G.D. Spradlin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3896,
+    "name": "Liam Neeson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2282,
+    "name": "Ben Kingsley",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6692,
+    "name": "Caroline Goodall",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6693,
+    "name": "Jonathan Sagall",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6368,
+    "name": "Embeth Davidtz",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6694,
+    "name": "Małgorzata Gebel",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6695,
+    "name": "Shmuel Levy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6696,
+    "name": "Mark Ivanir",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1936,
+    "name": "Martin Balsam",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5247,
+    "name": "John Fiedler",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5248,
+    "name": "Lee J. Cobb",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5249,
+    "name": "E.G. Marshall",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5250,
+    "name": "Jack Klugman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2651,
+    "name": "Edward Binns",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5251,
+    "name": "Jack Warden",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4958,
+    "name": "Henry Fonda",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5252,
+    "name": "Joseph Sweeney",
+    "department": "Interpretación"
+  },
+  {
+    "id": 39996,
+    "name": "Sidney Lumet",
+    "department": "Dirección"
+  },
+  {
+    "id": 52,
+    "name": "David Morse",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5149,
+    "name": "Bonnie Hunt",
+    "department": "Interpretación"
+  },
+  {
+    "id": 61981,
+    "name": "Michael Clarke Duncan",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2505,
+    "name": "James Cromwell",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2169,
+    "name": "Michael Jeter",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6804,
+    "name": "Graham Greene",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6806,
+    "name": "Doug Hutchison",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6807,
+    "name": "Sam Rockwell",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12052,
+    "name": "Gwyneth Paltrow",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12055,
+    "name": "John Cassini",
+    "department": "Interpretación"
+  },
+  {
+    "id": 30487,
+    "name": "Peter Crombie",
+    "department": "Interpretación"
+  },
+  {
+    "id": 38951,
+    "name": "Reg E. Cathey",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12054,
+    "name": "Daniel Zacapa",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12047,
+    "name": "Andrew Kevin Walker",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11477,
+    "name": "Ray Liotta",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4517,
+    "name": "Joe Pesci",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11478,
+    "name": "Lorraine Bracco",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7004,
+    "name": "Paul Sorvino",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11480,
+    "name": "Frank Sivero",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11482,
+    "name": "Tony Darrow",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5170,
+    "name": "Mike Starr",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7164,
+    "name": "Frank Vincent",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1032,
+    "name": "Martin Scorsese",
+    "department": "Dirección"
+  },
+  {
+    "id": 4818,
+    "name": "Roberto Benigni",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9235,
+    "name": "Nicoletta Braschi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9236,
+    "name": "Giorgio Cantarini",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9237,
+    "name": "Giustino Durano",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9239,
+    "name": "Sergio Bini Bustric",
+    "department": "Interpretación"
+  },
+  {
+    "id": 954,
+    "name": "Marisa Paredes",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5789,
+    "name": "Horst Buchholz",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9240,
+    "name": "Lidia Alfonsi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9242,
+    "name": "Giuliana Lojodice",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7301,
+    "name": "Anthony Perkins",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7302,
+    "name": "Janet Leigh",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7303,
+    "name": "Vera Miles",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7304,
+    "name": "John Gavin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 53010,
+    "name": "John McIntire",
+    "department": "Interpretación"
+  },
+  {
+    "id": 14063,
+    "name": "Simon Oakland",
+    "department": "Interpretación"
+  },
+  {
+    "id": 78902,
+    "name": "Frank Albertson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12500,
+    "name": "Patricia Hitchcock",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2636,
+    "name": "Alfred Hitchcock",
+    "department": "Dirección"
+  },
+  {
+    "id": 514,
+    "name": "Jack Nicholson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1370,
+    "name": "Brad Dourif",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7071,
+    "name": "Louise Fletcher",
+    "department": "Interpretación"
+  },
+  {
+    "id": 518,
+    "name": "Danny DeVito",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7072,
+    "name": "William Redfield",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7077,
+    "name": "Scatman Crothers",
+    "department": "Interpretación"
+  },
+  {
+    "id": 68301,
+    "name": "Will Sampson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7075,
+    "name": "Dean R. Brooks",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3974,
+    "name": "Miloš Forman",
+    "department": "Dirección"
+  },
+  {
+    "id": 3799,
+    "name": "Billy Dee Williams",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7908,
+    "name": "Frank Oz",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10930,
+    "name": "Irvin Kershner",
+    "department": "Dirección"
+  },
+  {
+    "id": 655,
+    "name": "John Rhys-Davies",
+    "department": "Interpretación"
+  },
+  {
+    "id": 114,
+    "name": "Orlando Bloom",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1369,
+    "name": "Bernard Hill",
+    "department": "Interpretación"
+  },
+  {
+    "id": 502,
+    "name": "Miranda Otto",
+    "department": "Interpretación"
+  },
+  {
+    "id": 65,
+    "name": "Ian Holm",
+    "department": "Interpretación"
+  },
+  {
+    "id": 882,
+    "name": "Liv Tyler",
+    "department": "Interpretación"
+  },
+  {
+    "id": 113,
+    "name": "Christopher Lee",
+    "department": "Interpretación"
+  },
+  {
+    "id": 48,
+    "name": "Sean Bean",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4512,
+    "name": "James Woods",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4513,
+    "name": "Elizabeth McGovern",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4521,
+    "name": "Burt Young",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4514,
+    "name": "Tuesday Weld",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4515,
+    "name": "Treat Williams",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1004,
+    "name": "Danny Aiello",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3174,
+    "name": "Richard Bright",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4385,
+    "name": "Sergio Leone",
+    "department": "Dirección"
+  },
+  {
+    "id": 2405,
+    "name": "Audrey Tautou",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2406,
+    "name": "Mathieu Kassovitz",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2407,
+    "name": "Rufus",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2410,
+    "name": "Serge Merlin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2408,
+    "name": "Jamel Debbouze",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2411,
+    "name": "Clotilde Mollet",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1654,
+    "name": "Claire Maurier",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2412,
+    "name": "Isabelle Nanty",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2413,
+    "name": "Dominique Pinon",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2419,
+    "name": "Jean-Pierre Jeunet",
+    "department": "Dirección"
+  },
+  {
+    "id": 6968,
+    "name": "Hugh Jackman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 15555,
+    "name": "Piper Perabo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 15556,
+    "name": "Rebecca Hall",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1580598,
+    "name": "Samantha Mahurin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7487,
+    "name": "David Bowie",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4139,
+    "name": "Tom Skerritt",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5047,
+    "name": "Veronica Cartwright",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5048,
+    "name": "Harry Dean Stanton",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5049,
+    "name": "John Hurt",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5050,
+    "name": "Yaphet Kotto",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5051,
+    "name": "Bolaji Badejo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5052,
+    "name": "Helen Horton",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10206,
+    "name": "Carrie Henn",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2712,
+    "name": "Michael Biehn",
+    "department": "Interpretación"
+  },
+  {
+    "id": 781,
+    "name": "Paul Reiser",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2714,
+    "name": "Lance Henriksen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2053,
+    "name": "Bill Paxton",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10207,
+    "name": "William Hope",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3981,
+    "name": "Jenette Goldstein",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10208,
+    "name": "Al Matthews",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12898,
+    "name": "Tim Allen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7167,
+    "name": "Don Rickles",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12899,
+    "name": "Jim Varney",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12900,
+    "name": "Wallace Shawn",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7907,
+    "name": "John Ratzenberger",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8873,
+    "name": "Annie Potts",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1116442,
+    "name": "John Morris",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12901,
+    "name": "Erik von Detten",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7879,
+    "name": "John Lasseter",
+    "department": "Dirección"
+  },
+  {
+    "id": 4756,
+    "name": "Matthew Broderick",
+    "department": "Interpretación"
+  },
+  {
+    "id": 20005,
+    "name": "Moira Kelly",
+    "department": "Interpretación"
+  },
+  {
+    "id": 16940,
+    "name": "Jeremy Irons",
+    "department": "Interpretación"
+  },
+  {
+    "id": 78729,
+    "name": "Nathan Lane",
+    "department": "Interpretación"
+  },
+  {
+    "id": 69415,
+    "name": "Ernie Sabella",
+    "department": "Interpretación"
+  },
+  {
+    "id": 15152,
+    "name": "James Earl Jones",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8294,
+    "name": "Robert Guillaume",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10730,
+    "name": "Rowan Atkinson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2395,
+    "name": "Whoopi Goldberg",
+    "department": "Interpretación"
+  },
+  {
+    "id": 15812,
+    "name": "Roger Allers",
+    "department": "Dirección"
+  },
+  {
+    "id": 18898,
+    "name": "Rob Minkoff",
+    "department": "Dirección"
+  },
+  {
+    "id": 85,
+    "name": "Johnny Depp",
+    "department": "Interpretación"
+  },
+  {
+    "id": 118,
+    "name": "Geoffrey Rush",
+    "department": "Interpretación"
+  },
+  {
+    "id": 116,
+    "name": "Keira Knightley",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1709,
+    "name": "Jack Davenport",
+    "department": "Interpretación"
+  },
+  {
+    "id": 378,
+    "name": "Jonathan Pryce",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1710,
+    "name": "Lee Arenberg",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1711,
+    "name": "Mackenzie Crook",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1712,
+    "name": "Damian O'Hare",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1704,
+    "name": "Gore Verbinski",
+    "department": "Dirección"
+  },
+  {
+    "id": 1954,
+    "name": "Billy Zane",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8534,
+    "name": "Kathy Bates",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3713,
+    "name": "Frances Fisher",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8535,
+    "name": "Gloria Stuart",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2076,
+    "name": "David Warner",
+    "department": "Interpretación"
+  },
+  {
+    "id": 670,
+    "name": "Ben Burtt",
+    "department": "Interpretación"
+  },
+  {
+    "id": 72754,
+    "name": "Elissa Knight",
+    "department": "Interpretación"
+  },
+  {
+    "id": 60074,
+    "name": "Jeff Garlin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 20753,
+    "name": "Fred Willard",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11074,
+    "name": "Kathy Najimy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 24358,
+    "name": "Lori Alan",
+    "department": "Interpretación"
+  },
+  {
+    "id": 78317,
+    "name": "Bob Bergen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7,
+    "name": "Andrew Stanton",
+    "department": "Dirección"
+  },
+  {
+    "id": 68812,
+    "name": "Ed Asner",
+    "department": "Interpretación"
+  },
+  {
+    "id": 290,
+    "name": "Christopher Plummer",
+    "department": "Interpretación"
+  },
+  {
+    "id": 80676,
+    "name": "Jordan Nagai",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10,
+    "name": "Bob Peterson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 18792,
+    "name": "Delroy Lindo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7960,
+    "name": "Jerome Ranft",
+    "department": "Interpretación"
+  },
+  {
+    "id": 84490,
+    "name": "David Kaye",
+    "department": "Interpretación"
+  },
+  {
+    "id": 84491,
+    "name": "Elie Docter",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12890,
+    "name": "Pete Docter",
+    "department": "Dirección"
+  },
+  {
+    "id": 12073,
+    "name": "Mike Myers",
+    "department": "Interpretación"
+  },
+  {
+    "id": 776,
+    "name": "Eddie Murphy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6941,
+    "name": "Cameron Diaz",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12074,
+    "name": "John Lithgow",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1925,
+    "name": "Vincent Cassel",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12075,
+    "name": "Peter Dennis",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12076,
+    "name": "Clive Pearse",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12077,
+    "name": "Jim Cummings",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12078,
+    "name": "Bobby Block",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5524,
+    "name": "Andrew Adamson",
+    "department": "Dirección"
+  },
+  {
+    "id": 12058,
+    "name": "Vicky Jenson",
+    "department": "Dirección"
+  },
+  {
+    "id": 3234,
+    "name": "Joan Cusack",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7090,
+    "name": "Kelsey Grammer",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8977,
+    "name": "Craig T. Nelson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 18686,
+    "name": "Holly Hunter",
+    "department": "Interpretación"
+  },
+  {
+    "id": 59361,
+    "name": "Sarah Vowell",
+    "department": "Interpretación"
+  },
+  {
+    "id": 59360,
+    "name": "Spencer Fox",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11662,
+    "name": "Jason Lee",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7430,
+    "name": "Elizabeth Peña",
+    "department": "Interpretación"
+  },
+  {
+    "id": 59358,
+    "name": "Eli Fucile",
+    "department": "Interpretación"
+  },
+  {
+    "id": 59359,
+    "name": "Maeve Andrews",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7087,
+    "name": "Brad Bird",
+    "department": "Dirección"
+  },
+  {
+    "id": 56322,
+    "name": "Amy Poehler",
+    "department": "Interpretación"
+  },
+  {
+    "id": 169200,
+    "name": "Phyllis Smith",
+    "department": "Interpretación"
+  },
+  {
+    "id": 21125,
+    "name": "Richard Kind",
+    "department": "Interpretación"
+  },
+  {
+    "id": 19278,
+    "name": "Bill Hader",
+    "department": "Interpretación"
+  },
+  {
+    "id": 59258,
+    "name": "Lewis Black",
+    "department": "Interpretación"
+  },
+  {
+    "id": 125167,
+    "name": "Mindy Kaling",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1371894,
+    "name": "Kaitlyn Dias",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2882,
+    "name": "Diane Lane",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6677,
+    "name": "Kyle MacLachlan",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1193391,
+    "name": "Anthony Gonzalez",
+    "department": "Interpretación"
+  },
+  {
+    "id": 258,
+    "name": "Gael García Bernal",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4589,
+    "name": "Benjamin Bratt",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10402,
+    "name": "Alanna Ubach",
+    "department": "Interpretación"
+  },
+  {
+    "id": 154004,
+    "name": "Renée Victor",
+    "department": "Interpretación"
+  },
+  {
+    "id": 545087,
+    "name": "Jaime Camil",
+    "department": "Interpretación"
+  },
+  {
+    "id": 22767,
+    "name": "Alfonso Arau",
+    "department": "Interpretación"
+  },
+  {
+    "id": 178667,
+    "name": "Herbert Siguenza",
+    "department": "Interpretación"
+  },
+  {
+    "id": 86498,
+    "name": "Gabriel Iglesias",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1684652,
+    "name": "Adrian Molina",
+    "department": "Dirección"
+  },
+  {
+    "id": 8,
+    "name": "Lee Unkrich",
+    "department": "Dirección"
+  },
+  {
+    "id": 134,
+    "name": "Jamie Foxx",
+    "department": "Interpretación"
+  },
+  {
+    "id": 56323,
+    "name": "Tina Fey",
+    "department": "Interpretación"
+  },
+  {
+    "id": 78577,
+    "name": "Graham Norton",
+    "department": "Interpretación"
+  },
+  {
+    "id": 15298,
+    "name": "Rachel House",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8602,
+    "name": "Alice Braga",
+    "department": "Interpretación"
+  },
+  {
+    "id": 98103,
+    "name": "Richard Ayoade",
+    "department": "Interpretación"
+  },
+  {
+    "id": 119598,
+    "name": "Phylicia Rashād",
+    "department": "Interpretación"
+  },
+  {
+    "id": 115218,
+    "name": "Donnell Rawlings",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4719,
+    "name": "Questlove",
+    "department": "Interpretación"
+  },
+  {
+    "id": 587506,
+    "name": "Shameik Moore",
+    "department": "Interpretación"
+  },
+  {
+    "id": 130640,
+    "name": "Hailee Steinfeld",
+    "department": "Interpretación"
+  },
+  {
+    "id": 25072,
+    "name": "Oscar Isaac",
+    "department": "Interpretación"
+  },
+  {
+    "id": 226366,
+    "name": "Brian Tyree Henry",
+    "department": "Interpretación"
+  },
+  {
+    "id": 141610,
+    "name": "Luna Lauren Vélez",
+    "department": "Interpretación"
+  },
+  {
+    "id": 543505,
+    "name": "Jake Johnson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 17881,
+    "name": "Jason Schwartzman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1455336,
+    "name": "Issa Rae",
+    "department": "Interpretación"
+  },
+  {
+    "id": 206919,
+    "name": "Daniel Kaluuya",
+    "department": "Interpretación"
+  },
+  {
+    "id": 89596,
+    "name": "Joaquim Dos Santos",
+    "department": "Dirección"
+  },
+  {
+    "id": 2451598,
+    "name": "Kemp Powers",
+    "department": "Dirección"
+  },
+  {
+    "id": 1046497,
+    "name": "Justin K. Thompson",
+    "department": "Dirección"
+  },
+  {
+    "id": 932967,
+    "name": "Mahershala Ali",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10437,
+    "name": "Lily Tomlin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 37153,
+    "name": "Zoë Kravitz",
+    "department": "Interpretación"
+  },
+  {
+    "id": 933558,
+    "name": "John Mulaney",
+    "department": "Interpretación"
+  },
+  {
+    "id": 59918,
+    "name": "Rodney Rothman",
+    "department": "Dirección"
+  },
+  {
+    "id": 936670,
+    "name": "Bob Persichetti",
+    "department": "Dirección"
+  },
+  {
+    "id": 151007,
+    "name": "Peter Ramsey",
+    "department": "Dirección"
+  },
+  {
+    "id": 1620,
+    "name": "Michelle Yeoh",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1381186,
+    "name": "Stephanie Hsu",
+    "department": "Interpretación"
+  },
+  {
+    "id": 690,
+    "name": "Ke Huy Quan",
+    "department": "Interpretación"
+  },
+  {
+    "id": 20904,
+    "name": "James Hong",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8944,
+    "name": "Jamie Lee Curtis",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1071151,
+    "name": "Tallie Medel",
+    "department": "Interpretación"
+  },
+  {
+    "id": 213001,
+    "name": "Jenny Slate",
+    "department": "Interpretación"
+  },
+  {
+    "id": 232499,
+    "name": "Harry Shum Jr.",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1367122,
+    "name": "Biff Wiff",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1317730,
+    "name": "Daniel Scheinert",
+    "department": "Dirección"
+  },
+  {
+    "id": 1383612,
+    "name": "Daniel Kwan",
+    "department": "Dirección"
+  },
+  {
+    "id": 7450,
+    "name": "Toshirō Mifune",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7453,
+    "name": "Takashi Shimura",
+    "department": "Interpretación"
+  },
+  {
+    "id": 20828,
+    "name": "Yoshio Inaba",
+    "department": "Interpretación"
+  },
+  {
+    "id": 20829,
+    "name": "Seiji Miyaguchi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7454,
+    "name": "Minoru Chiaki",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7457,
+    "name": "Daisuke Katō",
+    "department": "Interpretación"
+  },
+  {
+    "id": 20830,
+    "name": "Isao Kimura",
+    "department": "Interpretación"
+  },
+  {
+    "id": 20831,
+    "name": "Keiko Tsushima",
+    "department": "Interpretación"
+  },
+  {
+    "id": 554250,
+    "name": "Yukiko Shimazaki",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5026,
+    "name": "Akira Kurosawa",
+    "department": "Dirección"
+  },
+  {
+    "id": 533325,
+    "name": "Chieko Baisho",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12670,
+    "name": "Takuya Kimura",
+    "department": "Interpretación"
+  },
+  {
+    "id": 20338,
+    "name": "Akihiro Miwa",
+    "department": "Interpretación"
+  },
+  {
+    "id": 40449,
+    "name": "Mitsunori Isaki",
+    "department": "Interpretación"
+  },
+  {
+    "id": 40451,
+    "name": "Akio Otsuka",
+    "department": "Interpretación"
+  },
+  {
+    "id": 40452,
+    "name": "Daijirou Harada",
+    "department": "Interpretación"
+  },
+  {
+    "id": 72413,
+    "name": "Tsutomu Tatsumi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 72414,
+    "name": "Ayano Shiraishi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 72415,
+    "name": "Yoshiko Shinohara",
+    "department": "Interpretación"
+  },
+  {
+    "id": 72416,
+    "name": "Akemi Yamaguchi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3773484,
+    "name": "Masayo Sakai",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3773478,
+    "name": "Kozo Hashida",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3773488,
+    "name": "Kazumi Nozaki",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3773491,
+    "name": "Yoshio Matsuoka",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3773492,
+    "name": "Masahiro Kanetake",
+    "department": "Interpretación"
+  },
+  {
+    "id": 628,
+    "name": "Isao Takahata",
+    "department": "Dirección"
+  },
+  {
+    "id": 55662,
+    "name": "Noriko Hidaka",
+    "department": "Interpretación"
+  },
+  {
+    "id": 55664,
+    "name": "Chika Sakamoto",
+    "department": "Interpretación"
+  },
+  {
+    "id": 55663,
+    "name": "Hitoshi Takagi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 55665,
+    "name": "Shigesato Itoi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 613,
+    "name": "Sumi Shimamoto",
+    "department": "Interpretación"
+  },
+  {
+    "id": 55666,
+    "name": "Tanie Kitabayashi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1011400,
+    "name": "Toshiyuki Amagasa",
+    "department": "Interpretación"
+  },
+  {
+    "id": 552603,
+    "name": "Yuko Maruyama",
+    "department": "Interpretación"
+  },
+  {
+    "id": 553286,
+    "name": "Masashi Hirose",
+    "department": "Interpretación"
+  },
+  {
+    "id": 34491,
+    "name": "Luigi Lo Cascio",
+    "department": "Interpretación"
+  },
+  {
+    "id": 44646,
+    "name": "Alessio Boni",
+    "department": "Interpretación"
+  },
+  {
+    "id": 44110,
+    "name": "Adriana Asti",
+    "department": "Interpretación"
+  },
+  {
+    "id": 70234,
+    "name": "Sonia Bergamasco",
+    "department": "Interpretación"
+  },
+  {
+    "id": 35106,
+    "name": "Fabrizio Gifuni",
+    "department": "Interpretación"
+  },
+  {
+    "id": 54230,
+    "name": "Maya Sansa",
+    "department": "Interpretación"
+  },
+  {
+    "id": 129077,
+    "name": "Valentina Carnelutti",
+    "department": "Interpretación"
+  },
+  {
+    "id": 69489,
+    "name": "Jasmine Trinca",
+    "department": "Interpretación"
+  },
+  {
+    "id": 147159,
+    "name": "Andrea Tidona",
+    "department": "Interpretación"
+  },
+  {
+    "id": 70235,
+    "name": "Marco Tullio Giordana",
+    "department": "Dirección"
+  },
+  {
+    "id": 70131,
+    "name": "Tatsuya Nakadai",
+    "department": "Interpretación"
+  },
+  {
+    "id": 76977,
+    "name": "Akira Ishihama",
+    "department": "Interpretación"
+  },
+  {
+    "id": 76976,
+    "name": "Shima Iwashita",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10071,
+    "name": "Tetsuro Tamba",
+    "department": "Interpretación"
+  },
+  {
+    "id": 125721,
+    "name": "Masao Mishima",
+    "department": "Interpretación"
+  },
+  {
+    "id": 118993,
+    "name": "Ichirō Nakatani",
+    "department": "Interpretación"
+  },
+  {
+    "id": 33730,
+    "name": "Kei Satō",
+    "department": "Interpretación"
+  },
+  {
+    "id": 96637,
+    "name": "Hisashi Igawa",
+    "department": "Interpretación"
+  },
+  {
+    "id": 76978,
+    "name": "Masaki Kobayashi",
+    "department": "Dirección"
+  },
+  {
+    "id": 11288,
+    "name": "Robert Pattinson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2954,
+    "name": "Jeffrey Wright",
+    "department": "Interpretación"
+  },
+  {
+    "id": 72466,
+    "name": "Colin Farrell",
+    "department": "Interpretación"
+  },
+  {
+    "id": 17142,
+    "name": "Paul Dano",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1241,
+    "name": "John Turturro",
+    "department": "Interpretación"
+  },
+  {
+    "id": 133,
+    "name": "Peter Sarsgaard",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1290466,
+    "name": "Barry Keoghan",
+    "department": "Interpretación"
+  },
+  {
+    "id": 32278,
+    "name": "Matt Reeves",
+    "department": "Dirección"
+  },
+  {
+    "id": 30614,
+    "name": "Ryan Gosling",
+    "department": "Interpretación"
+  },
+  {
+    "id": 224513,
+    "name": "Ana de Armas",
+    "department": "Interpretación"
+  },
+  {
+    "id": 543530,
+    "name": "Dave Bautista",
+    "department": "Interpretación"
+  },
+  {
+    "id": 104632,
+    "name": "Sylvia Hoeks",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1110405,
+    "name": "Mackenzie Davis",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1013973,
+    "name": "Carla Juri",
+    "department": "Interpretación"
+  },
+  {
+    "id": 137427,
+    "name": "Denis Villeneuve",
+    "department": "Dirección"
+  },
+  {
+    "id": 93210,
+    "name": "Domhnall Gleeson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 227454,
+    "name": "Alicia Vikander",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1457238,
+    "name": "Sonoya Mizuno",
+    "department": "Interpretación"
+  },
+  {
+    "id": 17199,
+    "name": "Corey Johnson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1457239,
+    "name": "Claire Selby",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1394342,
+    "name": "Symara A. Templeman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1457240,
+    "name": "Gana Bayarsaikhan",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1457241,
+    "name": "Tiffany Pisani",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2036,
+    "name": "Alex Garland",
+    "department": "Dirección"
+  },
+  {
+    "id": 1255540,
+    "name": "Allison Williams",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2229,
+    "name": "Catherine Keener",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11367,
+    "name": "Bradley Whitford",
+    "department": "Interpretación"
+  },
+  {
+    "id": 572541,
+    "name": "Caleb Landry Jones",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1291961,
+    "name": "Marcus Henderson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1660452,
+    "name": "Betty Gabriel",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1200864,
+    "name": "LaKeith Stanfield",
+    "department": "Interpretación"
+  },
+  {
+    "id": 17401,
+    "name": "Stephen Root",
+    "department": "Interpretación"
+  },
+  {
+    "id": 291263,
+    "name": "Jordan Peele",
+    "department": "Dirección"
+  },
+  {
+    "id": 3392,
+    "name": "Michael Douglas",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2228,
+    "name": "Sean Penn",
+    "department": "Interpretación"
+  },
+  {
+    "id": 13549,
+    "name": "Deborah Kara Unger",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8986,
+    "name": "James Rebhorn",
+    "department": "Interpretación"
+  },
+  {
+    "id": 14849,
+    "name": "Peter Donat",
+    "department": "Interpretación"
+  },
+  {
+    "id": 14701,
+    "name": "Carroll Baker",
+    "department": "Interpretación"
+  },
+  {
+    "id": 27570,
+    "name": "Anna Katarina",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12647,
+    "name": "Armin Mueller-Stahl",
+    "department": "Interpretación"
+  },
+  {
+    "id": 176340,
+    "name": "Charles Martinet",
+    "department": "Interpretación"
+  },
+  {
+    "id": 27319,
+    "name": "Christoph Waltz",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11703,
+    "name": "Kerry Washington",
+    "department": "Interpretación"
+  },
+  {
+    "id": 27740,
+    "name": "Walton Goggins",
+    "department": "Interpretación"
+  },
+  {
+    "id": 27770,
+    "name": "Dennis Christopher",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1736,
+    "name": "James Remar",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1067187,
+    "name": "David Steen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6161,
+    "name": "Jennifer Connelly",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9562,
+    "name": "Marlon Wayans",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4443,
+    "name": "Christopher McDonald",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9565,
+    "name": "Louise Lasser",
+    "department": "Interpretación"
+  },
+  {
+    "id": 14548,
+    "name": "Marcia Jean Kurtz",
+    "department": "Interpretación"
+  },
+  {
+    "id": 171117,
+    "name": "Janet Sarno",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11484,
+    "name": "Suzanne Shepherd",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6431,
+    "name": "Darren Aronofsky",
+    "department": "Dirección"
+  },
+  {
+    "id": 1003,
+    "name": "Jean Reno",
+    "department": "Interpretación"
+  },
+  {
+    "id": 524,
+    "name": "Natalie Portman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1005,
+    "name": "Peter Appel",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1010,
+    "name": "Michael Badalucco",
+    "department": "Interpretación"
+  },
+  {
+    "id": 13420,
+    "name": "Ellen Greene",
+    "department": "Interpretación"
+  },
+  {
+    "id": 138401,
+    "name": "Frank Senger",
+    "department": "Interpretación"
+  },
+  {
+    "id": 122230,
+    "name": "Elizabeth Regen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 59,
+    "name": "Luc Besson",
+    "department": "Dirección"
+  },
+  {
+    "id": 69378,
+    "name": "Kim Sang-kyung",
+    "department": "Interpretación"
+  },
+  {
+    "id": 69379,
+    "name": "Kim Roi-ha",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1080904,
+    "name": "Song Jae-ho",
+    "department": "Interpretación"
+  },
+  {
+    "id": 116180,
+    "name": "Byun Hee-bong",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1299348,
+    "name": "Go Seo-hee",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1136064,
+    "name": "Ryu Tae-ho",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1075838,
+    "name": "Park No-shik",
+    "department": "Interpretación"
+  },
+  {
+    "id": 21687,
+    "name": "Park Hae-il",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11390,
+    "name": "Peter O'Toole",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5401,
+    "name": "Anthony Quinn",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10018,
+    "name": "Jack Hawkins",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5004,
+    "name": "Omar Sharif",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12515,
+    "name": "José Ferrer",
+    "department": "Interpretación"
+  },
+  {
+    "id": 14371,
+    "name": "Anthony Quayle",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4113,
+    "name": "Claude Rains",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11128,
+    "name": "Arthur Kennedy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12238,
+    "name": "David Lean",
+    "department": "Dirección"
+  },
+  {
+    "id": 1338,
+    "name": "Maggie Cheung Man-yuk",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1337,
+    "name": "Tony Leung Chiu-wai",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12674,
+    "name": "Siu Ping-lam",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12462,
+    "name": "Rebecca Pan Tik-hua",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12463,
+    "name": "Kelly Lai Chen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1002925,
+    "name": "Joe Cheung Tung-cho",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12464,
+    "name": "Chan Man-Lei",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12465,
+    "name": "Koo Kam-Wah",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12467,
+    "name": "Mama Hung",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12453,
+    "name": "Wong Kar-wai",
+    "department": "Dirección"
+  },
+  {
+    "id": 11389,
+    "name": "John Lone",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6720,
+    "name": "Joan Chen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11394,
+    "name": "Ruocheng Ying",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11395,
+    "name": "Victor Wong",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11392,
+    "name": "Dennis Dun",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11382,
+    "name": "Ryuichi Sakamoto",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11396,
+    "name": "Maggie Han",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11397,
+    "name": "Ric Young",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4956,
+    "name": "Bernardo Bertolucci",
+    "department": "Dirección"
+  },
+  {
+    "id": 1653,
+    "name": "Jean-Pierre Léaud",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1655,
+    "name": "Albert Rémy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1658,
+    "name": "Georges Flamant",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1659,
+    "name": "Patrick Auffay",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1660,
+    "name": "Robert Beauvais",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1661,
+    "name": "Yvonne Claudie",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1662,
+    "name": "Pierre Repp",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1656,
+    "name": "Guy Decomble",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1650,
+    "name": "François Truffaut",
+    "department": "Dirección"
+  },
+  {
+    "id": 1748,
+    "name": "William Shatner",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1749,
+    "name": "Leonard Nimoy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1750,
+    "name": "DeForest Kelley",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1751,
+    "name": "James Doohan",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1752,
+    "name": "George Takei",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1754,
+    "name": "Walter Koenig",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1753,
+    "name": "Nichelle Nichols",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1756,
+    "name": "Stephen Collins",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1757,
+    "name": "Persis Khambatta",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1744,
+    "name": "Robert Wise",
+    "department": "Dirección"
+  },
+  {
+    "id": 854,
+    "name": "James Stewart",
+    "department": "Interpretación"
+  },
+  {
+    "id": 17752,
+    "name": "Donna Reed",
+    "department": "Interpretación"
+  },
+  {
+    "id": 17753,
+    "name": "Lionel Barrymore",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3383,
+    "name": "Thomas Mitchell",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7666,
+    "name": "Henry Travers",
+    "department": "Interpretación"
+  },
+  {
+    "id": 17755,
+    "name": "Beulah Bondi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 17759,
+    "name": "Frank Faylen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4303,
+    "name": "Ward Bond",
+    "department": "Interpretación"
+  },
+  {
+    "id": 77081,
+    "name": "Gloria Grahame",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2662,
+    "name": "Frank Capra",
+    "department": "Dirección"
+  },
+  {
+    "id": 1243,
+    "name": "Woody Allen",
+    "department": "Interpretación",
+    "photo": "https://media.themoviedb.org/t/p/w185/wcPQgZLDibuej1RwNTy1R2U2ZJw.jpg"
+  },
+  {
+    "id": 10555,
+    "name": "Tony Roberts",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10556,
+    "name": "Carol Kane",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10557,
+    "name": "Paul Simon",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10409,
+    "name": "Shelley Duvall",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10558,
+    "name": "Janet Margolin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10559,
+    "name": "Colleen Dewhurst",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4690,
+    "name": "Christopher Walken",
+    "department": "Interpretación"
+  },
+  {
+    "id": 245,
+    "name": "Keir Dullea",
+    "department": "Interpretación"
+  },
+  {
+    "id": 246,
+    "name": "Gary Lockwood",
+    "department": "Interpretación"
+  },
+  {
+    "id": 247,
+    "name": "William Sylvester",
+    "department": "Interpretación"
+  },
+  {
+    "id": 253,
+    "name": "Douglas Rain",
+    "department": "Interpretación"
+  },
+  {
+    "id": 248,
+    "name": "Daniel Richter",
+    "department": "Interpretación"
+  },
+  {
+    "id": 249,
+    "name": "Leonard Rossiter",
+    "department": "Interpretación"
+  },
+  {
+    "id": 250,
+    "name": "Margaret Tyzack",
+    "department": "Interpretación"
+  },
+  {
+    "id": 251,
+    "name": "Robert Beatty",
+    "department": "Interpretación"
+  },
+  {
+    "id": 252,
+    "name": "Sean Sullivan",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8349,
+    "name": "Martin Sheen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8351,
+    "name": "Frederic Forrest",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8354,
+    "name": "Albert Hall",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8350,
+    "name": "Sam Bottoms",
+    "department": "Interpretación"
+  },
+  {
+    "id": 56890,
+    "name": "Malcolm McDowell",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2264,
+    "name": "Patrick Magee",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2272,
+    "name": "Carl Duering",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2267,
+    "name": "Michael Bates",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2268,
+    "name": "Warren Clarke",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2270,
+    "name": "James Marcus",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2271,
+    "name": "Michael Tarn",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2274,
+    "name": "Miriam Karlin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2265,
+    "name": "Adrienne Corri",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1038,
+    "name": "Jodie Foster",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1036,
+    "name": "Cybill Shepherd",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1039,
+    "name": "Peter Boyle",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1040,
+    "name": "Leonard Harris",
+    "department": "Interpretación"
+  },
+  {
+    "id": 13,
+    "name": "Albert Brooks",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1041,
+    "name": "Diahnne Abbott",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1042,
+    "name": "Frank Adu",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6649,
+    "name": "Gunnar Björnstrand",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6656,
+    "name": "Bengt Ekerot",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6658,
+    "name": "Nils Poppe",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2201,
+    "name": "Max von Sydow",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6657,
+    "name": "Bibi Andersson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6659,
+    "name": "Inga Gill",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6660,
+    "name": "Maud Hansson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6661,
+    "name": "Inga Landgré",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6662,
+    "name": "Gunnel Lindblom",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6648,
+    "name": "Ingmar Bergman",
+    "department": "Dirección"
+  },
+  {
+    "id": 10722,
+    "name": "Graham Chapman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8930,
+    "name": "John Cleese",
+    "department": "Interpretación"
+  },
+  {
+    "id": 280,
+    "name": "Terry Gilliam",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10713,
+    "name": "Eric Idle",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10707,
+    "name": "Terry Jones",
+    "department": "Interpretación"
+  },
+  {
+    "id": 383,
+    "name": "Michael Palin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10732,
+    "name": "Terence Bayler",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10733,
+    "name": "Carol Cleveland",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10734,
+    "name": "Kenneth Colley",
+    "department": "Interpretación"
+  },
+  {
+    "id": 33135,
+    "name": "Chishū Ryū",
+    "department": "Interpretación"
+  },
+  {
+    "id": 134307,
+    "name": "Chieko Higashiyama",
+    "department": "Interpretación"
+  },
+  {
+    "id": 95504,
+    "name": "Setsuko Hara",
+    "department": "Interpretación"
+  },
+  {
+    "id": 131013,
+    "name": "Haruko Sugimura",
+    "department": "Interpretación"
+  },
+  {
+    "id": 68411,
+    "name": "So Yamamura",
+    "department": "Interpretación"
+  },
+  {
+    "id": 131016,
+    "name": "Kuniko Miyake",
+    "department": "Interpretación"
+  },
+  {
+    "id": 34374,
+    "name": "Kyōko Kagawa",
+    "department": "Interpretación"
+  },
+  {
+    "id": 106165,
+    "name": "Eijirō Tōno",
+    "department": "Interpretación"
+  },
+  {
+    "id": 30772,
+    "name": "Nobuo Nakamura",
+    "department": "Interpretación"
+  },
+  {
+    "id": 95501,
+    "name": "Yasujirō Ozu",
+    "department": "Dirección"
+  },
+  {
+    "id": 8475,
+    "name": "Anatoliy Solonitsyn",
+    "department": "Interpretación"
+  },
+  {
+    "id": 13706,
+    "name": "Ivan Lapikov",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1190992,
+    "name": "Mykola Hrynko",
+    "department": "Interpretación"
+  },
+  {
+    "id": 13707,
+    "name": "Nikolai Sergeyev",
+    "department": "Interpretación"
+  },
+  {
+    "id": 13708,
+    "name": "Irma Raush",
+    "department": "Interpretación"
+  },
+  {
+    "id": 13709,
+    "name": "Nikolay Burlyaev",
+    "department": "Interpretación"
+  },
+  {
+    "id": 13710,
+    "name": "Yuriy Nazarov",
+    "department": "Interpretación"
+  },
+  {
+    "id": 86680,
+    "name": "Yuriy Nikulin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1191198,
+    "name": "Rolan Bykov",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8452,
+    "name": "Andrei Tarkovsky",
+    "department": "Dirección"
+  },
+  {
+    "id": 1229,
+    "name": "Jeff Bridges",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1230,
+    "name": "John Goodman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1231,
+    "name": "Julianne Moore",
+    "department": "Interpretación"
+  },
+  {
+    "id": 884,
+    "name": "Steve Buscemi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1232,
+    "name": "David Huddleston",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1233,
+    "name": "Philip Seymour Hoffman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1234,
+    "name": "Tara Reid",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1235,
+    "name": "Philip Moon",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1236,
+    "name": "Mark Pellegrino",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1223,
+    "name": "Joel Coen",
+    "department": "Dirección"
+  },
+  {
+    "id": 1224,
+    "name": "Ethan Coen",
+    "department": "Dirección"
+  },
+  {
+    "id": 190,
+    "name": "Clint Eastwood",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3265,
+    "name": "Eli Wallach",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4078,
+    "name": "Lee Van Cleef",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5813,
+    "name": "Aldo Giuffrè",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5814,
+    "name": "Luigi Pistilli",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5815,
+    "name": "Rada Rassimov",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1077276,
+    "name": "Enzo Petito",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1077277,
+    "name": "Claudio Scarchilli",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5818,
+    "name": "Antonio Casale",
+    "department": "Interpretación"
+  },
+  {
+    "id": 42416,
+    "name": "Lamberto Maggiorani",
+    "department": "Interpretación"
+  },
+  {
+    "id": 42417,
+    "name": "Enzo Staiola",
+    "department": "Interpretación"
+  },
+  {
+    "id": 42419,
+    "name": "Lianella Carell",
+    "department": "Interpretación"
+  },
+  {
+    "id": 944148,
+    "name": "Gino Saltamerenda",
+    "department": "Interpretación"
+  },
+  {
+    "id": 975006,
+    "name": "Vittorio Antonucci",
+    "department": "Interpretación"
+  },
+  {
+    "id": 42423,
+    "name": "Giulio Chiari",
+    "department": "Interpretación"
+  },
+  {
+    "id": 974973,
+    "name": "Elena Altieri",
+    "department": "Interpretación"
+  },
+  {
+    "id": 42421,
+    "name": "Carlo Jachino",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1077249,
+    "name": "Michele Sakara",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12329,
+    "name": "Vittorio De Sica",
+    "department": "Dirección"
+  },
+  {
+    "id": 27011,
+    "name": "Vanessa Williams",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6485,
+    "name": "Busta Rhymes",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6486,
+    "name": "Dan Hedaya",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3051,
+    "name": "Toni Collette",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6487,
+    "name": "Richard Roundtree",
+    "department": "Interpretación"
+  },
+  {
+    "id": 31839,
+    "name": "Ruben Santiago-Hudson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6482,
+    "name": "John Singleton",
+    "department": "Dirección"
+  },
+  {
+    "id": 24366,
+    "name": "Philippe Noiret",
+    "department": "Interpretación"
+  },
+  {
+    "id": 20030,
+    "name": "Jacques Perrin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 27643,
+    "name": "Marco Leonardi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 68635,
+    "name": "Salvatore Cascio",
+    "department": "Interpretación"
+  },
+  {
+    "id": 120152,
+    "name": "Agnese Nano",
+    "department": "Interpretación"
+  },
+  {
+    "id": 70083,
+    "name": "Antonella Attili",
+    "department": "Interpretación"
+  },
+  {
+    "id": 25780,
+    "name": "Pupella Maggio",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1959,
+    "name": "Brigitte Fossey",
+    "department": "Interpretación"
+  },
+  {
+    "id": 52657,
+    "name": "Enzo Cannavale",
+    "department": "Interpretación"
+  },
+  {
+    "id": 65314,
+    "name": "Giuseppe Tornatore",
+    "department": "Dirección"
+  },
+  {
+    "id": 2565,
+    "name": "Yves Montand",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2566,
+    "name": "Charles Vanel",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2567,
+    "name": "Peter van Eyck",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2568,
+    "name": "Folco Lulli",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2569,
+    "name": "Véra Clouzot",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2570,
+    "name": "Antonio Centa",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2573,
+    "name": "Jo Dest",
+    "department": "Interpretación"
+  },
+  {
+    "id": 397,
+    "name": "Darío Moreno",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2576,
+    "name": "William Tubbs",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2559,
+    "name": "Henri-Georges Clouzot",
+    "department": "Dirección"
+  },
+  {
+    "id": 49,
+    "name": "Maria Bello",
+    "department": "Interpretación"
+  },
+  {
+    "id": 55,
+    "name": "Abigail Stone",
+    "department": "Interpretación"
+  },
+  {
+    "id": 51,
+    "name": "Richard Elfyn",
+    "department": "Interpretación"
+  },
+  {
+    "id": 54,
+    "name": "Maurice Roëves",
+    "department": "Interpretación"
+  },
+  {
+    "id": 56,
+    "name": "Sophie Stuckey",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1297119,
+    "name": "Casper Harvey",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1297120,
+    "name": "Eluned Jones",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1297121,
+    "name": "Gwenyth Petty",
+    "department": "Interpretación"
+  },
+  {
+    "id": 43,
+    "name": "John Fawcett",
+    "department": "Dirección"
+  },
+  {
+    "id": 193,
+    "name": "Gene Hackman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7502,
+    "name": "Ernest Borgnine",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7631,
+    "name": "Stella Stevens",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7632,
+    "name": "Shelley Winters",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3461,
+    "name": "Jack Albertson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7503,
+    "name": "Red Buttons",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7505,
+    "name": "Roddy McDowall",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7504,
+    "name": "Carol Lynley",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7634,
+    "name": "Pamela Sue Martin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7501,
+    "name": "Ronald Neame",
+    "department": "Dirección"
+  },
+  {
+    "id": 1979,
+    "name": "Kevin Spacey",
+    "department": "Interpretación"
+  },
+  {
+    "id": 516,
+    "name": "Annette Bening",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2155,
+    "name": "Thora Birch",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8211,
+    "name": "Mena Suvari",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8212,
+    "name": "Peter Gallagher",
+    "department": "Interpretación"
+  },
+  {
+    "id": 19,
+    "name": "Allison Janney",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2955,
+    "name": "Chris Cooper",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2154,
+    "name": "Scott Bakula",
+    "department": "Interpretación"
+  },
+  {
+    "id": 39,
+    "name": "Sam Mendes",
+    "department": "Dirección"
+  },
+  {
+    "id": 529,
+    "name": "Guy Pearce",
+    "department": "Interpretación"
+  },
+  {
+    "id": 534,
+    "name": "Mark Boone Junior",
+    "department": "Interpretación"
+  },
+  {
+    "id": 535,
+    "name": "Russ Fega",
+    "department": "Interpretación"
+  },
+  {
+    "id": 536,
+    "name": "Jorja Fox",
+    "department": "Interpretación"
+  },
+  {
+    "id": 537,
+    "name": "Stephen Tobolowsky",
+    "department": "Interpretación"
+  },
+  {
+    "id": 538,
+    "name": "Harriet Sansom Harris",
+    "department": "Interpretación"
+  },
+  {
+    "id": 539,
+    "name": "Thomas Lennon",
+    "department": "Interpretación"
+  },
+  {
+    "id": 147,
+    "name": "Michael Madsen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2969,
+    "name": "Chris Penn",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6937,
+    "name": "Lawrence Tierney",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6938,
+    "name": "Randy Brooks",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3206,
+    "name": "Kirk Baltz",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6939,
+    "name": "Edward Bunker",
+    "department": "Interpretación"
+  },
+  {
+    "id": 47,
+    "name": "Björk",
+    "department": "Interpretación"
+  },
+  {
+    "id": 50,
+    "name": "Catherine Deneuve",
+    "department": "Interpretación"
+  },
+  {
+    "id": 53,
+    "name": "Peter Stormare",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6748,
+    "name": "Joel Grey",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2617,
+    "name": "Cara Seymour",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6749,
+    "name": "Vladica Kostic",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1642,
+    "name": "Jean-Marc Barr",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6750,
+    "name": "Vincent Paterson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 42,
+    "name": "Lars von Trier",
+    "department": "Dirección"
+  },
+  {
+    "id": 6450,
+    "name": "Faye Dunaway",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6593,
+    "name": "John Huston",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12295,
+    "name": "Perry Lopez",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12296,
+    "name": "John Hillerman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12297,
+    "name": "Darrell Zwerling",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3556,
+    "name": "Roman Polanski",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6587,
+    "name": "Diane Ladd",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4430,
+    "name": "Sharon Stone",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10477,
+    "name": "George Dzundza",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10478,
+    "name": "Jeanne Tripplehorn",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10480,
+    "name": "Denis Arndt",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10485,
+    "name": "Leilani Sarelle",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4943,
+    "name": "Bruce A. Young",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10486,
+    "name": "Chelcie Ross",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10487,
+    "name": "Dorothy Malone",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10491,
+    "name": "Paul Verhoeven",
+    "department": "Dirección"
+  },
+  {
+    "id": 131,
+    "name": "Jake Gyllenhaal",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11085,
+    "name": "Anthony Edwards",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2838,
+    "name": "Chloë Sevigny",
+    "department": "Interpretación"
+  },
+  {
+    "id": 13550,
+    "name": "Elias Koteas",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3911,
+    "name": "John Carroll Lynch",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1248,
+    "name": "Brian Cox",
+    "department": "Interpretación"
+  },
+  {
+    "id": 20212,
+    "name": "Dermot Mulroney",
+    "department": "Interpretación"
+  },
+  {
+    "id": 855,
+    "name": "Lee Remick",
+    "department": "Interpretación"
+  },
+  {
+    "id": 856,
+    "name": "Ben Gazzara",
+    "department": "Interpretación"
+  },
+  {
+    "id": 857,
+    "name": "Arthur O'Connell",
+    "department": "Interpretación"
+  },
+  {
+    "id": 860,
+    "name": "Eve Arden",
+    "department": "Interpretación"
+  },
+  {
+    "id": 861,
+    "name": "Kathryn Grant",
+    "department": "Interpretación"
+  },
+  {
+    "id": 862,
+    "name": "George C. Scott",
+    "department": "Interpretación"
+  },
+  {
+    "id": 863,
+    "name": "Orson Bean",
+    "department": "Interpretación"
+  },
+  {
+    "id": 866,
+    "name": "Russ Brown",
+    "department": "Interpretación"
+  },
+  {
+    "id": 834,
+    "name": "Otto Preminger",
+    "department": "Dirección"
+  },
+  {
+    "id": 2310,
+    "name": "Bruno Ganz",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5644,
+    "name": "Alexandra Maria Lara",
+    "department": "Interpretación"
+  },
+  {
+    "id": 680,
+    "name": "Corinna Harfouch",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8796,
+    "name": "Ulrich Matthes",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8797,
+    "name": "Juliane Köhler",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1086,
+    "name": "Heino Ferch",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7803,
+    "name": "Christian Berkel",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3491,
+    "name": "Thomas Kretschmann",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8799,
+    "name": "Ulrich Noethen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7832,
+    "name": "Oliver Hirschbiegel",
+    "department": "Dirección"
+  },
+  {
+    "id": 5823,
+    "name": "Julie Andrews",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7331,
+    "name": "Eleanor Parker",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1041410,
+    "name": "Charmian Carr",
+    "department": "Interpretación"
+  },
+  {
+    "id": 29095,
+    "name": "Nicholas Hammond",
+    "department": "Interpretación"
+  },
+  {
+    "id": 92691,
+    "name": "Heather Menzies",
+    "department": "Interpretación"
+  },
+  {
+    "id": 121640,
+    "name": "Angela Cartwright",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1198142,
+    "name": "Debbie Turner",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1194314,
+    "name": "Kym Karath",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1532,
+    "name": "Bill Murray",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1772,
+    "name": "Anna Faris",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1770,
+    "name": "Akiko Takeshita",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1773,
+    "name": "Kazuyoshi Minamimagoe",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1774,
+    "name": "Kazuko Shibata",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1775,
+    "name": "Take",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2510694,
+    "name": "Ryuichiro Baba",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1769,
+    "name": "Sofia Coppola",
+    "department": "Dirección"
+  },
+  {
+    "id": 738,
+    "name": "Sean Connery",
+    "department": "Interpretación"
+  },
+  {
+    "id": 656,
+    "name": "Denholm Elliott",
+    "department": "Interpretación"
+  },
+  {
+    "id": 739,
+    "name": "Alison Doody",
+    "department": "Interpretación"
+  },
+  {
+    "id": 740,
+    "name": "Julian Glover",
+    "department": "Interpretación"
+  },
+  {
+    "id": 741,
+    "name": "River Phoenix",
+    "department": "Interpretación"
+  },
+  {
+    "id": 742,
+    "name": "Michael Byrne",
+    "department": "Interpretación"
+  },
+  {
+    "id": 743,
+    "name": "Kevork Malikyan",
+    "department": "Interpretación"
+  },
+  {
+    "id": 228,
+    "name": "Ed Harris",
+    "department": "Interpretación"
+  },
+  {
+    "id": 350,
+    "name": "Laura Linney",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11315,
+    "name": "Noah Emmerich",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11317,
+    "name": "Natascha McElhone",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11318,
+    "name": "Holland Taylor",
+    "department": "Interpretación"
+  },
+  {
+    "id": 13242,
+    "name": "Paul Giamatti",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6579,
+    "name": "Brian Delate",
+    "department": "Interpretación"
+  },
+  {
+    "id": 23119,
+    "name": "Peter Krause",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2690,
+    "name": "Peter Weir",
+    "department": "Dirección"
+  },
+  {
+    "id": 19119,
+    "name": "Mélanie Laurent",
+    "department": "Interpretación"
+  },
+  {
+    "id": 16847,
+    "name": "Eli Roth",
+    "department": "Interpretación"
+  },
+  {
+    "id": 17288,
+    "name": "Michael Fassbender",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9824,
+    "name": "Diane Kruger",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3872,
+    "name": "Daniel Brühl",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1844,
+    "name": "Til Schweiger",
+    "department": "Interpretación"
+  },
+  {
+    "id": 32823,
+    "name": "Gedeon Burkhard",
+    "department": "Interpretación"
+  },
+  {
+    "id": 33161,
+    "name": "François Cluzet",
+    "department": "Interpretación"
+  },
+  {
+    "id": 78423,
+    "name": "Omar Sy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 19370,
+    "name": "Anne Le Ny",
+    "department": "Interpretación"
+  },
+  {
+    "id": 219708,
+    "name": "Audrey Fleurot",
+    "department": "Interpretación"
+  },
+  {
+    "id": 84430,
+    "name": "Joséphine de Meaux",
+    "department": "Interpretación"
+  },
+  {
+    "id": 26107,
+    "name": "Alba Gaïa Bellugi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 581728,
+    "name": "Cyril Mendy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1411815,
+    "name": "Salimata Kamate",
+    "department": "Interpretación"
+  },
+  {
+    "id": 84425,
+    "name": "Éric Toledano",
+    "department": "Dirección"
+  },
+  {
+    "id": 84426,
+    "name": "Olivier Nakache",
+    "department": "Dirección"
+  },
+  {
+    "id": 1190668,
+    "name": "Timothée Chalamet",
+    "department": "Interpretación"
+  },
+  {
+    "id": 933238,
+    "name": "Rebecca Ferguson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 117642,
+    "name": "Jason Momoa",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1640,
+    "name": "Stellan Skarsgård",
+    "department": "Interpretación"
+  },
+  {
+    "id": 196179,
+    "name": "Stephen McKinley Henderson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3810,
+    "name": "Javier Bardem",
+    "department": "Interpretación"
+  },
+  {
+    "id": 195666,
+    "name": "Sharon Duncan-Brewster",
+    "department": "Interpretación"
+  },
+  {
+    "id": 505710,
+    "name": "Zendaya",
+    "department": "Interpretación"
+  },
+  {
+    "id": 86654,
+    "name": "Austin Butler",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1373737,
+    "name": "Florence Pugh",
+    "department": "Interpretación"
+  },
+  {
+    "id": 146750,
+    "name": "George MacKay",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1332971,
+    "name": "Dean-Charles Chapman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2983,
+    "name": "Mark Strong",
+    "department": "Interpretación"
+  },
+  {
+    "id": 125660,
+    "name": "Andrew Scott",
+    "department": "Interpretación"
+  },
+  {
+    "id": 512991,
+    "name": "Richard Madden",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2385743,
+    "name": "Claire Duburcq",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5472,
+    "name": "Colin Firth",
+    "department": "Interpretación"
+  },
+  {
+    "id": 71580,
+    "name": "Benedict Cumberbatch",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1670,
+    "name": "Daniel Mays",
+    "department": "Interpretación"
+  },
+  {
+    "id": 172069,
+    "name": "Chadwick Boseman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 135651,
+    "name": "Michael B. Jordan",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1267329,
+    "name": "Lupita Nyong'o",
+    "department": "Interpretación"
+  },
+  {
+    "id": 82104,
+    "name": "Danai Gurira",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7060,
+    "name": "Martin Freeman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1083010,
+    "name": "Letitia Wright",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1447932,
+    "name": "Winston Duke",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1225953,
+    "name": "Sterling K. Brown",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1056121,
+    "name": "Ryan Coogler",
+    "department": "Dirección"
+  },
+  {
+    "id": 90633,
+    "name": "Gal Gadot",
+    "department": "Interpretación"
+  },
+  {
+    "id": 62064,
+    "name": "Chris Pine",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6413,
+    "name": "Danny Huston",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11207,
+    "name": "David Thewlis",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5419,
+    "name": "Saïd Taghmaoui",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1125,
+    "name": "Ewen Bremner",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1823591,
+    "name": "Eugene Brave Rock",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6884,
+    "name": "Patty Jenkins",
+    "department": "Dirección"
+  },
+  {
+    "id": 6885,
+    "name": "Charlize Theron",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3292,
+    "name": "Nicholas Hoult",
+    "department": "Interpretación"
+  },
+  {
+    "id": 26060,
+    "name": "Hugh Keays-Byrne",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1056053,
+    "name": "Josh Helman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 24898,
+    "name": "Nathan Jones",
+    "department": "Interpretación"
+  },
+  {
+    "id": 236048,
+    "name": "Rosie Huntington-Whiteley",
+    "department": "Interpretación"
+  },
+  {
+    "id": 98522,
+    "name": "Riley Keough",
+    "department": "Interpretación"
+  },
+  {
+    "id": 20629,
+    "name": "George Miller",
+    "department": "Dirección"
+  },
+  {
+    "id": 1356210,
+    "name": "Millie Bobby Brown",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2750967,
+    "name": "Brooke Carter",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1108907,
+    "name": "Nick Robinson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1753160,
+    "name": "Milo Twomey",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5538,
+    "name": "Ray Winstone",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9780,
+    "name": "Angela Bassett",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3857260,
+    "name": "Nicole Joseph",
+    "department": "Interpretación"
+  },
+  {
+    "id": 74415,
+    "name": "Patrice Naiambana",
+    "department": "Interpretación"
+  },
+  {
+    "id": 17597,
+    "name": "Juan Carlos Fresnadillo",
+    "department": "Dirección"
+  },
+  {
+    "id": 40036,
+    "name": "Taraji P. Henson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6944,
+    "name": "Octavia Spencer",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1005852,
+    "name": "Janelle Monáe",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1269,
+    "name": "Kevin Costner",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5374,
+    "name": "Jim Parsons",
+    "department": "Interpretación"
+  },
+  {
+    "id": 83271,
+    "name": "Glen Powell",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1141877,
+    "name": "Ariana Neal",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1141683,
+    "name": "Theodore Melfi",
+    "department": "Dirección"
+  },
+  {
+    "id": 976,
+    "name": "Jason Statham",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1116,
+    "name": "Alan Ford",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1115,
+    "name": "Stephen Graham",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1117,
+    "name": "Dennis Farina",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1119,
+    "name": "Robbie Gee",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1120,
+    "name": "Lennie James",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1121,
+    "name": "Benicio del Toro",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1118,
+    "name": "Rade Šerbedžija",
+    "department": "Interpretación"
+  },
+  {
+    "id": 956,
+    "name": "Guy Ritchie",
+    "department": "Dirección"
+  },
+  {
+    "id": 933160,
+    "name": "Suraj Sharma",
+    "department": "Interpretación"
+  },
+  {
+    "id": 76793,
+    "name": "Irrfan Khan",
+    "department": "Interpretación"
+  },
+  {
+    "id": 935504,
+    "name": "Ayush Tandon",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1133846,
+    "name": "Gautam Belur",
+    "department": "Interpretación"
+  },
+  {
+    "id": 227849,
+    "name": "Adil Hussain",
+    "department": "Interpretación"
+  },
+  {
+    "id": 55062,
+    "name": "Tabu",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1377778,
+    "name": "Ayaan Khan",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1133848,
+    "name": "Mohd Abbas Khaleeli",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1133849,
+    "name": "Vibish Sivakumar",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1614,
+    "name": "Ang Lee",
+    "department": "Dirección"
+  },
+  {
+    "id": 17678,
+    "name": "Rudy Youngblood",
+    "department": "Interpretación"
+  },
+  {
+    "id": 17688,
+    "name": "Raoul Max Trujillo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 17689,
+    "name": "Gerardo Taracena",
+    "department": "Interpretación"
+  },
+  {
+    "id": 42009,
+    "name": "Iazua Larios",
+    "department": "Interpretación"
+  },
+  {
+    "id": 62477,
+    "name": "Antonio Monroy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4364,
+    "name": "María Isabel Díaz Lago",
+    "department": "Interpretación"
+  },
+  {
+    "id": 17679,
+    "name": "Dalia Hernández",
+    "department": "Interpretación"
+  },
+  {
+    "id": 17680,
+    "name": "Jonathan Brewer",
+    "department": "Interpretación"
+  },
+  {
+    "id": 17681,
+    "name": "Morris Birdyellowhead",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2461,
+    "name": "Mel Gibson",
+    "department": "Dirección"
+  },
+  {
+    "id": 1812,
+    "name": "Michelle Williams",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1246,
+    "name": "Emily Mortimer",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1276,
+    "name": "Patricia Clarkson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 17183,
+    "name": "Jackie Earle Haley",
+    "department": "Interpretación"
+  },
+  {
+    "id": 15854,
+    "name": "Ted Levine",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2157,
+    "name": "Robin Williams",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2692,
+    "name": "Robert Sean Leonard",
+    "department": "Interpretación"
+  },
+  {
+    "id": 569,
+    "name": "Ethan Hawke",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2694,
+    "name": "Josh Charles",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2693,
+    "name": "Gale Hansen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2695,
+    "name": "Dylan Kussman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2696,
+    "name": "Allelon Ruggiero",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2697,
+    "name": "James Waterston",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2698,
+    "name": "Norman Lloyd",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1920,
+    "name": "Winona Ryder",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2224,
+    "name": "Christian Slater",
+    "department": "Interpretación"
+  },
+  {
+    "id": 27565,
+    "name": "Kim Walker",
+    "department": "Interpretación"
+  },
+  {
+    "id": 19144,
+    "name": "Shannen Doherty",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4801,
+    "name": "Lisanne Falk",
+    "department": "Interpretación"
+  },
+  {
+    "id": 86526,
+    "name": "Aaron Mendelsohn",
+    "department": "Interpretación"
+  },
+  {
+    "id": 181607,
+    "name": "Andrew Benne",
+    "department": "Interpretación"
+  },
+  {
+    "id": 554010,
+    "name": "Betty Ramey",
+    "department": "Interpretación"
+  },
+  {
+    "id": 109899,
+    "name": "Bess Meyer",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7145,
+    "name": "Michael Lehmann",
+    "department": "Dirección"
+  },
+  {
+    "id": 11856,
+    "name": "Daniel Day-Lewis",
+    "department": "Interpretación"
+  },
+  {
+    "id": 18916,
+    "name": "Kevin J. O'Connor",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8785,
+    "name": "Ciarán Hinds",
+    "department": "Interpretación"
+  },
+  {
+    "id": 53670,
+    "name": "Sydney McCallister",
+    "department": "Interpretación"
+  },
+  {
+    "id": 52564,
+    "name": "Dillon Freasier",
+    "department": "Interpretación"
+  },
+  {
+    "id": 52565,
+    "name": "Hope Elizabeth Reeves",
+    "department": "Interpretación"
+  },
+  {
+    "id": 52566,
+    "name": "Colleen Foy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8214,
+    "name": "Barry Del Sherman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4762,
+    "name": "Paul Thomas Anderson",
+    "department": "Dirección"
+  },
+  {
+    "id": 34375,
+    "name": "Haruo Tanaka",
+    "department": "Interpretación"
+  },
+  {
+    "id": 34376,
+    "name": "Nobuo Kaneko",
+    "department": "Interpretación"
+  },
+  {
+    "id": 34377,
+    "name": "Bokuzen Hidari",
+    "department": "Interpretación"
+  },
+  {
+    "id": 34378,
+    "name": "Miki Odagiri",
+    "department": "Interpretación"
+  },
+  {
+    "id": 33767,
+    "name": "Shinichi Himori",
+    "department": "Interpretación"
+  },
+  {
+    "id": 980381,
+    "name": "Minosuke Yamada",
+    "department": "Interpretación"
+  },
+  {
+    "id": 96552,
+    "name": "Kamatari Fujiwara",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5292,
+    "name": "Denzel Washington",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2296,
+    "name": "Clive Owen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5294,
+    "name": "Chiwetel Ejiofor",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5295,
+    "name": "Carlos Andrés Gómez",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4889,
+    "name": "Kim Director",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5296,
+    "name": "James Ransone",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5281,
+    "name": "Spike Lee",
+    "department": "Dirección"
+  },
+  {
+    "id": 13784,
+    "name": "Burt Lancaster",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9857,
+    "name": "Karl Malden",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7684,
+    "name": "Thelma Ritter",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9112,
+    "name": "Neville Brand",
+    "department": "Interpretación"
+  },
+  {
+    "id": 13785,
+    "name": "Betty Field",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10169,
+    "name": "Telly Savalas",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8254,
+    "name": "Edmond O'Brien",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10609,
+    "name": "Hugh Marlowe",
+    "department": "Interpretación"
+  },
+  {
+    "id": 13786,
+    "name": "Whit Bissell",
+    "department": "Interpretación"
+  },
+  {
+    "id": 13776,
+    "name": "John Frankenheimer",
+    "department": "Dirección"
+  },
+  {
+    "id": 4110,
+    "name": "Humphrey Bogart",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4111,
+    "name": "Ingrid Bergman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4112,
+    "name": "Paul Henreid",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3001,
+    "name": "Conrad Veidt",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4114,
+    "name": "Sydney Greenstreet",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2094,
+    "name": "Peter Lorre",
+    "department": "Interpretación"
+  },
+  {
+    "id": 94110,
+    "name": "S.Z. Sakall",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4116,
+    "name": "Madeleine Lebeau",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4109,
+    "name": "Michael Curtiz",
+    "department": "Dirección"
+  },
+  {
+    "id": 2176,
+    "name": "Tommy Lee Jones",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2179,
+    "name": "Suzy Amis",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2177,
+    "name": "Lloyd Bridges",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2178,
+    "name": "Forest Whitaker",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2266,
+    "name": "Stephi Lineburg",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9277,
+    "name": "John Finn",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2275,
+    "name": "Caitlin Clarke",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1073836,
+    "name": "Christofer de Oni",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2042,
+    "name": "Stephen Hopkins",
+    "department": "Dirección"
+  },
+  {
+    "id": 15135,
+    "name": "Alain Delon",
+    "department": "Interpretación"
+  },
+  {
+    "id": 27440,
+    "name": "François Périer",
+    "department": "Interpretación"
+  },
+  {
+    "id": 43814,
+    "name": "Nathalie Delon",
+    "department": "Interpretación"
+  },
+  {
+    "id": 43815,
+    "name": "Cathy Rosier",
+    "department": "Interpretación"
+  },
+  {
+    "id": 35216,
+    "name": "Michel Boisrond",
+    "department": "Interpretación"
+  },
+  {
+    "id": 20945,
+    "name": "Catherine Jourdan",
+    "department": "Interpretación"
+  },
+  {
+    "id": 54403,
+    "name": "Jean-Pierre Posier",
+    "department": "Interpretación"
+  },
+  {
+    "id": 277526,
+    "name": "Robert Favart",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1664777,
+    "name": "Jacques Leroy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3831,
+    "name": "Jean-Pierre Melville",
+    "department": "Dirección"
+  },
+  {
+    "id": 20211,
+    "name": "John Getz",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3910,
+    "name": "Frances McDormand",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3017,
+    "name": "Samm-Art Williams",
+    "department": "Interpretación"
+  },
+  {
+    "id": 588,
+    "name": "M. Emmet Walsh",
+    "department": "Interpretación"
+  },
+  {
+    "id": 565188,
+    "name": "Deborah Neumann",
+    "department": "Interpretación"
+  },
+  {
+    "id": 54764,
+    "name": "Raquel Gavia",
+    "department": "Interpretación"
+  },
+  {
+    "id": 565189,
+    "name": "Van Brooks",
+    "department": "Interpretación"
+  },
+  {
+    "id": 565190,
+    "name": "Señor Marco",
+    "department": "Interpretación"
+  },
+  {
+    "id": 14833,
+    "name": "Harold Gould",
+    "department": "Interpretación"
+  },
+  {
+    "id": 39491,
+    "name": "Olga Georges-Picot",
+    "department": "Interpretación"
+  },
+  {
+    "id": 974329,
+    "name": "Zvee Scooler",
+    "department": "Interpretación"
+  },
+  {
+    "id": 932751,
+    "name": "Despo Diamantidou",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1178327,
+    "name": "Sol Frieder",
+    "department": "Interpretación"
+  },
+  {
+    "id": 69055,
+    "name": "Jessica Harper",
+    "department": "Interpretación"
+  },
+  {
+    "id": 106678,
+    "name": "Lloyd Battista",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3380,
+    "name": "Bette Davis",
+    "department": "Interpretación"
+  },
+  {
+    "id": 80994,
+    "name": "Ann Sheridan",
+    "department": "Interpretación"
+  },
+  {
+    "id": 93123,
+    "name": "Monty Woolley",
+    "department": "Interpretación"
+  },
+  {
+    "id": 84634,
+    "name": "Richard Travis",
+    "department": "Interpretación"
+  },
+  {
+    "id": 34745,
+    "name": "Jimmy Durante",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9071,
+    "name": "Billie Burke",
+    "department": "Interpretación"
+  },
+  {
+    "id": 14029,
+    "name": "Reginald Gardiner",
+    "department": "Interpretación"
+  },
+  {
+    "id": 86346,
+    "name": "Elisabeth Fraser",
+    "department": "Interpretación"
+  },
+  {
+    "id": 30215,
+    "name": "Grant Mitchell",
+    "department": "Interpretación"
+  },
+  {
+    "id": 67426,
+    "name": "William Keighley",
+    "department": "Dirección"
+  },
+  {
+    "id": 19123,
+    "name": "Susanne Lothar",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8196,
+    "name": "Ulrich Mühe",
+    "department": "Interpretación"
+  },
+  {
+    "id": 20449,
+    "name": "Arno Frisch",
+    "department": "Interpretación"
+  },
+  {
+    "id": 18490,
+    "name": "Frank Giering",
+    "department": "Interpretación"
+  },
+  {
+    "id": 551782,
+    "name": "Stefan Clapczynski",
+    "department": "Interpretación"
+  },
+  {
+    "id": 45699,
+    "name": "Doris Kunstmann",
+    "department": "Interpretación"
+  },
+  {
+    "id": 551783,
+    "name": "Christoph Bantzer",
+    "department": "Interpretación"
+  },
+  {
+    "id": 221293,
+    "name": "Wolfgang Glück",
+    "department": "Interpretación"
+  },
+  {
+    "id": 551784,
+    "name": "Susanne Meneghel",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6011,
+    "name": "Michael Haneke",
+    "department": "Dirección"
+  },
+  {
+    "id": 4970,
+    "name": "Ruth Gordon",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4971,
+    "name": "Bud Cort",
+    "department": "Interpretación"
+  },
+  {
+    "id": 19616,
+    "name": "Vivian Pickles",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4973,
+    "name": "Cyril Cusack",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4974,
+    "name": "Charles Tyner",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4975,
+    "name": "Ellen Geer",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4976,
+    "name": "Eric Christmas",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4977,
+    "name": "G. Wood",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4978,
+    "name": "Judy Engles",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4964,
+    "name": "Hal Ashby",
+    "department": "Dirección"
+  },
+  {
+    "id": 40551,
+    "name": "Stephen Young",
+    "department": "Interpretación"
+  },
+  {
+    "id": 15650,
+    "name": "Michael Strong",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12431,
+    "name": "Carey Loftin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1089965,
+    "name": "Albert Dumortier",
+    "department": "Interpretación"
+  },
+  {
+    "id": 13733,
+    "name": "Frank Latimore",
+    "department": "Interpretación"
+  },
+  {
+    "id": 58495,
+    "name": "Morgan Paull",
+    "department": "Interpretación"
+  },
+  {
+    "id": 32021,
+    "name": "Karl Michael Vogler",
+    "department": "Interpretación"
+  },
+  {
+    "id": 13265,
+    "name": "Franklin J. Schaffner",
+    "department": "Dirección"
+  },
+  {
+    "id": 7451,
+    "name": "Machiko Kyō",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7452,
+    "name": "Masayuki Mori",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7455,
+    "name": "Kichijirō Ueda",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7456,
+    "name": "Noriko Honma",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4004,
+    "name": "Jeffrey Jones",
+    "department": "Interpretación"
+  },
+  {
+    "id": 19239,
+    "name": "Judith Ivey",
+    "department": "Interpretación"
+  },
+  {
+    "id": 42694,
+    "name": "Tamara Tunie",
+    "department": "Interpretación"
+  },
+  {
+    "id": 18596,
+    "name": "Taylor Hackford",
+    "department": "Dirección"
+  },
+  {
+    "id": 5676,
+    "name": "Marcello Mastroianni",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5961,
+    "name": "Anita Ekberg",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5682,
+    "name": "Anouk Aimée",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5962,
+    "name": "Yvonne Furneaux",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5963,
+    "name": "Magali Noël",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5964,
+    "name": "Alain Cuny",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5965,
+    "name": "Annibale Ninchi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5966,
+    "name": "Walter Santesso",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5967,
+    "name": "Valeria Ciangottini",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4415,
+    "name": "Federico Fellini",
+    "department": "Dirección"
+  },
+  {
+    "id": 8595,
+    "name": "Alexandre Rodrigues",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8596,
+    "name": "Leandro Firmino",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8597,
+    "name": "Phellipe Haagensen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8598,
+    "name": "Douglas Silva",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8599,
+    "name": "Jonathan Haagensen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8600,
+    "name": "Matheus Nachtergaele",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5659,
+    "name": "Seu Jorge",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8601,
+    "name": "Jefechander Suplino",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8557,
+    "name": "Fernando Meirelles",
+    "department": "Dirección"
+  },
+  {
+    "id": 57755,
+    "name": "Woody Harrelson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 37260,
+    "name": "Abbie Cornish",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1105079,
+    "name": "Lucas Hedges",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6752,
+    "name": "Željko Ivanek",
+    "department": "Interpretación"
+  },
+  {
+    "id": 61011,
+    "name": "Clarke Peters",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1372369,
+    "name": "Samara Weaving",
+    "department": "Interpretación"
+  },
+  {
+    "id": 54472,
+    "name": "Martin McDonagh",
+    "department": "Dirección"
+  },
+  {
+    "id": 87341,
+    "name": "Selton Mello",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10055,
+    "name": "Fernanda Montenegro",
+    "department": "Interpretación"
+  },
+  {
+    "id": 123757,
+    "name": "Rogério Cardoso",
+    "department": "Interpretación"
+  },
+  {
+    "id": 123758,
+    "name": "Denise Fraga",
+    "department": "Interpretación"
+  },
+  {
+    "id": 102551,
+    "name": "Diogo Vilela",
+    "department": "Interpretación"
+  },
+  {
+    "id": 90219,
+    "name": "Luís Melo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 123759,
+    "name": "Virginia Cavendish",
+    "department": "Interpretación"
+  },
+  {
+    "id": 123760,
+    "name": "Bruno Garcia",
+    "department": "Interpretación"
+  },
+  {
+    "id": 102560,
+    "name": "Guel Arraes",
+    "department": "Dirección"
+  },
+  {
+    "id": 1892,
+    "name": "Matt Damon",
+    "department": "Interpretación"
+  },
+  {
+    "id": 880,
+    "name": "Ben Affleck",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6613,
+    "name": "Minnie Driver",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6614,
+    "name": "Cole Hauser",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6623,
+    "name": "Vik Sahay",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6615,
+    "name": "John Mighton",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5216,
+    "name": "Gus Van Sant",
+    "department": "Dirección"
+  },
+  {
+    "id": 1146,
+    "name": "Julie Delpy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 649,
+    "name": "Vernon Dobtcheff",
+    "department": "Interpretación"
+  },
+  {
+    "id": 651,
+    "name": "Louise Lemoine Torrès",
+    "department": "Interpretación"
+  },
+  {
+    "id": 654,
+    "name": "Rodolphe Pauly",
+    "department": "Interpretación"
+  },
+  {
+    "id": 657,
+    "name": "Mariane Plasteig",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3728,
+    "name": "Diabolo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3729,
+    "name": "Denis Evrard",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3730,
+    "name": "Albert Delpy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 564,
+    "name": "Richard Linklater",
+    "department": "Dirección"
+  },
+  {
+    "id": 10872,
+    "name": "Patton Oswalt",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7962,
+    "name": "Lou Romano",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6197,
+    "name": "Brian Dennehy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 21198,
+    "name": "Peter Sohn",
+    "department": "Interpretación"
+  },
+  {
+    "id": 18,
+    "name": "Brad Garrett",
+    "department": "Interpretación"
+  },
+  {
+    "id": 21197,
+    "name": "Janeane Garofalo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 21200,
+    "name": "Will Arnett",
+    "department": "Interpretación"
+  },
+  {
+    "id": 98,
+    "name": "Sarah Polley",
+    "department": "Interpretación"
+  },
+  {
+    "id": 19115,
+    "name": "Linh-Dan Pham",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7026,
+    "name": "Rhys Ifans",
+    "department": "Interpretación"
+  },
+  {
+    "id": 110581,
+    "name": "Natasha Little",
+    "department": "Interpretación"
+  },
+  {
+    "id": 116606,
+    "name": "Toby Regbo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 36594,
+    "name": "Juno Temple",
+    "department": "Interpretación"
+  },
+  {
+    "id": 78018,
+    "name": "Allan Corduner",
+    "department": "Interpretación"
+  },
+  {
+    "id": 107490,
+    "name": "Jaco Van Dormael",
+    "department": "Dirección"
+  },
+  {
+    "id": 28079,
+    "name": "Alisa Freyndlikh",
+    "department": "Interpretación"
+  },
+  {
+    "id": 28078,
+    "name": "Aleksandr Kaydanovskiy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 28080,
+    "name": "Natalya Abramova",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1073948,
+    "name": "Faime Jurno",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1626954,
+    "name": "Evgeniy Kostin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2037109,
+    "name": "Raimo Rendi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 85219,
+    "name": "Vladimir Zamanskiy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 70811,
+    "name": "Yōko Tsukasa",
+    "department": "Interpretación"
+  },
+  {
+    "id": 33761,
+    "name": "Isuzu Yamada",
+    "department": "Interpretación"
+  },
+  {
+    "id": 83202,
+    "name": "Seizaburō Kawazu",
+    "department": "Interpretación"
+  },
+  {
+    "id": 33763,
+    "name": "Hiroshi Tachikawa",
+    "department": "Interpretación"
+  },
+  {
+    "id": 131201,
+    "name": "Yōsuke Natsuki",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12021,
+    "name": "Mia Farrow",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11147,
+    "name": "John Cassavetes",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12022,
+    "name": "Sidney Blackmer",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12023,
+    "name": "Maurice Evans",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1208,
+    "name": "Ralph Bellamy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12024,
+    "name": "Victoria Vetri",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12025,
+    "name": "Patsy Kelly",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3339,
+    "name": "Elisha Cook Jr.",
+    "department": "Interpretación"
+  },
+  {
+    "id": 37505,
+    "name": "Silvia Pinal",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9768,
+    "name": "Francisco Rabal",
+    "department": "Interpretación"
+  },
+  {
+    "id": 14821,
+    "name": "Fernando Rey",
+    "department": "Interpretación"
+  },
+  {
+    "id": 16311,
+    "name": "José Calvo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 16314,
+    "name": "Margarita Lozano",
+    "department": "Interpretación"
+  },
+  {
+    "id": 37506,
+    "name": "Victoria Zinny",
+    "department": "Interpretación"
+  },
+  {
+    "id": 37507,
+    "name": "Teresa Rabal",
+    "department": "Interpretación"
+  },
+  {
+    "id": 37508,
+    "name": "Luis Heredia",
+    "department": "Interpretación"
+  },
+  {
+    "id": 37509,
+    "name": "Joaquín Roa",
+    "department": "Interpretación"
+  },
+  {
+    "id": 793,
+    "name": "Luis Buñuel",
+    "department": "Dirección",
+    "photo": "https://media.themoviedb.org/t/p/w185/a7wib1eRG6TyonDXpAbF7PZd0f8.jpg"
+  },
+  {
+    "id": 677,
+    "name": "Moritz Bleibtreu",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5646,
+    "name": "Justus von Dohnányi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7827,
+    "name": "Maren Eggert",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7822,
+    "name": "Edgar Selge",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7823,
+    "name": "Andrea Sawatzki",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7804,
+    "name": "Oliver Stokowski",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7805,
+    "name": "Wotan Wilke Möhring",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7815,
+    "name": "Nicki von Tempelhoff",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12322,
+    "name": "Ellen Widmann",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12323,
+    "name": "Inge Landgut",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12324,
+    "name": "Otto Wernicke",
+    "department": "Interpretación"
+  },
+  {
+    "id": 79,
+    "name": "Theodor Loos",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12325,
+    "name": "Gustaf Gründgens",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12326,
+    "name": "Friedrich Gnaß",
+    "department": "Interpretación"
+  },
+  {
+    "id": 28068,
+    "name": "Fritz Odemar",
+    "department": "Interpretación"
+  },
+  {
+    "id": 219738,
+    "name": "Paul Kemp",
+    "department": "Interpretación"
+  },
+  {
+    "id": 68,
+    "name": "Fritz Lang",
+    "department": "Dirección"
+  },
+  {
+    "id": 70132,
+    "name": "Akira Terao",
+    "department": "Interpretación"
+  },
+  {
+    "id": 70133,
+    "name": "Jinpachi Nezu",
+    "department": "Interpretación"
+  },
+  {
+    "id": 70134,
+    "name": "Daisuke Ryū",
+    "department": "Interpretación"
+  },
+  {
+    "id": 72607,
+    "name": "Mieko Harada",
+    "department": "Interpretación"
+  },
+  {
+    "id": 237362,
+    "name": "Yoshiko Miyazaki",
+    "department": "Interpretación"
+  },
+  {
+    "id": 149405,
+    "name": "Mansai Nomura",
+    "department": "Interpretación"
+  },
+  {
+    "id": 17538,
+    "name": "Shinnosuke Ikehata",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2630,
+    "name": "Nastassja Kinski",
+    "department": "Interpretación"
+  },
+  {
+    "id": 923,
+    "name": "Dean Stockwell",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9892,
+    "name": "Hunter Carson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9893,
+    "name": "Aurore Clément",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9894,
+    "name": "Bernhard Wicki",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2922446,
+    "name": "Sam Berry",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1482977,
+    "name": "Claresie Mobley",
+    "department": "Interpretación"
+  },
+  {
+    "id": 54754,
+    "name": "Viva",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2303,
+    "name": "Wim Wenders",
+    "department": "Dirección"
+  },
+  {
+    "id": 16483,
+    "name": "Sylvester Stallone",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1101,
+    "name": "Carl Weathers",
+    "department": "Interpretación"
+  },
+  {
+    "id": 16523,
+    "name": "Burgess Meredith",
+    "department": "Interpretación"
+  },
+  {
+    "id": 16524,
+    "name": "Thayer David",
+    "department": "Interpretación"
+  },
+  {
+    "id": 16525,
+    "name": "Joe Spinell",
+    "department": "Interpretación"
+  },
+  {
+    "id": 16526,
+    "name": "Jimmy Gambina",
+    "department": "Interpretación"
+  },
+  {
+    "id": 16527,
+    "name": "Bill Baldwin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 16513,
+    "name": "John G. Avildsen",
+    "department": "Dirección"
+  },
+  {
+    "id": 4959,
+    "name": "Claudia Cardinale",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5683,
+    "name": "Sandra Milo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5684,
+    "name": "Rossella Falk",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5685,
+    "name": "Barbara Steele",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5686,
+    "name": "Caterina Boratto",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5687,
+    "name": "Eddra Gale",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6952,
+    "name": "Charlie Sheen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6863,
+    "name": "Kevin Dillon",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11889,
+    "name": "Mark Moses",
+    "department": "Interpretación"
+  },
+  {
+    "id": 65827,
+    "name": "Keith David",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6396,
+    "name": "Richard Edson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11886,
+    "name": "Francesco Quinn",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1152,
+    "name": "Oliver Stone",
+    "department": "Dirección"
+  },
+  {
+    "id": 19159,
+    "name": "Thomas Haden Church",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12519,
+    "name": "Virginia Madsen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 25540,
+    "name": "Sandra Oh",
+    "department": "Interpretación"
+  },
+  {
+    "id": 57823,
+    "name": "Marylouise Burke",
+    "department": "Interpretación"
+  },
+  {
+    "id": 14984,
+    "name": "Jessica Hecht",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1223003,
+    "name": "Missy Doty",
+    "department": "Interpretación"
+  },
+  {
+    "id": 22132,
+    "name": "M.C. Gainey",
+    "department": "Interpretación"
+  },
+  {
+    "id": 109740,
+    "name": "Alysia Reiner",
+    "department": "Interpretación"
+  },
+  {
+    "id": 13235,
+    "name": "Alexander Payne",
+    "department": "Dirección"
+  },
+  {
+    "id": 4038,
+    "name": "Susan Sarandon",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10360,
+    "name": "Robert Prosky",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10361,
+    "name": "Raymond J. Barry",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1989,
+    "name": "Celia Weston",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2207,
+    "name": "Lois Smith",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6914,
+    "name": "Scott Wilson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10362,
+    "name": "Roberta Maxwell",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8252,
+    "name": "William Holden",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12249,
+    "name": "Sessue Hayakawa",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12250,
+    "name": "James Donald",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12251,
+    "name": "Geoffrey Horne",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10029,
+    "name": "André Morell",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12252,
+    "name": "Peter Williams",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1075445,
+    "name": "John Boxer",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2963,
+    "name": "Nicolas Cage",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11148,
+    "name": "Joan Allen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4941,
+    "name": "Alessandro Nivola",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11150,
+    "name": "Gina Gershon",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11149,
+    "name": "Dominique Swain",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11151,
+    "name": "Nick Cassavetes",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3907,
+    "name": "Harve Presnell",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10132,
+    "name": "Colm Feore",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11401,
+    "name": "John Woo",
+    "department": "Dirección"
+  },
+  {
+    "id": 887,
+    "name": "Owen Wilson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 112,
+    "name": "Cate Blanchett",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5657,
+    "name": "Anjelica Huston",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5658,
+    "name": "Michael Gambon",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1284,
+    "name": "Noah Taylor",
+    "department": "Interpretación"
+  },
+  {
+    "id": 47879,
+    "name": "John Savage",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5064,
+    "name": "Meryl Streep",
+    "department": "Interpretación"
+  },
+  {
+    "id": 80135,
+    "name": "Rutanya Alda",
+    "department": "Interpretación"
+  },
+  {
+    "id": 133859,
+    "name": "Pierre Segui",
+    "department": "Interpretación"
+  },
+  {
+    "id": 87007,
+    "name": "Amy Wright",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12114,
+    "name": "Michael Cimino",
+    "department": "Dirección"
+  },
+  {
+    "id": 8993,
+    "name": "Simone Mareuil",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8992,
+    "name": "Pierre Batcheff",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8988,
+    "name": "Salvador Dalí",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8994,
+    "name": "Robert Hommet",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8995,
+    "name": "Marval",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8996,
+    "name": "Fano Messan",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8997,
+    "name": "Jaume Miravitlles",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1899217,
+    "name": "Pancho Cossío",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9762,
+    "name": "Jean Sorel",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3784,
+    "name": "Michel Piccoli",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9763,
+    "name": "Geneviève Page",
+    "department": "Interpretación"
+  },
+  {
+    "id": 17577,
+    "name": "Pierre Clémenti",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9765,
+    "name": "Françoise Fabian",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9766,
+    "name": "Macha Méril",
+    "department": "Interpretación"
+  },
+  {
+    "id": 37464,
+    "name": "Muni",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2053689,
+    "name": "Maria Latour",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3508,
+    "name": "Delphine Seyrig",
+    "department": "Interpretación"
+  },
+  {
+    "id": 24684,
+    "name": "Paul Frankeur",
+    "department": "Interpretación"
+  },
+  {
+    "id": 19092,
+    "name": "Stéphane Audran",
+    "department": "Interpretación"
+  },
+  {
+    "id": 38341,
+    "name": "Bulle Ogier",
+    "department": "Interpretación"
+  },
+  {
+    "id": 19162,
+    "name": "Jean-Pierre Cassel",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3594,
+    "name": "Julien Bertheau",
+    "department": "Interpretación"
+  },
+  {
+    "id": 24388,
+    "name": "Claude Piéplu",
+    "department": "Interpretación"
+  },
+  {
+    "id": 139573,
+    "name": "Jacqueline Andere",
+    "department": "Interpretación"
+  },
+  {
+    "id": 39008,
+    "name": "Claudio Brook",
+    "department": "Interpretación"
+  },
+  {
+    "id": 175980,
+    "name": "Enrique Rambal",
+    "department": "Interpretación"
+  },
+  {
+    "id": 176011,
+    "name": "José Baviera",
+    "department": "Interpretación"
+  },
+  {
+    "id": 105130,
+    "name": "Augusto Benedico",
+    "department": "Interpretación"
+  },
+  {
+    "id": 975213,
+    "name": "Luis Beristáin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 31599,
+    "name": "Antonio Bravo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 176045,
+    "name": "César del Campo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10500,
+    "name": "Carole Bouquet",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3822,
+    "name": "Ángela Molina",
+    "department": "Interpretación"
+  },
+  {
+    "id": 566171,
+    "name": "André Weber",
+    "department": "Interpretación"
+  },
+  {
+    "id": 44104,
+    "name": "Milena Vukotić",
+    "department": "Interpretación"
+  },
+  {
+    "id": 69529,
+    "name": "María Asquerino",
+    "department": "Interpretación"
+  },
+  {
+    "id": 39721,
+    "name": "Ellen Bahl",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1402298,
+    "name": "Valerie Blanco",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11543,
+    "name": "Gaston Modot",
+    "department": "Interpretación"
+  },
+  {
+    "id": 33023,
+    "name": "Lya Lys",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1830629,
+    "name": "Caridad de Laberdesque",
+    "department": "Interpretación"
+  },
+  {
+    "id": 45201,
+    "name": "Max Ernst",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1830630,
+    "name": "Josep Llorens Artigas",
+    "department": "Interpretación"
+  },
+  {
+    "id": 45204,
+    "name": "Lionel Salem",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1713004,
+    "name": "Germaine Noizet",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1830631,
+    "name": "Duchange",
+    "department": "Interpretación"
+  },
+  {
+    "id": 149004,
+    "name": "Bonaventura Ibáñez",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3637200,
+    "name": "Catalina Domènech",
+    "department": "Interpretación"
+  },
+  {
+    "id": 24299,
+    "name": "Jean-Claude Brialy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 41779,
+    "name": "Monica Vitti",
+    "department": "Interpretación"
+  },
+  {
+    "id": 24421,
+    "name": "Jean Rochefort",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9920,
+    "name": "Adolfo Celi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 22383,
+    "name": "Franco Nero",
+    "department": "Interpretación"
+  },
+  {
+    "id": 37510,
+    "name": "Lola Gaos",
+    "department": "Interpretación"
+  },
+  {
+    "id": 103529,
+    "name": "Antonio Casas",
+    "department": "Interpretación"
+  },
+  {
+    "id": 169313,
+    "name": "Jesús Fernández",
+    "department": "Interpretación"
+  },
+  {
+    "id": 169368,
+    "name": "Vicente Soler",
+    "department": "Interpretación"
+  },
+  {
+    "id": 169416,
+    "name": "Fernando Cebrián",
+    "department": "Interpretación"
+  },
+  {
+    "id": 24385,
+    "name": "Laurent Terzieff",
+    "department": "Interpretación"
+  },
+  {
+    "id": 27980,
+    "name": "Édith Scob",
+    "department": "Interpretación"
+  },
+  {
+    "id": 32514,
+    "name": "Bernard Verley",
+    "department": "Interpretación"
+  },
+  {
+    "id": 28247,
+    "name": "François Maistre",
+    "department": "Interpretación"
+  },
+  {
+    "id": 40976,
+    "name": "Claude Cerval",
+    "department": "Interpretación"
+  },
+  {
+    "id": 145273,
+    "name": "Hortensia Santoveña",
+    "department": "Interpretación"
+  },
+  {
+    "id": 145272,
+    "name": "Enrique Álvarez Félix",
+    "department": "Interpretación"
+  },
+  {
+    "id": 108688,
+    "name": "Francisco Reiguera",
+    "department": "Interpretación"
+  },
+  {
+    "id": 31884,
+    "name": "Luis Aceves Castañeda",
+    "department": "Interpretación"
+  },
+  {
+    "id": 186642,
+    "name": "Enrique del Castillo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 553164,
+    "name": "Enrique García Álvarez",
+    "department": "Interpretación"
+  },
+  {
+    "id": 14812,
+    "name": "Jeanne Moreau",
+    "department": "Interpretación"
+  },
+  {
+    "id": 19632,
+    "name": "Georges Géret",
+    "department": "Interpretación"
+  },
+  {
+    "id": 31819,
+    "name": "Françoise Lugagne",
+    "department": "Interpretación"
+  },
+  {
+    "id": 37137,
+    "name": "Jean Ozenne",
+    "department": "Interpretación"
+  },
+  {
+    "id": 34679,
+    "name": "Daniel Ivernel",
+    "department": "Interpretación"
+  },
+  {
+    "id": 25976,
+    "name": "Bernard Musson",
+    "department": "Interpretación"
+  },
+  {
+    "id": 38902,
+    "name": "Gilberte Géniat",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9747,
+    "name": "Jean-Claude Carrière",
+    "department": "Interpretación"
+  },
+  {
+    "id": 31551,
+    "name": "Zachary Scott",
+    "department": "Interpretación"
+  },
+  {
+    "id": 174624,
+    "name": "Bernie Hamilton",
+    "department": "Interpretación"
+  },
+  {
+    "id": 176477,
+    "name": "Key Meersman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 13787,
+    "name": "Crahan Denton",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3898032,
+    "name": "Graham Denton",
+    "department": "Interpretación"
+  },
+  {
+    "id": 996588,
+    "name": "María Félix",
+    "department": "Interpretación"
+  },
+  {
+    "id": 39208,
+    "name": "Gérard Philipe",
+    "department": "Interpretación"
+  },
+  {
+    "id": 14242,
+    "name": "Jean Servais",
+    "department": "Interpretación"
+  },
+  {
+    "id": 623776,
+    "name": "Miguel Ángel Ferriz Sr.",
+    "department": "Interpretación"
+  },
+  {
+    "id": 927677,
+    "name": "Raúl Dantés",
+    "department": "Interpretación"
+  },
+  {
+    "id": 102276,
+    "name": "Domingo Soler",
+    "department": "Interpretación"
+  },
+  {
+    "id": 717052,
+    "name": "Víctor Junco",
+    "department": "Interpretación"
+  },
+  {
+    "id": 31224,
+    "name": "Roberto Cañedo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 31796,
+    "name": "Andrés Soler",
+    "department": "Interpretación"
+  },
+  {
+    "id": 150341,
+    "name": "Marga López",
+    "department": "Interpretación"
+  },
+  {
+    "id": 150342,
+    "name": "Rita Macedo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 116992,
+    "name": "Ignacio López Tarso",
+    "department": "Interpretación"
+  },
+  {
+    "id": 950969,
+    "name": "Ofelia Guilmáin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 975377,
+    "name": "Noé Murayama",
+    "department": "Interpretación"
+  },
+  {
+    "id": 14534,
+    "name": "Rosenda Monteros",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12266,
+    "name": "Simone Signoret",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9767,
+    "name": "Georges Marchal",
+    "department": "Interpretación"
+  },
+  {
+    "id": 100570,
+    "name": "Tito Junco",
+    "department": "Interpretación"
+  },
+  {
+    "id": 26166,
+    "name": "Michèle Girardon",
+    "department": "Interpretación"
+  },
+  {
+    "id": 177449,
+    "name": "Raúl Ramírez",
+    "department": "Interpretación"
+  },
+  {
+    "id": 14532,
+    "name": "Jorge Martínez de Hoyos",
+    "department": "Interpretación"
+  },
+  {
+    "id": 39274,
+    "name": "Lucia Bosè",
+    "department": "Interpretación"
+  },
+  {
+    "id": 238768,
+    "name": "Jean-Jacques Delbo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 111305,
+    "name": "Simone Paris",
+    "department": "Interpretación"
+  },
+  {
+    "id": 583533,
+    "name": "Robert Le Fort",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2826656,
+    "name": "Brigitte Elloy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 556460,
+    "name": "Pascal Mazzotti",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1076017,
+    "name": "Jane Morlet",
+    "department": "Interpretación"
+  },
+  {
+    "id": 177753,
+    "name": "Ernesto Alonso",
+    "department": "Interpretación"
+  },
+  {
+    "id": 177731,
+    "name": "Miroslava",
+    "department": "Interpretación"
+  },
+  {
+    "id": 177800,
+    "name": "Andrea Palma",
+    "department": "Interpretación"
+  },
+  {
+    "id": 177802,
+    "name": "Rodolfo Landa",
+    "department": "Interpretación"
+  },
+  {
+    "id": 177785,
+    "name": "Ariadna Welter",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1090794,
+    "name": "José María Linares Rivas",
+    "department": "Interpretación"
+  },
+  {
+    "id": 553131,
+    "name": "Leonor Llausás",
+    "department": "Interpretación"
+  },
+  {
+    "id": 987346,
+    "name": "Eva Calvo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 31877,
+    "name": "Columba Domínguez",
+    "department": "Interpretación"
+  },
+  {
+    "id": 941461,
+    "name": "Miguel Torruco",
+    "department": "Interpretación"
+  },
+  {
+    "id": 31792,
+    "name": "Joaquín Cordero",
+    "department": "Interpretación"
+  },
+  {
+    "id": 31887,
+    "name": "Jaime Fernández",
+    "department": "Interpretación"
+  },
+  {
+    "id": 105151,
+    "name": "Víctor Alcocer",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1027119,
+    "name": "Silvia Derbez",
+    "department": "Interpretación"
+  },
+  {
+    "id": 223079,
+    "name": "José Elías Moreno",
+    "department": "Interpretación"
+  },
+  {
+    "id": 175484,
+    "name": "Carlos Martínez Baena",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1043508,
+    "name": "Alfredo Varela",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6836,
+    "name": "Dan O'Herlihy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 179477,
+    "name": "Felipe de Alba",
+    "department": "Interpretación"
+  },
+  {
+    "id": 179489,
+    "name": "Chel López",
+    "department": "Interpretación"
+  },
+  {
+    "id": 103565,
+    "name": "José Chávez",
+    "department": "Interpretación"
+  },
+  {
+    "id": 179522,
+    "name": "Emilio Garibay",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3419613,
+    "name": "Magdaleno Barba",
+    "department": "Interpretación"
+  },
+  {
+    "id": 31885,
+    "name": "Rogelio Fernández",
+    "department": "Interpretación"
+  },
+  {
+    "id": 179909,
+    "name": "Irasema Dilián",
+    "department": "Interpretación"
+  },
+  {
+    "id": 136150,
+    "name": "Jorge Mistral",
+    "department": "Interpretación"
+  },
+  {
+    "id": 179919,
+    "name": "Lilia Prado",
+    "department": "Interpretación"
+  },
+  {
+    "id": 101509,
+    "name": "Jaime González Quiñones",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1514445,
+    "name": "Leonor Gómez",
+    "department": "Interpretación"
+  },
+  {
+    "id": 184402,
+    "name": "Carlos Navarro",
+    "department": "Interpretación"
+  },
+  {
+    "id": 184453,
+    "name": "Fernando Soto",
+    "department": "Interpretación"
+  },
+  {
+    "id": 184465,
+    "name": "Agustín Isunza",
+    "department": "Interpretación"
+  },
+  {
+    "id": 106088,
+    "name": "Miguel Manzano",
+    "department": "Interpretación"
+  },
+  {
+    "id": 148576,
+    "name": "Guillermo Bravo Sosa",
+    "department": "Interpretación"
+  },
+  {
+    "id": 184504,
+    "name": "José Pidal",
+    "department": "Interpretación"
+  },
+  {
+    "id": 940997,
+    "name": "Felipe Montoya",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1753875,
+    "name": "Javier de la Parra",
+    "department": "Interpretación"
+  },
+  {
+    "id": 99171,
+    "name": "Arturo de Córdova",
+    "department": "Interpretación"
+  },
+  {
+    "id": 175479,
+    "name": "Delia Garcés",
+    "department": "Interpretación"
+  },
+  {
+    "id": 175481,
+    "name": "Aurora Walker",
+    "department": "Interpretación"
+  },
+  {
+    "id": 30306,
+    "name": "Manuel Dondé",
+    "department": "Interpretación"
+  },
+  {
+    "id": 175536,
+    "name": "Rafael Banquells",
+    "department": "Interpretación"
+  },
+  {
+    "id": 31889,
+    "name": "Fernando Casanova",
+    "department": "Interpretación"
+  },
+  {
+    "id": 180174,
+    "name": "Roberto Meyer",
+    "department": "Interpretación"
+  },
+  {
+    "id": 96973,
+    "name": "Pedro Armendáriz",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4069,
+    "name": "Katy Jurado",
+    "department": "Interpretación"
+  },
+  {
+    "id": 102305,
+    "name": "Rosita Arenas",
+    "department": "Interpretación"
+  },
+  {
+    "id": 180286,
+    "name": "Paco Martínez",
+    "department": "Interpretación"
+  },
+  {
+    "id": 180318,
+    "name": "Gloria Mestre",
+    "department": "Interpretación"
+  },
+  {
+    "id": 180225,
+    "name": "Beatriz Ramos",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1664326,
+    "name": "Paz Villegas",
+    "department": "Interpretación"
+  },
+  {
+    "id": 184047,
+    "name": "Rosario Granados",
+    "department": "Interpretación"
+  },
+  {
+    "id": 31878,
+    "name": "Julio Villarreal",
+    "department": "Interpretación"
+  },
+  {
+    "id": 105131,
+    "name": "Xavier Loyá",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1181228,
+    "name": "Elda Peralta",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1521535,
+    "name": "Jaime Calpe",
+    "department": "Interpretación"
+  },
+  {
+    "id": 185049,
+    "name": "Esteban Márquez",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11975,
+    "name": "Roberto Cobo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1458464,
+    "name": "Manuel Noriega",
+    "department": "Interpretación"
+  },
+  {
+    "id": 148577,
+    "name": "Pedro Elviro",
+    "department": "Interpretación"
+  },
+  {
+    "id": 185795,
+    "name": "Fernando Soler",
+    "department": "Interpretación"
+  },
+  {
+    "id": 185809,
+    "name": "Alicia Caro",
+    "department": "Interpretación"
+  },
+  {
+    "id": 105149,
+    "name": "Rubén Rojo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 185888,
+    "name": "Nacho Contla",
+    "department": "Interpretación"
+  },
+  {
+    "id": 185915,
+    "name": "Amparo Garrido",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1532110,
+    "name": "Lily Aclemar",
+    "department": "Interpretación"
+  },
+  {
+    "id": 987326,
+    "name": "Álvaro Matute",
+    "department": "Interpretación"
+  },
+  {
+    "id": 186561,
+    "name": "Rosita Quintana",
+    "department": "Interpretación"
+  },
+  {
+    "id": 50763,
+    "name": "Víctor Manuel Mendoza",
+    "department": "Interpretación"
+  },
+  {
+    "id": 186586,
+    "name": "Matilde Palou",
+    "department": "Interpretación"
+  },
+  {
+    "id": 186603,
+    "name": "María Gentil Arcos",
+    "department": "Interpretación"
+  },
+  {
+    "id": 186612,
+    "name": "Luis López Somoza",
+    "department": "Interpretación"
+  },
+  {
+    "id": 186620,
+    "name": "Rafael Icardo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11978,
+    "name": "Jesús García Navarro",
+    "department": "Interpretación"
+  },
+  {
+    "id": 30830,
+    "name": "Gustavo Rojo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 940920,
+    "name": "Maruja Grifell",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11977,
+    "name": "Francisco Jambrina",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11962,
+    "name": "Luis Alcoriza",
+    "department": "Interpretación"
+  },
+  {
+    "id": 187176,
+    "name": "Jorge Negrete",
+    "department": "Interpretación"
+  },
+  {
+    "id": 187235,
+    "name": "Libertad Lamarque",
+    "department": "Interpretación"
+  },
+  {
+    "id": 187313,
+    "name": "Meche Barba",
+    "department": "Interpretación"
+  },
+  {
+    "id": 30304,
+    "name": "Alfonso Bedoya",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1107778,
+    "name": "Fernande Albany",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1280447,
+    "name": "Angelillo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 271770,
+    "name": "Ana María Custodio",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1147038,
+    "name": "Mapy Cortés",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1280453,
+    "name": "Mari-Tere Pacheco",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2539677,
+    "name": "Emilio Portes",
+    "department": "Interpretación"
+  },
+  {
+    "id": 256947,
+    "name": "Josita Hernán",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5652511,
+    "name": "Mario Pacheco",
+    "department": "Interpretación"
+  },
+  {
+    "id": 238377,
+    "name": "Jean Grémillon",
+    "department": "Dirección"
+  },
+  {
+    "id": 1047626,
+    "name": "Lina Yegros",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1327779,
+    "name": "Fernando Freyre de Andrade",
+    "department": "Interpretación"
+  },
+  {
+    "id": 238926,
+    "name": "Manuel Arbó",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1876826,
+    "name": "Luis de Arnedillo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5117983,
+    "name": "José Besonía",
+    "department": "Interpretación"
+  },
+  {
+    "id": 932708,
+    "name": "José Luis Sáenz de Heredia",
+    "department": "Dirección"
+  },
+  {
+    "id": 36209,
+    "name": "Jean Debucourt",
+    "department": "Interpretación"
+  },
+  {
+    "id": 100029,
+    "name": "Marguerite Gance",
+    "department": "Interpretación"
+  },
+  {
+    "id": 100030,
+    "name": "Charles Lamy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 100031,
+    "name": "Fournez-Goffard",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1556292,
+    "name": "Luc Dartagnan",
+    "department": "Interpretación"
+  },
+  {
+    "id": 29720,
+    "name": "Abel Gance",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1386335,
+    "name": "Halma",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1505027,
+    "name": "Pierre Hot",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1682554,
+    "name": "Pierre Kefer",
+    "department": "Interpretación"
+  },
+  {
+    "id": 100027,
+    "name": "Jean Epstein",
+    "department": "Dirección"
+  },
+  {
+    "id": 1148018,
+    "name": "Josephine Baker",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1270933,
+    "name": "Régina Dalthy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1498388,
+    "name": "Regina Thomas",
+    "department": "Interpretación"
+  },
+  {
+    "id": 224424,
+    "name": "Georges Melchior",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1498389,
+    "name": "Kiranine",
+    "department": "Interpretación"
+  },
+  {
+    "id": 992688,
+    "name": "Adolphe Candé",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1498390,
+    "name": "Mario Nalpas",
+    "department": "Dirección"
+  },
+  {
+    "id": 1121611,
+    "name": "Henri Étiévant",
+    "department": "Dirección"
+  },
+  {
+    "id": 1341969,
+    "name": "Raquel Meller",
+    "department": "Interpretación"
+  },
+  {
+    "id": 590644,
+    "name": "Fred Louis Lerch",
+    "department": "Interpretación"
+  },
+  {
+    "id": 37143,
+    "name": "Jean Murat",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1043396,
+    "name": "Victor Vina",
+    "department": "Interpretación"
+  },
+  {
+    "id": 109342,
+    "name": "Jacques Feyder",
+    "department": "Dirección"
+  },
+  {
+    "id": 2417953,
+    "name": "Yujia Wang",
+    "department": "Dirección"
+  },
+  {
+    "id": 116618,
+    "name": "Joseph Kaiser",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1926214,
+    "name": "Amanda Echalaz",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1709007,
+    "name": "Audrey Luna",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1569474,
+    "name": "Alice Coote",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1109275,
+    "name": "Sally Matthews",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1356521,
+    "name": "Iestyn Davies",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1340886,
+    "name": "Christine Rice",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1115341,
+    "name": "Rodney Gilfry",
+    "department": "Interpretación"
+  },
+  {
+    "id": 79861,
+    "name": "Sophie Bevan",
+    "department": "Interpretación"
+  },
+  {
+    "id": 290661,
+    "name": "Tom Cairns",
+    "department": "Dirección"
+  },
+  {
+    "id": 150641,
+    "name": "Gary Halvorson",
+    "department": "Dirección"
+  },
+  {
+    "id": 16948,
+    "name": "Nancho Novo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 37580,
+    "name": "Juan Diego",
+    "department": "Interpretación"
+  },
+  {
+    "id": 72887,
+    "name": "Esperanza Roy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1075729,
+    "name": "Clara Sanchís",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2798096,
+    "name": "Sara Astray Tudela",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2798097,
+    "name": "Celsa Bouzon",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2269400,
+    "name": "Lino Braxe",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2798098,
+    "name": "Miguel Castelo",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1075728,
+    "name": "Antonio F. Simón",
+    "department": "Dirección"
+  },
+  {
+    "id": 1045413,
+    "name": "Olja Bećković",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1308523,
+    "name": "Željka Cvjetan",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2244161,
+    "name": "Marta Gligorijević",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1647799,
+    "name": "Mihailo Jevtić",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5497,
+    "name": "Aleksandar Jovanović",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1049501,
+    "name": "Dubravko Jovanović",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1553757,
+    "name": "Ferid Karaica",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2161228,
+    "name": "Zdenko Kolar",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1345556,
+    "name": "Milenko Zablaćanski",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6037519,
+    "name": "Predrag Sinđelić",
+    "department": "Dirección"
+  },
+  {
+    "id": 53714,
+    "name": "Rachel McAdams",
+    "department": "Interpretación"
+  },
+  {
+    "id": 29685,
+    "name": "Kurt Fuller",
+    "department": "Interpretación"
+  },
+  {
+    "id": 937039,
+    "name": "Carla Bruni",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3968,
+    "name": "Michael Sheen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 971329,
+    "name": "Nina Arianda",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1244,
+    "name": "Jonathan Rhys Meyers",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1247,
+    "name": "Matthew Goode",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1249,
+    "name": "Penelope Wilton",
+    "department": "Interpretación"
+  },
+  {
+    "id": 34715,
+    "name": "James Nesbitt",
+    "department": "Interpretación"
+  },
+  {
+    "id": 195525,
+    "name": "Miranda Raison",
+    "department": "Interpretación"
+  },
+  {
+    "id": 955,
+    "name": "Penélope Cruz",
+    "department": "Interpretación"
+  },
+  {
+    "id": 60021,
+    "name": "Christopher Evan Welch",
+    "department": "Interpretación"
+  },
+  {
+    "id": 61659,
+    "name": "Chris Messina",
+    "department": "Interpretación"
+  },
+  {
+    "id": 14721,
+    "name": "Kevin Dunn",
+    "department": "Interpretación"
+  },
+  {
+    "id": 588323,
+    "name": "Julio Perillán",
+    "department": "Interpretación"
+  },
+  {
+    "id": 39658,
+    "name": "Sally Hawkins",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7447,
+    "name": "Alec Baldwin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 21127,
+    "name": "Bobby Cannavale",
+    "department": "Interpretación"
+  },
+  {
+    "id": 57906,
+    "name": "Andrew Dice Clay",
+    "department": "Interpretación"
+  },
+  {
+    "id": 52849,
+    "name": "Louis C.K.",
+    "department": "Interpretación"
+  },
+  {
+    "id": 72873,
+    "name": "Michael Stuhlbarg",
+    "department": "Interpretación"
+  },
+  {
+    "id": 71375,
+    "name": "Alden Ehrenreich",
+    "department": "Interpretación"
+  },
+  {
+    "id": 44735,
+    "name": "Jesse Eisenberg",
+    "department": "Interpretación"
+  },
+  {
+    "id": 37917,
+    "name": "Kristen Stewart",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4495,
+    "name": "Steve Carell",
+    "department": "Interpretación"
+  },
+  {
+    "id": 59175,
+    "name": "Blake Lively",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7489,
+    "name": "Parker Posey",
+    "department": "Interpretación"
+  },
+  {
+    "id": 74541,
+    "name": "Corey Stoll",
+    "department": "Interpretación"
+  },
+  {
+    "id": 124377,
+    "name": "Jeannie Berlin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 25136,
+    "name": "Ken Stott",
+    "department": "Interpretación"
+  },
+  {
+    "id": 221098,
+    "name": "Anna Camp",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4776,
+    "name": "Michael Murphy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10447,
+    "name": "Mariel Hemingway",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10448,
+    "name": "Anne Byrne Hoffman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10449,
+    "name": "Karen Ludwig",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10450,
+    "name": "Michael O'Donoghue",
+    "department": "Interpretación"
+  },
+  {
+    "id": 80482,
+    "name": "Gary Weis",
+    "department": "Interpretación"
+  },
+  {
+    "id": 54693,
+    "name": "Emma Stone",
+    "department": "Interpretación"
+  },
+  {
+    "id": 221985,
+    "name": "Jamie Blackley",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1373307,
+    "name": "Joe Stapleton",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1637781,
+    "name": "Jack Haven",
+    "department": "Interpretación"
+  },
+  {
+    "id": 29445,
+    "name": "Ethan Phillips",
+    "department": "Interpretación"
+  },
+  {
+    "id": 133047,
+    "name": "Betsy Aidem",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1456296,
+    "name": "Paula Plum",
+    "department": "Interpretación"
+  },
+  {
+    "id": 939099,
+    "name": "Lou de Laâge",
+    "department": "Interpretación"
+  },
+  {
+    "id": 62531,
+    "name": "Valérie Lemercier",
+    "department": "Interpretación"
+  },
+  {
+    "id": 26100,
+    "name": "Melvil Poupaud",
+    "department": "Interpretación"
+  },
+  {
+    "id": 143596,
+    "name": "Niels Schneider",
+    "department": "Interpretación"
+  },
+  {
+    "id": 39195,
+    "name": "Elsa Zylberstein",
+    "department": "Interpretación"
+  },
+  {
+    "id": 223532,
+    "name": "Grégory Gadebois",
+    "department": "Interpretación"
+  },
+  {
+    "id": 17896,
+    "name": "Guillaume de Tonquédec",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1364904,
+    "name": "Jeanne Bournaud",
+    "department": "Interpretación"
+  },
+  {
+    "id": 13191,
+    "name": "Anne Loiret",
+    "department": "Interpretación"
+  },
+  {
+    "id": 16269,
+    "name": "Louis Garrel",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3623,
+    "name": "Elena Anaya",
+    "department": "Interpretación"
+  },
+  {
+    "id": 944099,
+    "name": "Enrique Arce",
+    "department": "Interpretación"
+  },
+  {
+    "id": 26472,
+    "name": "Steve Guttenberg",
+    "department": "Interpretación"
+  },
+  {
+    "id": 16972,
+    "name": "Sergi López",
+    "department": "Interpretación"
+  },
+  {
+    "id": 32983,
+    "name": "Douglas McGrath",
+    "department": "Interpretación"
+  },
+  {
+    "id": 18050,
+    "name": "Elle Fanning",
+    "department": "Interpretación"
+  },
+  {
+    "id": 77948,
+    "name": "Selena Gomez",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8688,
+    "name": "Diego Luna",
+    "department": "Interpretación"
+  },
+  {
+    "id": 23626,
+    "name": "Liev Schreiber",
+    "department": "Interpretación"
+  },
+  {
+    "id": 225377,
+    "name": "Griffin Newman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1156913,
+    "name": "Kelly Rohrbach Walton",
+    "department": "Interpretación"
+  },
+  {
+    "id": 26485,
+    "name": "Jim Belushi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12111,
+    "name": "Justin Timberlake",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7133,
+    "name": "Max Casella",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1181345,
+    "name": "Jack Gore",
+    "department": "Interpretación"
+  },
+  {
+    "id": 38582,
+    "name": "David Krumholtz",
+    "department": "Interpretación"
+  },
+  {
+    "id": 150932,
+    "name": "Robert C. Kirk",
+    "department": "Interpretación"
+  },
+  {
+    "id": 172017,
+    "name": "Tommy Nohilly",
+    "department": "Interpretación"
+  },
+  {
+    "id": 184581,
+    "name": "Hamish Linklater",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4726,
+    "name": "Marcia Gay Harden",
+    "department": "Interpretación"
+  },
+  {
+    "id": 67837,
+    "name": "Jacki Weaver",
+    "department": "Interpretación"
+  },
+  {
+    "id": 57514,
+    "name": "Erica Leerhsen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 20300,
+    "name": "Eileen Atkins",
+    "department": "Interpretación"
+  },
+  {
+    "id": 16358,
+    "name": "Simon McBurney",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2462,
+    "name": "Catherine McCormack",
+    "department": "Interpretación"
+  },
+  {
+    "id": 351,
+    "name": "Judy Davis",
+    "department": "Interpretación"
+  },
+  {
+    "id": 45400,
+    "name": "Greta Gerwig",
+    "department": "Interpretación"
+  },
+  {
+    "id": 210766,
+    "name": "Alessandro Tiberi",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3131,
+    "name": "Antonio Banderas",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4173,
+    "name": "Anthony Hopkins",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9138,
+    "name": "Gemma Jones",
+    "department": "Interpretación"
+  },
+  {
+    "id": 76792,
+    "name": "Freida Pinto",
+    "department": "Interpretación"
+  },
+  {
+    "id": 66446,
+    "name": "Lucy Punch",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3489,
+    "name": "Naomi Watts",
+    "department": "Interpretación"
+  },
+  {
+    "id": 83437,
+    "name": "Pauline Collins",
+    "department": "Interpretación"
+  },
+  {
+    "id": 62231,
+    "name": "Rupert Frazer",
+    "department": "Interpretación"
+  },
+  {
+    "id": 16376,
+    "name": "Larry David",
+    "department": "Interpretación"
+  },
+  {
+    "id": 38940,
+    "name": "Evan Rachel Wood",
+    "department": "Interpretación"
+  },
+  {
+    "id": 21731,
+    "name": "Michael McKean",
+    "department": "Interpretación"
+  },
+  {
+    "id": 84423,
+    "name": "Conleth Hill",
+    "department": "Interpretación"
+  },
+  {
+    "id": 42157,
+    "name": "Ed Begley Jr.",
+    "department": "Interpretación"
+  },
+  {
+    "id": 84422,
+    "name": "Carolyn McCormick",
+    "department": "Interpretación"
+  },
+  {
+    "id": 73968,
+    "name": "Henry Cavill",
+    "department": "Interpretación"
+  },
+  {
+    "id": 17487,
+    "name": "John Gallagher Jr.",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3061,
+    "name": "Ewan McGregor",
+    "department": "Interpretación"
+  },
+  {
+    "id": 39459,
+    "name": "Hayley Atwell",
+    "department": "Interpretación"
+  },
+  {
+    "id": 26854,
+    "name": "Phil Davis",
+    "department": "Interpretación"
+  },
+  {
+    "id": 42642,
+    "name": "John Benfield",
+    "department": "Interpretación"
+  },
+  {
+    "id": 45588,
+    "name": "Clare Higgins",
+    "department": "Interpretación"
+  },
+  {
+    "id": 75061,
+    "name": "Ashley Madekwe",
+    "department": "Interpretación"
+  },
+  {
+    "id": 23659,
+    "name": "Will Ferrell",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9012,
+    "name": "Jonny Lee Miller",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8329,
+    "name": "Radha Mitchell",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2956,
+    "name": "Amanda Peet",
+    "department": "Interpretación"
+  },
+  {
+    "id": 60195,
+    "name": "David Aaron Baker",
+    "department": "Interpretación"
+  },
+  {
+    "id": 33432,
+    "name": "Arija Bareikis",
+    "department": "Interpretación"
+  },
+  {
+    "id": 71791,
+    "name": "Billy Joel",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2585,
+    "name": "Eric Clapton",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11370,
+    "name": "Elton John",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10215,
+    "name": "Paul McCartney",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1428,
+    "name": "Mick Jagger",
+    "department": "Interpretación"
+  },
+  {
+    "id": 82602,
+    "name": "Nick Carter",
+    "department": "Interpretación"
+  },
+  {
+    "id": 82604,
+    "name": "Howie Dorough",
+    "department": "Interpretación"
+  },
+  {
+    "id": 82601,
+    "name": "Brian Littrell",
+    "department": "Interpretación"
+  },
+  {
+    "id": 91394,
+    "name": "Ric Burns",
+    "department": "Dirección"
+  },
+  {
+    "id": 85357,
+    "name": "Christian Charles",
+    "department": "Dirección"
+  },
+  {
+    "id": 94270,
+    "name": "Louis J. Horvitz",
+    "department": "Dirección"
+  },
+  {
+    "id": 12833,
+    "name": "Edward Burns",
+    "department": "Dirección"
+  },
+  {
+    "id": 19303,
+    "name": "Kevin Smith",
+    "department": "Dirección"
+  },
+  {
+    "id": 16377,
+    "name": "Jerry Seinfeld",
+    "department": "Dirección"
+  },
+  {
+    "id": 30364,
+    "name": "Tracey Ullman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4688,
+    "name": "Michael Rapaport",
+    "department": "Interpretación"
+  },
+  {
+    "id": 16165,
+    "name": "Jon Lovitz",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3291,
+    "name": "Hugh Grant",
+    "department": "Interpretación"
+  },
+  {
+    "id": 58251,
+    "name": "Elaine May",
+    "department": "Interpretación"
+  },
+  {
+    "id": 67096,
+    "name": "Sam Josepher",
+    "department": "Interpretación"
+  },
+  {
+    "id": 67097,
+    "name": "Lawrence Howard Levy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2206,
+    "name": "Samantha Morton",
+    "department": "Interpretación"
+  },
+  {
+    "id": 57829,
+    "name": "Anthony LaPaglia",
+    "department": "Interpretación"
+  },
+  {
+    "id": 58528,
+    "name": "James Urbaniak",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10367,
+    "name": "John Waters",
+    "department": "Interpretación"
+  },
+  {
+    "id": 15370,
+    "name": "Gretchen Mol",
+    "department": "Interpretación"
+  },
+  {
+    "id": 81681,
+    "name": "Denis O'Hare",
+    "department": "Interpretación"
+  },
+  {
+    "id": 150972,
+    "name": "Molly Price",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5587,
+    "name": "Hank Azaria",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11181,
+    "name": "Kenneth Branagh",
+    "department": "Interpretación"
+  },
+  {
+    "id": 29369,
+    "name": "Melanie Griffith",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10696,
+    "name": "Famke Janssen",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4250,
+    "name": "Michael Lerner",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3266,
+    "name": "Joe Mantegna",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10739,
+    "name": "Bebe Neuwirth",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1796,
+    "name": "Kirstie Alley",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1951,
+    "name": "Elisabeth Shue",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7904,
+    "name": "Billy Crystal",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12438,
+    "name": "Bob Balaban",
+    "department": "Interpretación"
+  },
+  {
+    "id": 91756,
+    "name": "Hazelle Goodman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 27564,
+    "name": "Eric Lloyd",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1910,
+    "name": "Caroline Aaron",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10871,
+    "name": "Natasha Lyonne",
+    "department": "Interpretación"
+  },
+  {
+    "id": 18892,
+    "name": "Goldie Hawn",
+    "department": "Interpretación"
+  },
+  {
+    "id": 21278,
+    "name": "Alan Alda",
+    "department": "Interpretación"
+  },
+  {
+    "id": 69597,
+    "name": "Drew Barrymore",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1204,
+    "name": "Julia Roberts",
+    "department": "Interpretación"
+  },
+  {
+    "id": 526,
+    "name": "Lukas Haas",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12930,
+    "name": "Gaby Hoffmann",
+    "department": "Interpretación"
+  },
+  {
+    "id": 23931,
+    "name": "Mira Sorvino",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10560,
+    "name": "Donald Symington",
+    "department": "Interpretación"
+  },
+  {
+    "id": 29545,
+    "name": "Claire Bloom",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3019,
+    "name": "Olympia Dukakis",
+    "department": "Interpretación"
+  },
+  {
+    "id": 28010,
+    "name": "David Ogden Stiers",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3666,
+    "name": "Ed Herlihy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 14792,
+    "name": "Josef Sommer",
+    "department": "Interpretación"
+  },
+  {
+    "id": 53963,
+    "name": "Robert Stanton",
+    "department": "Interpretación"
+  },
+  {
+    "id": 52995,
+    "name": "Edward Herrmann",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8492,
+    "name": "Rosemary Murphy",
+    "department": "Interpretación"
+  },
+  {
+    "id": 199,
+    "name": "Julie Kavner",
+    "department": "Interpretación"
+  },
+  {
+    "id": 167640,
+    "name": "Mayim Bialik",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3036,
+    "name": "John Cusack",
+    "department": "Interpretación"
+  },
+  {
+    "id": 9046,
+    "name": "Chazz Palminteri",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1902,
+    "name": "Dianne Wiest",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7906,
+    "name": "Jennifer Tilly",
+    "department": "Interpretación"
+  },
+  {
+    "id": 18248,
+    "name": "Mary-Louise Parker",
+    "department": "Interpretación"
+  },
+  {
+    "id": 388,
+    "name": "Jim Broadbent",
+    "department": "Interpretación"
+  },
+  {
+    "id": 60023,
+    "name": "Joe Viterelli",
+    "department": "Interpretación"
+  },
+  {
+    "id": 7420,
+    "name": "Harvey Fierstein",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2226,
+    "name": "Sydney Pollack",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3196,
+    "name": "Juliette Lewis",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12812,
+    "name": "Lysette Anthony",
+    "department": "Interpretación"
+  },
+  {
+    "id": 5130,
+    "name": "Cristi Conaway",
+    "department": "Interpretación"
+  },
+  {
+    "id": 12122,
+    "name": "Ron Rifkin",
+    "department": "Interpretación"
+  },
+  {
+    "id": 6949,
+    "name": "John Malkovich",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3125,
+    "name": "Madonna",
+    "department": "Interpretación"
+  },
+  {
+    "id": 164015,
+    "name": "Anne Lange",
+    "department": "Interpretación"
+  },
+  {
+    "id": 227,
+    "name": "William Hurt",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10401,
+    "name": "Blythe Danner",
+    "department": "Interpretación"
+  },
+  {
+    "id": 16103,
+    "name": "Keye Luke",
+    "department": "Interpretación"
+  },
+  {
+    "id": 40389,
+    "name": "Bernadette Peters",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2641,
+    "name": "Martin Landau",
+    "department": "Interpretación"
+  },
+  {
+    "id": 20747,
+    "name": "Joanna Gleason",
+    "department": "Interpretación"
+  },
+  {
+    "id": 8975,
+    "name": "Sam Waterston",
+    "department": "Interpretación"
+  },
+  {
+    "id": 725,
+    "name": "Jerry Orbach",
+    "department": "Interpretación"
+  },
+  {
+    "id": 953612,
+    "name": "Jenny Nichols",
+    "department": "Interpretación"
+  },
+  {
+    "id": 1733,
+    "name": "Nick Nolte",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2165,
+    "name": "Rosanna Arquette",
+    "department": "Interpretación"
+  },
+  {
+    "id": 54123,
+    "name": "Patrick O'Neal",
+    "department": "Interpretación"
+  },
+  {
+    "id": 58530,
+    "name": "Mae Questel",
+    "department": "Interpretación"
+  },
+  {
+    "id": 3753,
+    "name": "Giancarlo Giannini",
+    "department": "Interpretación"
+  },
+  {
+    "id": 22248,
+    "name": "Heather McComb",
+    "department": "Interpretación"
+  },
+  {
+    "id": 161860,
+    "name": "Don Novello",
+    "department": "Interpretación"
+  },
+  {
+    "id": 4800,
+    "name": "Gena Rowlands",
+    "department": "Interpretación"
+  },
+  {
+    "id": 52462,
+    "name": "Betty Buckley",
+    "department": "Interpretación"
+  },
+  {
+    "id": 17495,
+    "name": "Martha Plimpton",
+    "department": "Interpretación"
+  },
+  {
+    "id": 11783,
+    "name": "John Houseman",
+    "department": "Interpretación"
+  },
+  {
+    "id": 18365,
+    "name": "Sandy Dennis",
+    "department": "Interpretación"
+  },
+  {
+    "id": 36802,
+    "name": "Elaine Stritch",
+    "department": "Interpretación"
+  },
+  {
+    "id": 28029,
+    "name": "Ira Wheeler",
+    "department": "Interpretación"
+  },
+  {
+    "id": 2747955,
+    "name": "Jane Cecil",
+    "department": "Interpretación"
+  },
+  {
+    "id": 10767,
+    "name": "Barbara Hershey",
+    "department": "Interpretación"
+  },
+  {
+    "id": 19411,
+    "name": "Lloyd Nolan",
+    "department": "Interpretación"
+  },
+  {
+    "id": 41516,
+    "name": "Maureen O'Sullivan",
+    "department": "Interpretación"
+  }
+]

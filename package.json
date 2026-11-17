@@ -1,16 +1,20 @@
 {
   "name": "movie-duel",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "test:e2e": "node tests/e2e.cjs"
   },
   "dependencies": {
     "next": "^15.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "playwright": "1.65.1"
   }
 }
