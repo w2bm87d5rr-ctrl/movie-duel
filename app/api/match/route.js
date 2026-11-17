@@ -1,4 +1,4 @@
-import {prepareMatch} from '../../../lib/tmdb.mjs';
+import {prepareMatch} from '../../../lib/tmdb-server.js';
 export async function POST(request){
  try {
   const text=await request.text();

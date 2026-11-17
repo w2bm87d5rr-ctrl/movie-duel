@@ -49,3 +49,26 @@ test('bounded rate-limit retry then cache avoids redundant network calls',async(
  mock(()=>++count===1?new Response('',{status:429,headers:{'retry-after':'0'}}):Response.json({ok:true}));
  try{assert.deepEqual(await tmdb('test/cache'),{ok:true});assert.deepEqual(await tmdb('test/cache'),{ok:true});assert.equal(count,2)}finally{reset()}
 });
+test('failed authentication never advertises a working live catalogue',async()=>{
+ mock(()=>new Response('',{status:401}));
+ try {
+  const {getOptions}=await import('../lib/tmdb.mjs');
+  await assert.rejects(getOptions(),e=>e.code==='TMDB_AUTH_ERROR');
+ }finally{reset()}
+});
+test('authenticated metadata includes genres and localized countries/languages only after success',async()=>{
+ mock(url=>Response.json(url.pathname.endsWith('/countries')?[{iso_3166_1:'AR'},{iso_3166_1:'FR'}]:url.pathname.endsWith('/languages')?[{iso_639_1:'es'},{iso_639_1:'fr'}]:{genres:[{id:18,name:'Drama'},{id:35,name:'Comedia'},{id:99,name:'Documental'}]}));
+ try {
+  const {getOptions}=await import('../lib/tmdb.mjs');const options=await getOptions();
+  assert.equal(options.source,'tmdb');assert.ok(!('catalogSize' in options));
+  assert.deepEqual(options.genres.map(g=>g.id),['18','35']);assert.ok(options.countries.some(c=>c.name==='Argentina'));
+  assert.ok(options.languages.some(l=>l.name==='español'));
+ }finally{reset()}
+});
+test('discovery preserves country evidence even when TMDB omits origin_country in results',async()=>{
+ mock(()=>Response.json({total_pages:1,results:Array.from({length:20},(_,i)=>movie(50000+i,{origin_country:undefined,original_language:'es'}))}));
+ try {
+  const result=await prepareMatch({duels:10,country:'AR',language:'es'});
+  assert.equal(result.status,'ready');assert.ok(result.deck.every(m=>m.countries.includes('AR')&&m.language==='es'));
+ }finally{reset()}
+});

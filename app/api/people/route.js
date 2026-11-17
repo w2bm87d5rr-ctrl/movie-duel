@@ -1,4 +1,4 @@
-import {searchPeople} from '../../../lib/tmdb.mjs';
+import {searchPeople} from '../../../lib/tmdb-server.js';
 export async function GET(request){
  const query=new URL(request.url).searchParams.get('q')||'';
  try{return Response.json({people:await searchPeople(query.slice(0,100))},{headers:{'Cache-Control':'private, max-age=300'}})}
