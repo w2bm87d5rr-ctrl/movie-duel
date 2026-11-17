@@ -35,7 +35,7 @@ async function safe(page){assert.equal(await page.evaluate(()=>document.document
  await page.locator('.choose').first().click();await ready(page);
  await page.getByRole('button',{name:'← INICIO',exact:true}).click();await page.getByRole('button',{name:'CONTINUAR PARTIDA',exact:true}).waitFor();
  await page.reload();await page.getByRole('button',{name:'CONTINUAR PARTIDA',exact:true}).click();await ready(page);await page.getByText('DUELO 02 / 5',{exact:true}).waitFor();
- await page.getByRole('button',{name:'← INICIO',exact:true}).click();await page.getByRole('button',{name:/JUGAR AHORA/}).click();await page.getByRole('dialog').waitFor();await page.getByRole('button',{name:'CONTINUAR LA ACTUAL'}).click();await ready(page);await page.getByText('DUELO 02 / 5',{exact:true}).waitFor();
+ await page.getByRole('button',{name:'← INICIO',exact:true}).click();await page.getByRole('button',{name:/JUGAR AHORA/}).click();await page.getByRole('dialog').waitFor();await page.getByRole('button',{name:'SEGUIR JUGANDO'}).click();await ready(page);await page.getByText('DUELO 02 / 5',{exact:true}).waitFor();
  for(let i=0;i<4;i++){await ready(page);await page.locator('.choose').nth(i%2).click();}
  await page.getByRole('heading',{name:'¡TENEMOS CAMPEONA!'}).waitFor();await page.getByText('5 duelos completados',{exact:false}).waitFor();await safe(page);
  await page.getByRole('button',{name:'↶ DESHACER',exact:true}).click();await ready(page);await page.getByText('DUELO 05 / 5',{exact:true}).waitFor();await page.locator('.choose').first().click();
@@ -47,7 +47,7 @@ async function safe(page){assert.equal(await page.evaluate(()=>document.document
  await page.setViewportSize({width:320,height:700});await page.locator('summary').evaluate(e=>{e.parentElement.open=true});
  await page.getByRole('combobox',{name:'Actor, actriz o director'}).fill('Morgan Freeman');await page.getByRole('option',{name:/Morgan Freeman/}).click();
  await page.getByRole('combobox',{name:'Idioma original'}).fill('japonés');await page.getByRole('option',{name:'japonés',exact:true}).click();
- await page.getByRole('button',{name:'EMPEZAR PARTIDA',exact:true}).click();await page.getByRole('button',{name:'EMPEZAR OTRA',exact:true}).click();await page.getByText('Probemos otros filtros',{exact:true}).waitFor();await page.getByRole('button',{name:'MODIFICAR FILTROS',exact:true}).click();assert.equal(await page.locator('.chips>span').count(),1);
+ await page.getByRole('button',{name:'EMPEZAR PARTIDA',exact:true}).click();await page.getByRole('button',{name:'NUEVA PARTIDA',exact:true}).click();await page.getByText('Probemos otros filtros',{exact:true}).waitFor();await page.getByRole('button',{name:'MODIFICAR FILTROS',exact:true}).click();assert.equal(await page.locator('.chips>span').count(),1);
  // Existing game survived the failed replacement.
  await page.getByRole('button',{name:'← INICIO',exact:true}).click();await page.getByRole('button',{name:'CONTINUAR PARTIDA',exact:true}).click();await ready(page);
  assert.equal(errors.length,0,errors.join('\n'));

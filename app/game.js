@@ -62,7 +62,7 @@ function Picker({label,options=[],value,onChange,placeholder='Buscar…',multipl
 function Confirm({onCancel,onConfirm}){
  const ref=useRef(null);
  useEffect(()=>{const dialog=ref.current;dialog.showModal();return ()=>dialog.close()},[]);
- return <dialog ref={ref} onCancel={event=>{event.preventDefault();onCancel()}} aria-labelledby="confirm-title"><h2 id="confirm-title">¿Empezar otra partida?</h2><p>Tenés una partida en curso. Se reemplazará cuando la nueva selección esté lista.</p><div className="actions"><button className="primary" autoFocus onClick={onCancel}>CONTINUAR LA ACTUAL</button><button className="secondary" onClick={onConfirm}>EMPEZAR OTRA</button></div></dialog>
+ return <dialog ref={ref} onCancel={event=>{event.preventDefault();onCancel()}} aria-labelledby="confirm-title"><h2 id="confirm-title">¿Empezar otra partida?</h2><p>Tenés una partida en curso. Si empezás otra, perderás el progreso anterior.</p><div className="actions"><button className="primary" autoFocus onClick={onCancel}>SEGUIR JUGANDO</button><button className="secondary" onClick={onConfirm}>NUEVA PARTIDA</button></div></dialog>
 }
 function Poster({movie,onReady,onFail,retry=0}){
  const [status,setStatus]=useState('loading');
@@ -132,19 +132,18 @@ export default function Game(){
  function rewind(){setLoaded({});setRetry(n=>n+1);setGame(previous=>undo(previous))}
  function backHome(){setView('home');setProblem(null);setLoaded({})}
  const playable=game?.pair.every(m=>loaded[m.id])&&!game.blocked;
- return <main>
+ return <main className={view==='settings'?'customizing':undefined}>
   <header><button className="brand" aria-label="Movie Duel — Ir al inicio" onClick={backHome}>MOVIE<span>DUEL</span><b aria-hidden="true">✦</b></button><span className="header-note">EL CINE SE ELIGE</span></header>
   {!hydrated?<section className="waiting" role="status">Preparando tu cine…</section>:<>
    {storageError&&<p className="notice" role="status">Este navegador no permite guardar el progreso. Mantené esta página abierta para conservar la partida.</p>}
    {view==='home'&&<section className="intro">
-    <p className="eyebrow">TU PROPIO FESTIVAL DE CINE</p><h1 ref={titleRef} tabIndex={-1}>Grandes películas.<br/>Una sola <em>campeona.</em></h1>
-    <p className="description">Elegí entre dos películas. Tu favorita sigue en juego hasta encontrar a la campeona</p>
+    <h1 ref={titleRef} tabIndex={-1}>¿Cuál será tu favorita?</h1>
+    <p className="description">Elegí entre dos películas. Tu favorita sigue en juego hasta encontrar a la campeona.</p>
     <fieldset className="quick-duels"><legend>Duelos</legend>{[10,20,40].map(count=><button key={count} aria-pressed={config.duels===count} onClick={()=>update('duels',count)}>{count}</button>)}</fieldset>
-    <div className="home-actions">{active&&<button className="primary" onClick={()=>setView('play')}>CONTINUAR PARTIDA <span aria-hidden="true">↗</span></button>}<button className={active?'secondary':'primary'} disabled={busy} onClick={()=>requestMatch()}>{busy?'PREPARANDO PARTIDA…':'JUGAR AHORA'} <span aria-hidden="true">↗</span></button><button className="secondary" disabled={busy} onClick={()=>{setView('settings');setProblem(null)}}>PERSONALIZAR PARTIDA</button></div>
-    <div className="cinema-line" aria-hidden="true"><span>01</span><div/><span>UNA SOLA CAMPEONA</span><div/><span>✦</span></div>
+    <div className="home-actions">{active&&<button className="primary" onClick={()=>setView('play')}>CONTINUAR PARTIDA</button>}<button className={active?'secondary':'primary'} disabled={busy} onClick={()=>requestMatch()}>{busy?'PREPARANDO PARTIDA…':'JUGAR AHORA'}</button><button className="secondary" disabled={busy} onClick={()=>{setView('settings');setProblem(null)}}>PERSONALIZAR PARTIDA</button></div>
    </section>}
    {view==='settings'&&<section className="settings">
-    <button className="text-button" onClick={backHome}>← INICIO</button><p className="eyebrow">A TU MANERA</p><h1 ref={titleRef} tabIndex={-1}>Personalizar partida</h1>
+    <button className="text-button" onClick={backHome}>← INICIO</button><h1 ref={titleRef} tabIndex={-1}>Personalizar partida</h1>
     <div className="form-grid"><div className="field"><label htmlFor="genre">Género</label><select id="genre" value={config.genre} onChange={e=>update('genre',e.target.value)}><option value="">Todos</option>{GENRES.map(g=><option key={g.id} value={g.id}>{g.name}</option>)}</select></div>
      <div className="field"><label htmlFor="decade">Década</label><select id="decade" value={config.decade} onChange={e=>update('decade',e.target.value)}><option value="">Todas</option>{DECADES.map(d=><option key={d} value={d}>{d}–{Number(d)+9}</option>)}</select></div>
      <div className="field duels-control"><label htmlFor="duels">Duelos <strong>{config.duels}</strong></label><div className="slider-row"><button className="step" aria-label="Menos duelos" disabled={config.duels<=5} onClick={()=>update('duels',config.duels-1)}>−</button><input id="duels" type="range" min="5" max="40" value={config.duels} onChange={e=>update('duels',Number(e.target.value))}/><button className="step" aria-label="Más duelos" disabled={config.duels>=40} onClick={()=>update('duels',config.duels+1)}>+</button></div><div className="range-values"><span>5 duelos</span><span>40 duelos</span></div></div>
@@ -160,10 +159,10 @@ export default function Game(){
     {options.source==='catalog'&&<p className="catalog-note">Selección de {options.catalogSize||230} películas de TMDB. La búsqueda de personas y sus filmografías se limita a este catálogo.</p>}
     {optionsError&&<p className="notice" role="alert">No pudimos cargar los países e idiomas. Recargá la página para volver a intentarlo; tu configuración se conserva.</p>}
     <button className="text-button reset" disabled={busy} onClick={()=>{setConfig({...DEFAULT_CONFIG});setProblem(null)}}>RESTABLECER CONFIGURACIÓN</button>
-    <div className="sticky-start"><button className="primary" disabled={busy} onClick={()=>requestMatch()}>{busy?'PREPARANDO PARTIDA…':'EMPEZAR PARTIDA'} <span aria-hidden="true">↗</span></button></div>
+    <div className="sticky-start"><button className="primary" disabled={busy} onClick={()=>requestMatch()}>{busy?'PREPARANDO PARTIDA…':'EMPEZAR PARTIDA'}</button></div>
    </section>}
    {view==='play'&&game&&(finished?<section className="result">
-    <p className="trophy" aria-hidden="true">♛</p><h1 ref={titleRef} tabIndex={-1}>¡TENEMOS CAMPEONA!</h1>
+    <p className="trophy" aria-hidden="true">♛</p><h1 ref={titleRef} tabIndex={-1}>¡TENEMOS CAMPEONA!</h1><p className="champion-subtitle">Tu película favorita de esta partida</p>
     <div className="winner-poster"><Poster key={`${game.pair[0].id}-${retry}`} movie={game.pair[0]} onReady={handleReady} onFail={handleFailure} retry={retry}/></div>
     <h2>{game.pair[0].title}</h2><p className="winner-detail">{game.pair[0].year} <span>·</span> {game.history.length} duelos completados</p>
     <div className="actions"><button className="primary" disabled={busy} onClick={()=>requestMatch(game.config)}>{busy?'PREPARANDO…':'JUGAR OTRA VEZ'}</button><button className="secondary" disabled={busy} onClick={()=>{setConfig(game.config);setView('settings');setProblem(null)}}>NUEVA PARTIDA</button></div>
@@ -176,14 +175,14 @@ export default function Game(){
      {game.history.length>0&&<p className="movie-label">{index===0?'SELECCIÓN ACTUAL':'NUEVA PELÍCULA'}</p>}
      <button className="poster-button" disabled={!playable} aria-label={`Elegir ${movie.title}`} onClick={()=>pick(movie.id)}><Poster key={`${movie.id}-${retry}`} movie={movie} onReady={handleReady} onFail={handleFailure} retry={retry}/></button>
      <div className="movie-info"><h2 title={movie.title}>{movie.title}</h2><p>{movie.year}</p></div>
-     <button className="choose" disabled={!playable} aria-label={`Elegir ${movie.title}, botón`} onClick={()=>pick(movie.id)}>ELEGIR <span aria-hidden="true">↗</span></button>
-    </article>)}<span className="versus" aria-hidden="true">VS</span></div>
-    <div className="arena-bottom"><button className="secondary" disabled={!game.history.length} onClick={rewind}>↶ DESHACER</button><span>Elegí con el corazón cinéfilo.</span></div>
+     <button className="choose" disabled={!playable} aria-label={`Elegir ${movie.title}, botón`} onClick={()=>pick(movie.id)}>ELEGIR</button>
+    </article>)}</div>
+    <div className="arena-bottom"><button className="secondary" disabled={!game.history.length} onClick={rewind}>↶ DESHACER</button></div>
    </section>)}
    {view==='play'&&game?.blocked&&<div className="problem" role="alert"><h2>No pudimos cargar un afiche</h2><p>No se descontó ningún duelo. Podés volver a intentar o modificar los filtros para preparar otra selección.</p><div className="actions"><button className="secondary" onClick={()=>{setLoaded({});setRetry(n=>n+1);setGame(previous=>({...previous,failedIds:[],blocked:false}))}}>REINTENTAR AFICHES</button><button className="secondary" onClick={()=>{setConfig(game.config);setView('settings')}}>MODIFICAR FILTROS</button></div></div>}
    {problem&&<div className="problem" role="alert"><h2>{problem.status==='insufficient'?'Una partida más corta':problem.status==='empty'?'Probemos otros filtros':'No pudimos preparar la partida'}</h2><p>{problem.message}</p><div className="actions">{problem.status==='insufficient'&&<button className="primary" disabled={busy} onClick={()=>startMatch({...config,duels:problem.available})}>JUGAR {problem.available} DUELOS</button>}<button className="secondary" onClick={()=>{setView('settings');setProblem(null)}}>MODIFICAR FILTROS</button>{problem.status==='error'&&<button className="secondary" disabled={busy} onClick={()=>startMatch(config)}>REINTENTAR</button>}</div></div>}
    {pending&&<Confirm onCancel={()=>{setPending(null);if(game)setView('play')}} onConfirm={()=>{const settings=pending;setPending(null);startMatch(settings)}}/>}
   </>}
-  <footer><span>Hecho para quienes aman el cine.</span><p>Afiches y datos de <a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer">TMDB</a>. Este producto utiliza la API de TMDB, pero no está respaldado ni certificado por TMDB.</p></footer>
+  <footer>{view!=='play'&&<span>Hecho para quienes aman el cine.</span>}<p>Afiches y datos de <a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer">TMDB</a>. Este producto utiliza la API de TMDB, pero no está respaldado ni certificado por TMDB.</p></footer>
  </main>
 }
