@@ -246,3 +246,14 @@ footer p { max-width: 510px; }
  .result .actions { margin-top: 18px; }
  footer { gap: 5px; padding-top: 16px; }
 }
+
+/* Final UX: visible modal feedback and discreet but perceptible progress. */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.match-problem { margin: auto; width: min(440px, calc(100vw - 32px)); max-height: calc(100dvh - 32px - env(safe-area-inset-top) - env(safe-area-inset-bottom)); overflow-y: auto; overscroll-behavior: contain; }
+.match-problem h2:focus { outline: none; }
+.match-problem .actions { flex-direction: column; }
+.match-problem .primary, .match-problem .secondary { min-height: 48px; }
+.progress { height: 4px; }
+.progress > div { min-width: 4px; }
+.result .secondary { background: #1c201f; border-color: var(--border); }
+.result .secondary:hover:enabled { background: #272c2d; }

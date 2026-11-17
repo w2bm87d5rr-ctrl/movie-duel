@@ -64,6 +64,45 @@ function Confirm({onCancel,onConfirm}){
  useEffect(()=>{const dialog=ref.current;dialog.showModal();return ()=>dialog.close()},[]);
  return <dialog ref={ref} onCancel={event=>{event.preventDefault();onCancel()}} aria-labelledby="confirm-title"><h2 id="confirm-title">¿Empezar otra partida?</h2><p>Tenés una partida en curso. Si empezás otra, perderás el progreso anterior.</p><div className="actions"><button className="primary" autoFocus onClick={onCancel}>SEGUIR JUGANDO</button><button className="secondary" onClick={onConfirm}>NUEVA PARTIDA</button></div></dialog>
 }
+function MatchProblem({problem,busy,onShorter,onModify,onRetry}){
+ const ref=useRef(null);
+ const heading=useRef(null);
+ const uid=useId();
+ const shorter=problem.status==='insufficient';
+ const empty=problem.status==='empty';
+ const title=shorter?'Podés jugar menos duelos':empty?'No hay suficientes películas':'No pudimos preparar la partida';
+ const description=shorter?`Encontramos películas suficientes para ${problem.available} duelos con tu selección.`:empty?'No encontramos suficientes películas para comenzar con los filtros seleccionados.':problem.message;
+ useEffect(()=>{
+  const dialog=ref.current;
+  const previousFocus=document.activeElement;
+  const previousOverflow=document.body.style.overflow;
+  document.body.style.overflow='hidden';
+  dialog.showModal();
+  heading.current.focus({preventScroll:true});
+  return ()=>{
+   dialog.close();
+   document.body.style.overflow=previousOverflow;
+   if(previousFocus instanceof HTMLElement && previousFocus.isConnected && !previousFocus.matches(':disabled'))previousFocus.focus({preventScroll:true});
+  };
+ },[]);
+ function trapFocus(event){
+  if(event.key!=='Tab')return;
+  const buttons=[...ref.current.querySelectorAll('button:not(:disabled)')];
+  const first=buttons[0];const last=buttons.at(-1);const active=document.activeElement;
+  if(!first){event.preventDefault();heading.current.focus();return;}
+  if(event.shiftKey&&(active===first||!buttons.includes(active))){event.preventDefault();last.focus();}
+  else if(!event.shiftKey&&(active===last||!buttons.includes(active))){event.preventDefault();first.focus();}
+ }
+ return <dialog className="match-problem" ref={ref} onKeyDown={trapFocus} aria-modal="true" aria-labelledby={`${uid}-title`} aria-describedby={`${uid}-description`} onCancel={event=>{event.preventDefault();onModify()}}>
+  <h2 ref={heading} tabIndex={-1} id={`${uid}-title`}>{title}</h2>
+  <p id={`${uid}-description`}>{description}</p>
+  <div className="actions">
+   {shorter&&<button className="primary" disabled={busy} onClick={onShorter}>JUGAR {problem.available} DUELOS</button>}
+   {!shorter&&!empty&&<button className="primary" disabled={busy} onClick={onRetry}>REINTENTAR</button>}
+   <button className="secondary" onClick={onModify}>MODIFICAR FILTROS</button>
+  </div>
+ </dialog>
+}
 function Poster({movie,onReady,onFail,retry=0}){
  const [status,setStatus]=useState('loading');
  return <div className={`poster-frame ${status}`}>
@@ -87,6 +126,7 @@ export default function Game(){
  const latest=useRef({config,game});
  const inFlight=useRef(false);
  const titleRef=useRef(null);
+ const startButtonRef=useRef(null);
  latest.current={config,game};
  useEffect(()=>{
   try {
@@ -125,6 +165,7 @@ export default function Game(){
   }catch(e){setProblem({status:'error',message:'No pudimos preparar la partida. Tu progreso y tus filtros se conservan. Intentá de nuevo en un momento.'});}
   finally{setBusy(false);inFlight.current=false;}
  }
+ function closeProblem(){setView('settings');setProblem(null);requestAnimationFrame(()=>startButtonRef.current?.focus({preventScroll:true}))}
  function requestMatch(settings=config){if(active)setPending(settings);else startMatch(settings)}
  function handleFailure(id){setGame(previous=>replaceFailedPoster(previous,id));setLoaded(previous=>({...previous,[id]:false}))}
  function handleReady(id){setLoaded(previous=>previous[id]?previous:{...previous,[id]:true})}
@@ -135,6 +176,7 @@ export default function Game(){
  return <main className={view==='settings'?'customizing':undefined}>
   <header><button className="brand" aria-label="Movie Duel — Ir al inicio" onClick={backHome}>MOVIE<span>DUEL</span><b aria-hidden="true">✦</b></button><span className="header-note">EL CINE SE ELIGE</span></header>
   {!hydrated?<section className="waiting" role="status">Preparando tu cine…</section>:<>
+   <span className="sr-only" role="status">{busy?'PREPARANDO PARTIDA…':''}</span>
    {storageError&&<p className="notice" role="status">Este navegador no permite guardar el progreso. Mantené esta página abierta para conservar la partida.</p>}
    {view==='home'&&<section className="intro">
     <h1 ref={titleRef} tabIndex={-1}>¿Cuál será tu favorita?</h1>
@@ -159,7 +201,7 @@ export default function Game(){
     {options.source==='catalog'&&<p className="catalog-note">Selección de {options.catalogSize||230} películas de TMDB. La búsqueda de personas y sus filmografías se limita a este catálogo.</p>}
     {optionsError&&<p className="notice" role="alert">No pudimos cargar los países e idiomas. Recargá la página para volver a intentarlo; tu configuración se conserva.</p>}
     <button className="text-button reset" disabled={busy} onClick={()=>{setConfig({...DEFAULT_CONFIG});setProblem(null)}}>RESTABLECER CONFIGURACIÓN</button>
-    <div className="sticky-start"><button className="primary" disabled={busy} onClick={()=>requestMatch()}>{busy?'PREPARANDO PARTIDA…':'EMPEZAR PARTIDA'}</button></div>
+    <div className="sticky-start"><button ref={startButtonRef} className="primary" aria-busy={busy} disabled={busy} onClick={()=>requestMatch()}>{busy?'PREPARANDO PARTIDA…':'EMPEZAR PARTIDA'}</button></div>
    </section>}
    {view==='play'&&game&&(finished?<section className="result">
     <p className="trophy" aria-hidden="true">♛</p><h1 ref={titleRef} tabIndex={-1}>¡TENEMOS CAMPEONA!</h1><p className="champion-subtitle">Tu película favorita de esta partida</p>
@@ -169,7 +211,7 @@ export default function Game(){
     <button className="text-button" onClick={rewind}>↶ DESHACER</button>
    </section>:<section className="arena">
     <div className="round-info"><span className="eyebrow" aria-live="polite">DUELO {String(game.history.length+1).padStart(2,'0')} / {game.config.duels}</span><button className="text-button" onClick={backHome}>← INICIO</button></div>
-    <div className="progress" role="progressbar" aria-label="Duelos completados" aria-valuenow={game.history.length} aria-valuemin={0} aria-valuemax={game.config.duels}><div style={{width:`${game.history.length/game.config.duels*100}%`}}/></div>
+    <div className="progress" role="progressbar" aria-label="Progreso de la partida" aria-valuetext={`Duelo ${game.history.length+1} de ${game.config.duels}`} aria-valuenow={game.history.length+1} aria-valuemin={0} aria-valuemax={game.config.duels}><div style={{width:`${(game.history.length+1)/game.config.duels*100}%`}}/></div>
     <h1 className="arena-title" ref={titleRef} tabIndex={-1}>¿Cuál se queda?</h1>
     <div className="duel">{game.pair.map((movie,index)=><article className="movie" key={index}>
      {game.history.length>0&&<p className="movie-label">{index===0?'SELECCIÓN ACTUAL':'NUEVA PELÍCULA'}</p>}
@@ -180,7 +222,7 @@ export default function Game(){
     <div className="arena-bottom"><button className="secondary" disabled={!game.history.length} onClick={rewind}>↶ DESHACER</button></div>
    </section>)}
    {view==='play'&&game?.blocked&&<div className="problem" role="alert"><h2>No pudimos cargar un afiche</h2><p>No se descontó ningún duelo. Podés volver a intentar o modificar los filtros para preparar otra selección.</p><div className="actions"><button className="secondary" onClick={()=>{setLoaded({});setRetry(n=>n+1);setGame(previous=>({...previous,failedIds:[],blocked:false}))}}>REINTENTAR AFICHES</button><button className="secondary" onClick={()=>{setConfig(game.config);setView('settings')}}>MODIFICAR FILTROS</button></div></div>}
-   {problem&&<div className="problem" role="alert"><h2>{problem.status==='insufficient'?'Una partida más corta':problem.status==='empty'?'Probemos otros filtros':'No pudimos preparar la partida'}</h2><p>{problem.message}</p><div className="actions">{problem.status==='insufficient'&&<button className="primary" disabled={busy} onClick={()=>startMatch({...config,duels:problem.available})}>JUGAR {problem.available} DUELOS</button>}<button className="secondary" onClick={()=>{setView('settings');setProblem(null)}}>MODIFICAR FILTROS</button>{problem.status==='error'&&<button className="secondary" disabled={busy} onClick={()=>startMatch(config)}>REINTENTAR</button>}</div></div>}
+   {problem&&<MatchProblem problem={problem} busy={busy} onShorter={()=>startMatch({...config,duels:problem.available})} onModify={closeProblem} onRetry={()=>startMatch(config)}/>}
    {pending&&<Confirm onCancel={()=>{setPending(null);if(game)setView('play')}} onConfirm={()=>{const settings=pending;setPending(null);startMatch(settings)}}/>}
   </>}
   <footer>{view!=='play'&&<span>Hecho para quienes aman el cine.</span>}<p>Afiches y datos de <a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer">TMDB</a>. Este producto utiliza la API de TMDB, pero no está respaldado ni certificado por TMDB.</p></footer>
