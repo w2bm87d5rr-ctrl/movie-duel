@@ -3,6 +3,8 @@ import {useEffect,useId,useRef,useState} from 'react';
 import {DEFAULT_CONFIG,DECADES,GENRES,normalizeConfig,configIssue} from '../lib/config.mjs';
 import {choose,createGame,readSaved,replaceFailedPoster,STORAGE_KEY,undo} from '../lib/game.mjs';
 
+import {presentMovie,sanitizePresentation} from '../lib/localization.mjs';
+
 function Picker({label,options=[],value,onChange,placeholder='Buscar…',multiple=false,remote=false,disabled=false}) {
  const uid=useId();
  const [query,setQuery]=useState('');
@@ -64,11 +66,28 @@ const HOME_POSTERS=[
  {id:165,path:'/hQq8xZe5uLjFzSBt4LanNP7SQjl.jpg'},
  {id:592,path:'/dHqVBwcv1SGymOpUueRoKzcmdes.jpg'},
 ];
-function HomePosters(){
+function HomePosters({presentation}){
  return <div className="home-duel" aria-hidden="true">
-  <div className="home-posters">{HOME_POSTERS.map(poster=><div className="home-poster-frame" key={poster.id}><img src={`https://image.tmdb.org/t/p/w342${poster.path}`} srcSet={`https://image.tmdb.org/t/p/w185${poster.path} 185w, https://image.tmdb.org/t/p/w342${poster.path} 342w, https://image.tmdb.org/t/p/w500${poster.path} 500w`} sizes="(max-width: 600px) 45vw, 310px" width="500" height="750" alt="" decoding="async" onError={event=>{event.currentTarget.hidden=true}}/></div>)}</div>
+  <div className="home-posters">{HOME_POSTERS.map(poster=><div className="home-poster-frame" key={poster.id}><DecorativePoster movie={presentMovie({id:poster.id,poster:`https://image.tmdb.org/t/p/w500${poster.path}`},presentation)}/></div>)}</div>
   <span className="home-vs">VS</span>
  </div>
+}
+function usePoster(movie){
+ const base=movie.basePoster||movie.poster;
+ const [source,setSource]=useState(base);
+ useEffect(()=>{
+  if(!movie.poster||movie.poster===base){setSource(base);return;}
+  let cancelled=false;const image=new Image();
+  const timer=setTimeout(()=>{cancelled=true},4000);
+  image.onload=()=>{if(!cancelled)setSource(movie.poster);clearTimeout(timer)};
+  image.onerror=()=>clearTimeout(timer);image.src=movie.poster;
+  return ()=>{cancelled=true;clearTimeout(timer);image.onload=null;image.onerror=null};
+ },[movie.poster,base]);
+ return [source,setSource,base];
+}
+function DecorativePoster({movie}){
+ const [source,setSource,base]=usePoster(movie);
+ return <img src={source} srcSet={`${source.replace('/w500/','/w185/')} 185w, ${source.replace('/w500/','/w342/')} 342w, ${source} 500w`} sizes="(max-width: 600px) 45vw, 310px" width="500" height="750" alt="" decoding="async" onLoad={event=>{event.currentTarget.hidden=false}} onError={event=>{if(source!==base)setSource(base);else event.currentTarget.hidden=true}}/>;
 }
 
 function Confirm({onCancel,onConfirm}){
@@ -118,14 +137,17 @@ function MatchProblem({problem,busy,onShorter,onModify,onRetry}){
 }
 function Poster({movie,onReady,onFail,retry=0}){
  const [status,setStatus]=useState('loading');
+ const [source,setSource,base]=usePoster(movie);
  return <div className={`poster-frame ${status}`}>
-  {status!=='failed'&&<img key={retry} src={movie.poster} alt={`Afiche de ${movie.title}`} width="500" height="750" fetchPriority="high" decoding="async" onLoad={()=>{setStatus('ready');onReady(movie.id)}} onError={()=>{setStatus('failed');onFail(movie.id)}}/>}
+  {status!=='failed'&&<img key={retry} src={source} alt={`Afiche de ${movie.title}`} width="500" height="750" fetchPriority="high" decoding="async" onLoad={()=>{setStatus('ready');onReady(movie.id)}} onError={()=>{if(source!==base){setSource(base);return;}setStatus('failed');onFail(movie.id)}}/>}
   {status!=='ready'&&<div className="poster-placeholder" role="status"><span className="film-icon" aria-hidden="true">✦</span>{status==='loading'?'Cargando afiche…':'Buscando otro afiche…'}</div>}
  </div>
 }
 export default function Game(){
  const [config,setConfig]=useState({...DEFAULT_CONFIG});
  const [game,setGame]=useState(null);
+ const [presentation,setPresentation]=useState({});
+ const attempted=useRef(new Set());
  const [view,setView]=useState('home');
  const [hydrated,setHydrated]=useState(false);
  const [options,setOptions]=useState({countries:[],languages:[],source:'catalog'});
@@ -140,11 +162,11 @@ export default function Game(){
  const inFlight=useRef(false);
  const titleRef=useRef(null);
  const startButtonRef=useRef(null);
- latest.current={config,game};
+ latest.current={config,game,presentation};
  useEffect(()=>{
   try {
    const restored=readSaved(localStorage.getItem(STORAGE_KEY));
-   if(restored){setConfig(restored.config);setGame(restored.game);}
+   if(restored){setConfig(restored.config);setGame(restored.game);setPresentation(restored.presentation||{});}
   }catch{setStorageError(true);}
   setHydrated(true);
   const controller=new AbortController();
@@ -159,7 +181,28 @@ export default function Game(){
   function hidden(){if(document.visibilityState==='hidden')save()}
   save();window.addEventListener('pagehide',save);document.addEventListener('visibilitychange',hidden);
   return ()=>{window.removeEventListener('pagehide',save);document.removeEventListener('visibilitychange',hidden)};
- },[config,game,hydrated]);
+ },[config,game,presentation,hydrated]);
+ // Presentation requests are deliberately independent of start/resume and game state.
+ const presentationIds=JSON.stringify([...new Set([165,592,...(game?.deck||[]).map(m=>m.id),...(game?.reserves||[]).map(m=>m.id),...(game?.pair||[]).map(m=>m.id),...(game?.history||[]).flatMap(h=>(h.pair||[]).map(m=>m.id))])]);
+ useEffect(()=>{
+  if(!hydrated)return;
+  const controller=new AbortController();
+  const processing=new Set();
+  const ids=JSON.parse(presentationIds).filter(id=>!sanitizePresentation({[id]:latest.current.presentation[id]})[id]&&!attempted.current.has(id));
+  async function localize(){
+   for(let offset=0;offset<ids.length&&!controller.signal.aborted;offset+=12){
+    const batch=ids.slice(offset,offset+12);batch.forEach(id=>{attempted.current.add(id);processing.add(id)});
+    try{
+     const response=await fetch('/api/presentation',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({ids:batch}),signal:AbortSignal.any([controller.signal,AbortSignal.timeout(6000)])});
+     if(!response.ok)continue;
+     const body=await response.json();
+     if(!controller.signal.aborted)setPresentation(previous=>sanitizePresentation({...previous,...body.presentation}));
+    }catch{if(controller.signal.aborted)batch.forEach(id=>attempted.current.delete(id));}
+    finally{batch.forEach(id=>processing.delete(id))}
+   }
+  }
+  localize();return ()=>{controller.abort();processing.forEach(id=>attempted.current.delete(id))};
+ },[presentationIds,hydrated]);
  useEffect(()=>{if(hydrated)titleRef.current?.focus()},[view,hydrated]);
  function update(key,value){const next={...config,[key]:value};const message=configIssue(next);if(message&&!(key==='people'&&value.length<config.people.length)){setProblem({status:'invalid',message});return;}setConfig(normalizeConfig(next));setProblem(null)}
  const active=game&&game.history.length<game.config.duels;
@@ -196,7 +239,7 @@ export default function Game(){
    {view==='home'&&<section className="intro">
     <h1 ref={titleRef} tabIndex={-1}>¿Cuál será tu favorita?</h1>
     <p className="description">Dos películas. Una sola campeona.</p>
-    <HomePosters/>
+    <HomePosters presentation={presentation}/>
     <div className="home-actions">{active&&<button className="primary" onClick={()=>setView('play')}>CONTINUAR PARTIDA</button>}<button className={active?'secondary':'primary'} disabled={busy} onClick={()=>requestMatch({...config,duels:20,difficulty:'normal'})}>{busy?'PREPARANDO PARTIDA…':'JUGAR AHORA'}</button><button className="secondary" disabled={busy} onClick={()=>{setView('settings');setProblem(null)}}>PERSONALIZAR PARTIDA</button></div>
    </section>}
    {view==='settings'&&<section className="settings">
@@ -220,15 +263,15 @@ export default function Game(){
    </section>}
    {view==='play'&&game&&(finished?<section className="result">
     <p className="trophy" aria-hidden="true">♛</p><h1 ref={titleRef} tabIndex={-1}>¡TENEMOS CAMPEONA!</h1><p className="champion-subtitle">Tu película favorita de esta partida</p>
-    <div className="winner-poster"><Poster key={`${game.pair[0].id}-${retry}`} movie={game.pair[0]} onReady={handleReady} onFail={handleFailure} retry={retry}/></div>
-    <h2>{game.pair[0].title}</h2><p className="winner-detail">{game.pair[0].year} <span>·</span> {game.history.length} duelos completados</p>
+    <div className="winner-poster"><Poster key={`${game.pair[0].id}-${retry}`} movie={presentMovie(game.pair[0],presentation)} onReady={handleReady} onFail={handleFailure} retry={retry}/></div>
+    <h2>{presentMovie(game.pair[0],presentation).title}</h2><p className="winner-detail">{game.pair[0].year} <span>·</span> {game.history.length} duelos completados</p>
     <div className="actions"><button className="primary" disabled={busy} onClick={()=>requestMatch(game.config)}>{busy?'PREPARANDO…':'JUGAR OTRA VEZ'}</button><button className="secondary" disabled={busy} onClick={()=>{setConfig(game.config);setView('settings');setProblem(null)}}>NUEVA PARTIDA</button></div>
     <button className="text-button" onClick={rewind}>↶ DESHACER</button>
    </section>:<section className="arena">
     <div className="round-info"><span className="eyebrow" aria-live="polite">DUELO {String(game.history.length+1).padStart(2,'0')} / {game.config.duels}</span><button className="text-button" onClick={backHome}>← INICIO</button></div>
     <div className="progress" role="progressbar" aria-label="Progreso de la partida" aria-valuetext={`Duelo ${game.history.length+1} de ${game.config.duels}`} aria-valuenow={game.history.length+1} aria-valuemin={0} aria-valuemax={game.config.duels}><div style={{width:`${(game.history.length+1)/game.config.duels*100}%`}}/></div>
     <h1 className="arena-title" ref={titleRef} tabIndex={-1}>¿Cuál se queda?</h1>
-    <div className="duel">{game.pair.map((movie,index)=><article className="movie" key={index}>
+    <div className="duel">{game.pair.map(m=>presentMovie(m,presentation)).map((movie,index)=><article className="movie" key={index}>
      {game.history.length>0&&<p className="movie-label">{index===0?'SELECCIÓN ACTUAL':'NUEVA PELÍCULA'}</p>}
      <button className="poster-button" disabled={!playable} aria-label={`Elegir ${movie.title}`} onClick={()=>pick(movie.id)}><Poster key={`${movie.id}-${retry}`} movie={movie} onReady={handleReady} onFail={handleFailure} retry={retry}/></button>
      <div className="movie-info"><h2 title={movie.title}>{movie.title}</h2><p>{movie.year}</p></div>
