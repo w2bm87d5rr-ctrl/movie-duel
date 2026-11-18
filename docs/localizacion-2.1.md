@@ -25,7 +25,7 @@ TMDB informa el idioma de cada imagen, pero no su país. Por eso un afiche `es` 
 
 La API prioriza esas rutas si siguen presentes y tienen como mínimo 500×750 píxeles y proporción compatible. Después busca imágenes etiquetadas en el idioma original. Una etiqueta de idioma nula no demuestra que el afiche carezca de texto, así que tampoco se utiliza como prueba de una alternativa segura. No se utiliza un afiche español no verificado como nueva alternativa localizada. Si falta información o falla la descarga se conserva el afiche base existente, sin cambiar de película. Esto implica que una partida antigua puede conservar temporalmente su afiche previo, incluso si TMDB no permite identificar su mercado. La instantánea offline sólo conserva referencias de afiches revisadas en la tabla de excepciones; no aplica los pósters predeterminados de páginas traducidas como prueba de procedencia regional.
 
-Las imágenes nuevas se precargan hasta cuatro segundos antes de sustituir el afiche visible. Su fallo no dispara reemplazo de película, no bloquea los botones ni consume duelos. El manejo previo de fallos del afiche base se conserva.
+Los afiches se resuelven una sola vez por montaje/duelo. Mientras falta la localización, el marco 2:3 muestra un placeholder y se precarga el afiche base sin mostrarlo. Se esperan hasta 1,2 segundos por los metadatos; si están disponibles en caché, no se espera ese plazo. La imagen elegida se precarga con un máximo de 2,5 segundos por descarga. Si falla la localizada se utiliza la base, ya precargada cuando fue posible. Una vez visible, el afiche queda fijo aunque lleguen nuevos metadatos. Se mantiene una caché en memoria de hasta 128 descargas durante cinco minutos; los fallos se eliminan. Home y partidas usan el mismo mecanismo. No se retrasa la petición de partida ni la navegación; la elección sigue esperando únicamente a que estén disponibles los afiches, como antes. El manejo previo de fallos del afiche base se conserva.
 
 ## Rendimiento, persistencia y seguridad
 
@@ -44,7 +44,7 @@ Las pruebas locales no usan el secreto ni consultan la API autenticada real. La 
 ### Resultado local final
 
 - `npm ci`: completado sin cambios en package.json/package-lock.json.
-- `npm test`: 45 aprobadas, cero fallos.
+- `npm test`: 52 aprobadas, cero fallos.
 - `npm run build`: aprobado con Next.js 15.5.29.
 - `tests/localization.cjs`: aprobado en Chromium y WebKit Linux; tamaños 320, 375, 390, 430 y 1440.
 - `tests/home.cjs`: aprobado con imágenes reales, siete tamaños y controles de 20 Normal/5 Experto/continuación.
@@ -52,3 +52,5 @@ Las pruebas locales no usan el secreto ni consultan la API autenticada real. La 
 - `tests/iphone-focus.cjs`: aprobado en WebKit Linux, conservando inputs 16 px y zoom manual.
 - Endpoint real local: 200 con referencias públicas, 400 para IDs inválidos. El bundle estático no contiene `TMDB_READ_ACCESS_TOKEN` ni la URL de la API autenticada.
 - Pendientes: API de TMDB con credencial en Preview aislada y Safari real en iPhone. Ningún despliegue realizado.
+
+Corrección de afiches estables: `tests/stable-poster.cjs` aprobado en Chromium y WebKit Linux. Incluye placeholder inicial, recuperación de caché guardada, navegación rápida, deshacer y timeout con metadatos tardíos sin sustitución visible. Se ajustó la prueba de afiche irrecuperable para simular un fallo persistente: un único error transitorio de precarga puede recuperarse antes de mostrar la imagen.

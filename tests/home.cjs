@@ -14,7 +14,7 @@ const base=process.env.MOVIE_DUEL_TEST_URL||'http://127.0.0.1:3063';
  for(const [width,height] of [[320,568],[375,667],[390,844],[430,932],[390,568],[768,900],[1440,900]]){
   await page.setViewportSize({width,height});await page.goto(base);
   await page.getByRole('heading',{name:'¿Cuál será tu favorita?',exact:true}).waitFor();
-  const images=page.locator('.home-posters img');assert.equal(await images.count(),2);
+  const images=page.locator('.home-posters img');await page.waitForFunction(()=>document.querySelectorAll('.home-posters img').length===2);assert.equal(await images.count(),2);
   await page.waitForFunction(()=>[...document.querySelectorAll('.home-posters img')].every(i=>i.complete&&i.naturalWidth>0));
   const frames=await page.locator('.home-poster-frame').evaluateAll(es=>es.map(e=>{const r=e.getBoundingClientRect();return {width:r.width,height:r.height}}));
   assert.equal(frames[0].width,frames[1].width);assert.equal(frames[0].height,frames[1].height);assert.ok(Math.abs(frames[0].width/frames[0].height-2/3)<0.01);
@@ -30,7 +30,7 @@ const base=process.env.MOVIE_DUEL_TEST_URL||'http://127.0.0.1:3063';
  }
  // A failed decorative image leaves controls usable and layout stable.
  await page.unroute(/https:\/\/image\.tmdb\.org\//);await page.route(/https:\/\/image\.tmdb\.org\//,r=>r.abort());await page.reload();
- await page.waitForFunction(()=>[...document.querySelectorAll('.home-posters img')].every(i=>i.hidden));assert.equal(await page.getByRole('button',{name:'JUGAR AHORA',exact:true}).isEnabled(),true);
+ await page.waitForFunction(()=>document.querySelectorAll('.home-poster-placeholder').length===2);assert.equal(await page.getByRole('button',{name:'JUGAR AHORA',exact:true}).isEnabled(),true);
  // Match generation never receives decoration IDs or additional fields.
  let config;await page.route('**/api/match',async route=>{config=route.request().postDataJSON();await route.fulfill({contentType:'application/json',body:JSON.stringify({status:'error',message:'Test de disponibilidad'})})});
  await page.getByRole('button',{name:'JUGAR AHORA',exact:true}).click();await page.getByRole('dialog').waitFor();assert.deepEqual(Object.keys(config).sort(),['country','decade','difficulty','duels','genre','language','people']);assert.deepEqual(config.people,[]);

@@ -4,6 +4,7 @@ import {DEFAULT_CONFIG,DECADES,GENRES,normalizeConfig,configIssue} from '../lib/
 import {choose,createGame,readSaved,replaceFailedPoster,STORAGE_KEY,undo} from '../lib/game.mjs';
 
 import {presentMovie,sanitizePresentation} from '../lib/localization.mjs';
+import {createPosterSession,preloadPoster} from '../lib/stable-poster.mjs';
 
 function Picker({label,options=[],value,onChange,placeholder='Buscar…',multiple=false,remote=false,disabled=false}) {
  const uid=useId();
@@ -73,21 +74,21 @@ function HomePosters({presentation}){
  </div>
 }
 function usePoster(movie){
+ const [image,setImage]=useState({source:null,status:'loading'});
+ const session=useRef(null);
  const base=movie.basePoster||movie.poster;
- const [source,setSource]=useState(base);
  useEffect(()=>{
-  if(!movie.poster||movie.poster===base){setSource(base);return;}
-  let cancelled=false;const image=new Image();
-  const timer=setTimeout(()=>{cancelled=true},4000);
-  image.onload=()=>{if(!cancelled)setSource(movie.poster);clearTimeout(timer)};
-  image.onerror=()=>clearTimeout(timer);image.src=movie.poster;
-  return ()=>{cancelled=true;clearTimeout(timer);image.onload=null;image.onerror=null};
- },[movie.poster,base]);
- return [source,setSource,base];
+  const current=createPosterSession({base,initial:movie.poster,resolved:movie.posterResolved,load:preloadPoster,onChange:setImage});
+  session.current=current;
+  return ()=>{current.dispose();session.current=null};
+  // ID/base identify the mounted slot. Metadata updates use update, never reset it.
+ },[movie.id,base]);
+ useEffect(()=>{session.current?.update(movie.poster,movie.posterResolved)},[movie.poster,movie.posterResolved]);
+ return image;
 }
 function DecorativePoster({movie}){
- const [source,setSource,base]=usePoster(movie);
- return <img src={source} srcSet={`${source.replace('/w500/','/w185/')} 185w, ${source.replace('/w500/','/w342/')} 342w, ${source} 500w`} sizes="(max-width: 600px) 45vw, 310px" width="500" height="750" alt="" decoding="async" onLoad={event=>{event.currentTarget.hidden=false}} onError={event=>{if(source!==base)setSource(base);else event.currentTarget.hidden=true}}/>;
+ const {source,status}=usePoster(movie);
+ return source?<img src={source} width="500" height="750" alt="" decoding="async" onError={event=>{event.currentTarget.hidden=true}}/>:<span className="home-poster-placeholder">{status==='loading'?'✦':''}</span>;
 }
 
 function Confirm({onCancel,onConfirm}){
@@ -136,13 +137,15 @@ function MatchProblem({problem,busy,onShorter,onModify,onRetry}){
  </dialog>
 }
 function Poster({movie,onReady,onFail,retry=0}){
- const [status,setStatus]=useState('loading');
- const [source,setSource,base]=usePoster(movie);
+ const {source,status}=usePoster(movie);
+ const reported=useRef(false);
+ useEffect(()=>{if(status==='failed'&&!reported.current){reported.current=true;onFail(movie.id)}},[status,onFail,movie.id]);
  return <div className={`poster-frame ${status}`}>
-  {status!=='failed'&&<img key={retry} src={source} alt={`Afiche de ${movie.title}`} width="500" height="750" fetchPriority="high" decoding="async" onLoad={()=>{setStatus('ready');onReady(movie.id)}} onError={()=>{if(source!==base){setSource(base);return;}setStatus('failed');onFail(movie.id)}}/>}
+  {source&&<img key={retry} src={source} alt={`Afiche de ${movie.title}`} width="500" height="750" fetchPriority="high" decoding="async" onLoad={()=>onReady(movie.id)} onError={event=>{event.currentTarget.hidden=true;if(!reported.current){reported.current=true;onFail(movie.id)}}}/>}
   {status!=='ready'&&<div className="poster-placeholder" role="status"><span className="film-icon" aria-hidden="true">✦</span>{status==='loading'?'Cargando afiche…':'Buscando otro afiche…'}</div>}
  </div>
 }
+
 export default function Game(){
  const [config,setConfig]=useState({...DEFAULT_CONFIG});
  const [game,setGame]=useState(null);
