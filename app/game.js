@@ -59,6 +59,19 @@ function Picker({label,options=[],value,onChange,placeholder='Buscar…',multipl
   </div>}
  </div>
 }
+// Fixed decoration only: these IDs and paths never enter a match selection.
+const HOME_POSTERS=[
+ {id:165,path:'/hQq8xZe5uLjFzSBt4LanNP7SQjl.jpg'},
+ {id:592,path:'/dHqVBwcv1SGymOpUueRoKzcmdes.jpg'},
+];
+function HomePosters(){
+ return <div className="home-posters" aria-hidden="true">
+  {HOME_POSTERS.map((poster,index)=><div className="home-poster-pair" key={poster.id}>
+   {index===1&&<span className="home-vs">VS</span>}
+   <div className="home-poster-frame"><img src={`https://image.tmdb.org/t/p/w342${poster.path}`} srcSet={`https://image.tmdb.org/t/p/w185${poster.path} 185w, https://image.tmdb.org/t/p/w342${poster.path} 342w, https://image.tmdb.org/t/p/w500${poster.path} 500w`} sizes="(max-height: 650px) 64px, (max-width: 600px) 116px, 180px" width="500" height="750" alt="" decoding="async" onError={event=>{event.currentTarget.hidden=true}}/></div>
+  </div>)}
+ </div>
+}
 function Confirm({onCancel,onConfirm}){
  const ref=useRef(null);
  useEffect(()=>{const dialog=ref.current;dialog.showModal();return ()=>dialog.close()},[]);
@@ -184,6 +197,7 @@ export default function Game(){
    {view==='home'&&<section className="intro">
     <h1 ref={titleRef} tabIndex={-1}>¿Cuál será tu favorita?</h1>
     <p className="description">Elegí entre dos películas. Tu favorita sigue en juego hasta encontrar a la campeona.</p>
+    <HomePosters/>
     <fieldset className="quick-duels"><legend>Duelos</legend>{[10,20,40].map(count=><button key={count} aria-pressed={config.duels===count} onClick={()=>update('duels',count)}>{count}</button>)}</fieldset>
     <div className="home-actions">{active&&<button className="primary" onClick={()=>setView('play')}>CONTINUAR PARTIDA</button>}<button className={active?'secondary':'primary'} disabled={busy} onClick={()=>requestMatch()}>{busy?'PREPARANDO PARTIDA…':'JUGAR AHORA'}</button><button className="secondary" disabled={busy} onClick={()=>{setView('settings');setProblem(null)}}>PERSONALIZAR PARTIDA</button></div>
    </section>}

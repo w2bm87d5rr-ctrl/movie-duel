@@ -263,3 +263,21 @@ footer p { max-width: 510px; }
 .suggestions > button { min-width: 0; white-space: normal; }
 .suggestions > button > span { min-width: 0; overflow-wrap: anywhere; }
 .suggestions img { flex-shrink: 0; }
+
+/* Home decoration is independent from interactive match posters. */
+.home-posters { position: relative; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 36px; width: min(100%,396px); margin: 0 auto 24px; }
+.home-poster-pair { min-width: 0; }
+.home-poster-frame { aspect-ratio: 2/3; background: #191b1d; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+.home-poster-frame img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.home-poster-frame img[hidden] { display: none; }
+.home-vs { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font-size: 10px; letter-spacing: 1px; color: var(--muted); }
+@media (max-width: 600px) {
+ .home-posters { width: min(100%,264px); gap: 32px; margin-bottom: 20px; }
+}
+@media (max-height: 650px) and (max-width: 600px) {
+ .intro { padding-top: 16px; }
+ .intro h1 { margin-bottom: 12px; }
+ .intro .description { margin-bottom: 12px; }
+ .home-posters { width: 160px; margin-bottom: 12px; }
+ .intro .home-actions { margin-top: 12px; }
+}

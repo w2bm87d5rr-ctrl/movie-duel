@@ -55,7 +55,7 @@ async function safe(page){assert.equal(await page.evaluate(()=>document.document
  await context.close();
  // Real image load failure -> reserve replacement, no round increment.
  const ctx=await browser.newContext({viewport:{width:375,height:812}});let first=null;
- await ctx.route(/https:\/\/(image|media)\.tmdb\.org\//,route=>{if(!first){first=route.request().url();return route.abort()}return route.fulfill({contentType:'image/png',body:png})});
+ await ctx.route(/https:\/\/(image|media)\.tmdb\.org\//,async route=>{if(await route.request().frame().page().locator('.arena').count()&&!first){first=route.request().url();return route.abort()}return route.fulfill({contentType:'image/png',body:png})});
  const p=await ctx.newPage();await p.goto(base);await p.getByRole('button',{name:/JUGAR AHORA/}).click();await ready(p);await p.getByText('DUELO 01 / 20',{exact:true}).waitFor();const stored=await p.evaluate(()=>JSON.parse(localStorage.getItem('movie-duel:v2')));assert.equal(stored.game.failedIds.length,1);assert.equal(stored.game.history.length,0);await safe(p);
  await ctx.close();
  const shorter=await browser.newContext({viewport:{width:375,height:812}});
