@@ -5,6 +5,7 @@ import {choose,createGame,readSaved,replaceFailedPoster,STORAGE_KEY,undo} from '
 
 import {presentMovie,sanitizePresentation} from '../lib/localization.mjs';
 import {createPosterSession,preloadPoster} from '../lib/stable-poster.mjs';
+import {nextOpponent,presentationTargets} from '../lib/next-opponent.mjs';
 
 function Picker({label,options=[],value,onChange,placeholder='Buscar…',multiple=false,remote=false,disabled=false}) {
  const uid=useId();
@@ -74,18 +75,23 @@ function HomePosters({presentation}){
  </div>
 }
 function usePoster(movie){
- const [image,setImage]=useState({source:null,status:'loading'});
+ const cache=movie.posterCache;
+ const cacheKey=`${movie.id}:${movie.basePoster||movie.poster}`;
+ const [image,setImage]=useState(()=>cache?.get(cacheKey)||{source:null,status:'loading'});
  const session=useRef(null);
  const base=movie.basePoster||movie.poster;
  useEffect(()=>{
-  const current=createPosterSession({base,initial:movie.poster,resolved:movie.posterResolved,load:preloadPoster,onChange:setImage});
+  const saved=cache?.get(cacheKey);
+  if(saved){setImage(saved);return;}
+  const current=createPosterSession({base,initial:movie.poster,resolved:movie.posterResolved,warmFallback:!movie.prefetch,load:preloadPoster,onChange:value=>{if(value.status==='ready')cache?.set(cacheKey,value);setImage(value)}});
   session.current=current;
   return ()=>{current.dispose();session.current=null};
   // ID/base identify the mounted slot. Metadata updates use update, never reset it.
- },[movie.id,base]);
+ },[movie.id,base,cache,cacheKey]);
  useEffect(()=>{session.current?.update(movie.poster,movie.posterResolved)},[movie.poster,movie.posterResolved]);
  return image;
 }
+function NextPoster({movie}){usePoster({...movie,prefetch:true});return null;}
 function DecorativePoster({movie}){
  const {source,status}=usePoster(movie);
  return source?<img src={source} width="500" height="750" alt="" decoding="async" onError={event=>{event.currentTarget.hidden=true}}/>:<span className="home-poster-placeholder">{status==='loading'?'✦':''}</span>;
@@ -151,6 +157,8 @@ export default function Game(){
  const [game,setGame]=useState(null);
  const [presentation,setPresentation]=useState({});
  const attempted=useRef(new Set());
+ const posterCache=useRef(new Map());
+ const localizationRequests=useRef(new Map());
  const [view,setView]=useState('home');
  const [hydrated,setHydrated]=useState(false);
  const [options,setOptions]=useState({countries:[],languages:[],source:'catalog'});
@@ -185,27 +193,29 @@ export default function Game(){
   save();window.addEventListener('pagehide',save);document.addEventListener('visibilitychange',hidden);
   return ()=>{window.removeEventListener('pagehide',save);document.removeEventListener('visibilitychange',hidden)};
  },[config,game,presentation,hydrated]);
- // Presentation requests are deliberately independent of start/resume and game state.
- const presentationIds=JSON.stringify([...new Set([165,592,...(game?.deck||[]).map(m=>m.id),...(game?.reserves||[]).map(m=>m.id),...(game?.pair||[]).map(m=>m.id),...(game?.history||[]).flatMap(h=>(h.pair||[]).map(m=>m.id))])]);
+ // Only visible movies and the SINGLE immediate opponent are localized.
+ // Requests already in flight are shared when the opponent becomes visible.
+ const presentationIds=JSON.stringify(presentationTargets(game,view));
  useEffect(()=>{
   if(!hydrated)return;
-  const controller=new AbortController();
-  const processing=new Set();
-  const ids=JSON.parse(presentationIds).filter(id=>!sanitizePresentation({[id]:latest.current.presentation[id]})[id]&&!attempted.current.has(id));
-  async function localize(){
-   for(let offset=0;offset<ids.length&&!controller.signal.aborted;offset+=12){
-    const batch=ids.slice(offset,offset+12);batch.forEach(id=>{attempted.current.add(id);processing.add(id)});
-    try{
-     const response=await fetch('/api/presentation',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({ids:batch}),signal:AbortSignal.any([controller.signal,AbortSignal.timeout(6000)])});
-     if(!response.ok)continue;
-     const body=await response.json();
-     if(!controller.signal.aborted)setPresentation(previous=>sanitizePresentation({...previous,...body.presentation}));
-    }catch{if(controller.signal.aborted)batch.forEach(id=>attempted.current.delete(id));}
-    finally{batch.forEach(id=>processing.delete(id))}
-   }
+  const targets=new Set(JSON.parse(presentationIds));
+  for(const [id,controller] of localizationRequests.current){
+   if(!targets.has(id)){controller.abort();localizationRequests.current.delete(id);attempted.current.delete(id)}
   }
-  localize();return ()=>{controller.abort();processing.forEach(id=>attempted.current.delete(id))};
+  for(const id of targets){
+   if(sanitizePresentation({[id]:latest.current.presentation[id]})[id]||attempted.current.has(id))continue;
+   attempted.current.add(id);
+   const controller=new AbortController();localizationRequests.current.set(id,controller);
+   fetch('/api/presentation',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({ids:[id]}),signal:AbortSignal.any([controller.signal,AbortSignal.timeout(6000)])})
+    .then(response=>response.ok?response.json():null)
+    .then(body=>{if(body&&!controller.signal.aborted)setPresentation(previous=>sanitizePresentation({...previous,...body.presentation}))})
+    .catch(()=>{})
+    .finally(()=>{if(localizationRequests.current.get(id)===controller)localizationRequests.current.delete(id)});
+  }
  },[presentationIds,hydrated]);
+ useEffect(()=>()=>{for(const controller of localizationRequests.current.values())controller.abort()},[]);
+ const displayMovie=movie=>({...presentMovie(movie,presentation),posterCache:posterCache.current});
+ const upcoming=view==='play'?nextOpponent(game):null;
  useEffect(()=>{if(hydrated)titleRef.current?.focus()},[view,hydrated]);
  function update(key,value){const next={...config,[key]:value};const message=configIssue(next);if(message&&!(key==='people'&&value.length<config.people.length)){setProblem({status:'invalid',message});return;}setConfig(normalizeConfig(next));setProblem(null)}
  const active=game&&game.history.length<game.config.duels;
@@ -221,7 +231,7 @@ export default function Game(){
    if(data.status==='error'||data.status==='invalid'){setProblem(data);return;}
    if(!response.ok)throw Error('No pudimos preparar la partida.');
    if(data.status==='ready'){
-    setGame(createGame(data));setConfig(data.config);setLoaded({});setView('play');
+    posterCache.current=new Map();setGame(createGame(data));setConfig(data.config);setLoaded({});setView('play');
    }else setProblem(data);
   }catch(e){setProblem({status:'error',message:'No pudimos preparar la partida. Tu progreso y tus filtros se conservan. Intentá de nuevo en un momento.'});}
   finally{setBusy(false);inFlight.current=false;}
@@ -230,7 +240,7 @@ export default function Game(){
  function requestMatch(settings=config){if(active)setPending(settings);else startMatch(settings)}
  function handleFailure(id){setGame(previous=>replaceFailedPoster(previous,id));setLoaded(previous=>({...previous,[id]:false}))}
  function handleReady(id){setLoaded(previous=>previous[id]?previous:{...previous,[id]:true})}
- function pick(id){setLoaded({});setRetry(n=>n+1);setGame(previous=>choose(previous,id))}
+ function pick(id){setLoaded(previous=>({[id]:previous[id]}));setGame(previous=>choose(previous,id))}
  function rewind(){setLoaded({});setRetry(n=>n+1);setGame(previous=>undo(previous))}
  function backHome(){setView('home');setProblem(null);setLoaded({})}
  const playable=game?.pair.every(m=>loaded[m.id])&&!game.blocked;
@@ -264,9 +274,10 @@ export default function Game(){
     <button className="text-button reset" disabled={busy} onClick={()=>{setConfig({...DEFAULT_CONFIG});setProblem(null)}}>RESTABLECER CONFIGURACIÓN</button>
     <div className="sticky-start"><button ref={startButtonRef} className="primary" aria-busy={busy} disabled={busy} onClick={()=>requestMatch()}>{busy?'PREPARANDO PARTIDA…':'EMPEZAR PARTIDA'}</button></div>
    </section>}
+   {upcoming&&<NextPoster key={`${upcoming.id}-${retry}`} movie={displayMovie(upcoming)}/>}
    {view==='play'&&game&&(finished?<section className="result">
     <p className="trophy" aria-hidden="true">♛</p><h1 ref={titleRef} tabIndex={-1}>¡TENEMOS CAMPEONA!</h1><p className="champion-subtitle">Tu película favorita de esta partida</p>
-    <div className="winner-poster"><Poster key={`${game.pair[0].id}-${retry}`} movie={presentMovie(game.pair[0],presentation)} onReady={handleReady} onFail={handleFailure} retry={retry}/></div>
+    <div className="winner-poster"><Poster key={`${game.pair[0].id}-${retry}`} movie={displayMovie(game.pair[0])} onReady={handleReady} onFail={handleFailure} retry={retry}/></div>
     <h2>{presentMovie(game.pair[0],presentation).title}</h2><p className="winner-detail">{game.pair[0].year} <span>·</span> {game.history.length} duelos completados</p>
     <div className="actions"><button className="primary" disabled={busy} onClick={()=>requestMatch(game.config)}>{busy?'PREPARANDO…':'JUGAR OTRA VEZ'}</button><button className="secondary" disabled={busy} onClick={()=>{setConfig(game.config);setView('settings');setProblem(null)}}>NUEVA PARTIDA</button></div>
     <button className="text-button" onClick={rewind}>↶ DESHACER</button>
@@ -274,7 +285,7 @@ export default function Game(){
     <div className="round-info"><span className="eyebrow" aria-live="polite">DUELO {String(game.history.length+1).padStart(2,'0')} / {game.config.duels}</span><button className="text-button" onClick={backHome}>← INICIO</button></div>
     <div className="progress" role="progressbar" aria-label="Progreso de la partida" aria-valuetext={`Duelo ${game.history.length+1} de ${game.config.duels}`} aria-valuenow={game.history.length+1} aria-valuemin={0} aria-valuemax={game.config.duels}><div style={{width:`${(game.history.length+1)/game.config.duels*100}%`}}/></div>
     <h1 className="arena-title" ref={titleRef} tabIndex={-1}>¿Cuál se queda?</h1>
-    <div className="duel">{game.pair.map(m=>presentMovie(m,presentation)).map((movie,index)=><article className="movie" key={index}>
+    <div className="duel">{game.pair.map(displayMovie).map((movie,index)=><article className="movie" key={movie.id}>
      {game.history.length>0&&<p className="movie-label">{index===0?'SELECCIÓN ACTUAL':'NUEVA PELÍCULA'}</p>}
      <button className="poster-button" disabled={!playable} aria-label={`Elegir ${movie.title}`} onClick={()=>pick(movie.id)}><Poster key={`${movie.id}-${retry}`} movie={movie} onReady={handleReady} onFail={handleFailure} retry={retry}/></button>
      <div className="movie-info"><h2 title={movie.title}>{movie.title}</h2><p>{movie.year}</p></div>

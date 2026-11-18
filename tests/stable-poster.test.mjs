@@ -29,3 +29,6 @@ test('image cache deduplicates successful preloads and evicts failures',async()=
   await assert.rejects(preloadPoster('bad-test'));await assert.rejects(preloadPoster('bad-test'));assert.equal(count,3);
  }finally{if(Original===undefined)delete globalThis.Image;else globalThis.Image=Original}
 });
+test('future opponent downloads only its definitive image, no speculative base image',async()=>{
+ const loads=[];const s=createPosterSession({base:'base',resolved:false,warmFallback:false,load:async x=>loads.push(x),onChange:()=>{}});await tick();assert.deepEqual(loads,[]);s.update('regional',true);await tick();assert.deepEqual(loads,['regional']);s.dispose();
+});
