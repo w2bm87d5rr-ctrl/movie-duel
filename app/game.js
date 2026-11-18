@@ -1,6 +1,6 @@
 'use client';
 import {useEffect,useId,useRef,useState} from 'react';
-import {DEFAULT_CONFIG,DECADES,GENRES,normalizeConfig} from '../lib/config.mjs';
+import {DEFAULT_CONFIG,DECADES,GENRES,normalizeConfig,configIssue} from '../lib/config.mjs';
 import {choose,createGame,readSaved,replaceFailedPoster,STORAGE_KEY,undo} from '../lib/game.mjs';
 
 function Picker({label,options=[],value,onChange,placeholder='Buscar…',multiple=false,remote=false,disabled=false}) {
@@ -70,7 +70,8 @@ function MatchProblem({problem,busy,onShorter,onModify,onRetry}){
  const uid=useId();
  const shorter=problem.status==='insufficient';
  const empty=problem.status==='empty';
- const title=shorter?'Podés jugar menos duelos':empty?'No hay suficientes películas':'No pudimos preparar la partida';
+ const invalid=problem.status==='invalid';
+ const title=invalid?'Revisá la combinación de filtros':shorter?'Podés jugar menos duelos':empty?'No hay suficientes películas':'No pudimos preparar la partida';
  const description=shorter?`Encontramos películas suficientes para ${problem.available} duelos con tu selección.`:empty?'No encontramos suficientes películas para comenzar con los filtros seleccionados.':problem.message;
  useEffect(()=>{
   const dialog=ref.current;
@@ -98,7 +99,7 @@ function MatchProblem({problem,busy,onShorter,onModify,onRetry}){
   <p id={`${uid}-description`}>{description}</p>
   <div className="actions">
    {shorter&&<button className="primary" disabled={busy} onClick={onShorter}>JUGAR {problem.available} DUELOS</button>}
-   {!shorter&&!empty&&<button className="primary" disabled={busy} onClick={onRetry}>REINTENTAR</button>}
+   {!shorter&&!empty&&!invalid&&<button className="primary" disabled={busy} onClick={onRetry}>REINTENTAR</button>}
    <button className="secondary" onClick={onModify}>MODIFICAR FILTROS</button>
   </div>
  </dialog>
@@ -148,17 +149,19 @@ export default function Game(){
   return ()=>{window.removeEventListener('pagehide',save);document.removeEventListener('visibilitychange',hidden)};
  },[config,game,hydrated]);
  useEffect(()=>{if(hydrated)titleRef.current?.focus()},[view,hydrated]);
- function update(key,value){setConfig(previous=>normalizeConfig({...previous,[key]:value}));setProblem(null)}
+ function update(key,value){const next={...config,[key]:value};const message=configIssue(next);if(message&&!(key==='people'&&value.length<config.people.length)){setProblem({status:'invalid',message});return;}setConfig(normalizeConfig(next));setProblem(null)}
  const active=game&&game.history.length<game.config.duels;
  const finished=game&&game.history.length===game.config.duels;
  const advanced=config.people.length+Number(Boolean(config.country))+Number(Boolean(config.language));
  async function startMatch(settings){
   if(inFlight.current)return;
+  const issue=configIssue(settings);if(issue){setProblem({status:'invalid',message:issue});return;}
   inFlight.current=true;setBusy(true);setProblem(null);
   try {
-   const response=await fetch('/api/match',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(settings)});
+   const response=await fetch('/api/match',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(settings),signal:AbortSignal.timeout(25000)});
    const data=await response.json();
-   if(!response.ok||data.status==='error')throw Error(data.message||'No pudimos preparar la partida.');
+   if(data.status==='error'||data.status==='invalid'){setProblem(data);return;}
+   if(!response.ok)throw Error('No pudimos preparar la partida.');
    if(data.status==='ready'){
     setGame(createGame(data));setConfig(data.config);setLoaded({});setView('play');
    }else setProblem(data);
@@ -193,7 +196,7 @@ export default function Game(){
     </div>
     <details className="advanced"><summary>Opciones avanzadas <span>{advanced?`${advanced} ${advanced===1?'filtro activo':'filtros activos'}`:'Sin filtros'}</span><b aria-hidden="true">+</b></summary><div className="advanced-fields">
      <Picker label="Actor, actriz o director" value={config.people} multiple remote disabled={config.people.length>=5} onChange={people=>update('people',people)} placeholder="Buscar por nombre"/>
-     <p className="field-hint">Hasta cinco personas. Mezclaremos sus filmografías.</p>
+     <p className="field-hint">Hasta cinco personas sin país; con país, una sola persona.</p>
      <Picker label="País de origen o producción" options={options.countries} value={config.country} onChange={country=>update('country',country)} placeholder="Todos los países"/>
      <Picker label="Idioma original" options={options.languages} value={config.language} onChange={language=>update('language',language)} placeholder="Todos los idiomas"/>
      <p className="field-hint">El idioma original puede ser distinto del país de producción.</p>

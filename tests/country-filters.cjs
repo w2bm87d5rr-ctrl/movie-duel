@@ -1,0 +1,32 @@
+const {chromium}=require('playwright');
+const assert=require('node:assert/strict');
+const base=process.env.MOVIE_DUEL_TEST_URL||'http://127.0.0.1:3051';
+(async()=>{
+ const browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});
+ const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+ const page=await context.newPage();
+ await page.goto(base);await page.getByRole('button',{name:'PERSONALIZAR PARTIDA',exact:true}).click();await page.locator('summary').click();
+ const picker=page.getByRole('combobox',{name:'Actor, actriz o director'});
+ const add=async name=>{await picker.fill(name);await page.getByRole('option',{name:new RegExp(name)}).first().click()};
+ const saved=()=>page.evaluate(()=>JSON.parse(localStorage.getItem('movie-duel:v2')).config);
+ const dismiss=async()=>{await page.getByRole('dialog',{name:'Revisá la combinación de filtros'}).waitFor();await page.getByRole('button',{name:'MODIFICAR FILTROS',exact:true}).click()};
+ await add('Al Pacino');await add('Robert De Niro');const original=await saved();
+ await page.getByRole('combobox',{name:'País de origen o producción'}).fill('Francia');await page.getByRole('option',{name:'Francia',exact:true}).click();
+ await dismiss();assert.deepEqual(await saved(),original);
+ await page.getByRole('button',{name:'Quitar Robert De Niro',exact:true}).click();
+ await page.getByRole('combobox',{name:'País de origen o producción'}).fill('Francia');await page.getByRole('option',{name:'Francia',exact:true}).click();
+ const one=await saved();assert.equal(one.country,'FR');await add('Robert De Niro');await dismiss();assert.deepEqual(await saved(),one);
+ await page.reload();await page.getByRole('button',{name:'PERSONALIZAR PARTIDA',exact:true}).click();assert.deepEqual(await saved(),one);
+ await page.locator('summary').click();await page.getByRole('button',{name:'Quitar filtro de País de origen o producción'}).click();
+ for(const name of ['Robert De Niro','Woody Allen','Morgan Freeman','Luis Buñuel'])await add(name);
+ assert.equal(await page.locator('.chips>span').count(),5);assert.equal(await picker.isDisabled(),true);
+ const response=await context.request.post(base+'/api/match',{data:{country:'FR',people:original.people}});assert.equal(response.status(),400);assert.equal((await response.json()).status,'invalid');
+ // Old saved combinations remain recoverable one removal at a time.
+ const legacy=await saved();legacy.country='FR';
+ await page.addInitScript(config=>localStorage.setItem('movie-duel:v2',JSON.stringify({version:2,config,game:null})),legacy);
+ await page.reload();await page.getByRole('button',{name:'PERSONALIZAR PARTIDA',exact:true}).click();await page.locator('summary').click();
+ for(const name of ['Luis Buñuel','Morgan Freeman','Woody Allen','Robert De Niro'])await page.getByRole('button',{name:`Quitar ${name}`,exact:true}).click();
+ assert.equal((await saved()).people.length,1);assert.equal((await saved()).country,'FR');
+ assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+ await browser.close();console.log('PASS country/person guards: both selection orders, unchanged filters, five without country, reload, direct API 400, legacy configuration reduced without dropping filters, mobile overflow.');
+})().catch(e=>{console.error(e);process.exit(1)});

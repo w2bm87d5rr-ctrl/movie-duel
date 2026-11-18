@@ -10,15 +10,15 @@ function mock(fn){process.env.TMDB_READ_ACCESS_TOKEN='test-only';globalThis.fetc
 function reset(){globalThis.fetch=originalFetch;if(originalToken===undefined)delete process.env.TMDB_READ_ACCESS_TOKEN;else process.env.TMDB_READ_ACCESS_TOKEN=originalToken;}
 test('live provider paginates, excludes documentary, deduplicates and preserves country/language',async()=>{
  const calls=[];
- mock(url=>{calls.push(url);const page=Number(url.searchParams.get('page'));return Response.json({total_pages:2,results:[...Array.from({length:20},(_,i)=>movie(i+(page-1)*20+1)),movie(1),movie(900,{genre_ids:[99]}),movie(901,{poster_path:null})]})});
+ mock(url=>{calls.push(url);if(!url.pathname.endsWith('/discover/movie'))return Response.json(movie(Number(url.pathname.split('/').at(-1))));const page=Number(url.searchParams.get('page'));return Response.json({total_pages:2,results:[...Array.from({length:20},(_,i)=>movie(i+(page-1)*20+1)),movie(1),movie(900,{genre_ids:[99]}),movie(901,{poster_path:null})]})});
  try {
   const result=await prepareMatch({duels:20,country:'FR',language:'fr',genre:'35',decade:'1980'});
-  assert.equal(result.status,'ready');assert.equal(calls.length,2);
-  assert.ok(calls.every(url=>url.searchParams.get('with_origin_country')==='FR'&&url.searchParams.get('with_original_language')==='fr'&&url.searchParams.get('without_genres')==='99'));
+  assert.equal(result.status,'ready');assert.equal(calls.filter(u=>u.pathname.endsWith('/discover/movie')).length,2);
+  assert.ok(calls.filter(u=>u.pathname.endsWith('/discover/movie')).every(url=>!url.searchParams.has('with_origin_country')&&url.searchParams.get('with_original_language')==='fr'&&url.searchParams.get('without_genres')==='99'));
   assert.equal(new Set(result.deck.map(m=>m.id)).size,21);assert.ok(!result.deck.some(m=>[900,901].includes(m.id)));
  }finally{reset()}
 });
-test('live movie credits combine actors OR directors, verify production countries and skip other crew',async()=>{
+test('live movie credits combine actors OR directors without country and skip other crew',async()=>{
  const ids=[777777,888888];
  mock(url=>{
   if(url.pathname.includes('/movie_credits')){
@@ -28,8 +28,8 @@ test('live movie credits combine actors OR directors, verify production countrie
   const id=Number(url.pathname.split('/').at(-1));return Response.json(movie(id,{genres:[{id:35}],origin_country:[],production_countries:[{iso_3166_1:'ES'}]}));
  });
  try {
-  const result=await prepareMatch({duels:10,country:'ES',people:ids.map(id=>({id,name:'Persona'}))});
-  assert.equal(result.status,'ready');assert.ok(result.deck.every(m=>m.countries.includes('ES')));
+  const result=await prepareMatch({duels:10,people:ids.map(id=>({id,name:'Persona'}))});
+  assert.equal(result.status,'ready');assert.ok(result.deck.every(m=>m.countries.includes('FR')));
   assert.ok(result.deck.some(m=>m.peopleIds.includes(ids[0]))&&result.deck.some(m=>m.peopleIds.includes(ids[1])));
   assert.ok(!result.deck.some(m=>[1006,2006].includes(m.id)));
  }finally{reset()}
@@ -65,8 +65,8 @@ test('authenticated metadata includes genres and localized countries/languages o
   assert.ok(options.languages.some(l=>l.name==='español'));
  }finally{reset()}
 });
-test('discovery preserves country evidence even when TMDB omits origin_country in results',async()=>{
- mock(()=>Response.json({total_pages:1,results:Array.from({length:20},(_,i)=>movie(50000+i,{origin_country:undefined,original_language:'es'}))}));
+test('discovery verifies production countries even when origin country is missing',async()=>{
+ mock(url=>Response.json(url.pathname.endsWith('/discover/movie')?{total_pages:1,results:Array.from({length:20},(_,i)=>movie(50000+i,{origin_country:undefined,original_language:'es'}))}:movie(Number(url.pathname.split('/').at(-1)),{origin_country:[],production_countries:[{iso_3166_1:'AR'}],original_language:'es'})));
  try {
   const result=await prepareMatch({duels:10,country:'AR',language:'es'});
   assert.equal(result.status,'ready');assert.ok(result.deck.every(m=>m.countries.includes('AR')&&m.language==='es'));

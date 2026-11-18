@@ -24,8 +24,11 @@ const png=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42
   await field('Actor, actriz o director','Al Pacino',/Al Pacino/);
   await field('Actor, actriz o director','Robert De Niro',/Robert De Niro/);
   assert.equal(await page.locator('.chips>span').count(),2);
+  await page.getByRole('button',{name:'Quitar Robert De Niro',exact:true}).tap();
   await field('País de origen o producción','Francia','Francia');
   await field('Idioma original','francés','francés');
+  await page.getByRole('button',{name:'Quitar filtro de País de origen o producción',exact:true}).tap();
+  await field('Actor, actriz o director','Robert De Niro',/Robert De Niro/);
   // Stress an unbroken suggestion label independently of TMDB availability.
   await page.route('**/api/people?q=super',r=>r.fulfill({contentType:'application/json',body:JSON.stringify({people:[{id:999001,name:'NombreSinEspacios'.repeat(20)}]})}));
   const actor=page.getByRole('combobox',{name:'Actor, actriz o director',exact:true});await actor.tap();await actor.fill('super');await page.getByRole('option',{name:/NombreSinEspacios/}).waitFor();await stable();
