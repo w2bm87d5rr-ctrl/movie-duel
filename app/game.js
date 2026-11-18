@@ -65,13 +65,12 @@ const HOME_POSTERS=[
  {id:592,path:'/dHqVBwcv1SGymOpUueRoKzcmdes.jpg'},
 ];
 function HomePosters(){
- return <div className="home-posters" aria-hidden="true">
-  {HOME_POSTERS.map((poster,index)=><div className="home-poster-pair" key={poster.id}>
-   {index===1&&<span className="home-vs">VS</span>}
-   <div className="home-poster-frame"><img src={`https://image.tmdb.org/t/p/w342${poster.path}`} srcSet={`https://image.tmdb.org/t/p/w185${poster.path} 185w, https://image.tmdb.org/t/p/w342${poster.path} 342w, https://image.tmdb.org/t/p/w500${poster.path} 500w`} sizes="(max-height: 650px) 64px, (max-width: 600px) 116px, 180px" width="500" height="750" alt="" decoding="async" onError={event=>{event.currentTarget.hidden=true}}/></div>
-  </div>)}
+ return <div className="home-duel" aria-hidden="true">
+  <div className="home-posters">{HOME_POSTERS.map(poster=><div className="home-poster-frame" key={poster.id}><img src={`https://image.tmdb.org/t/p/w342${poster.path}`} srcSet={`https://image.tmdb.org/t/p/w185${poster.path} 185w, https://image.tmdb.org/t/p/w342${poster.path} 342w, https://image.tmdb.org/t/p/w500${poster.path} 500w`} sizes="(max-width: 600px) 45vw, 310px" width="500" height="750" alt="" decoding="async" onError={event=>{event.currentTarget.hidden=true}}/></div>)}</div>
+  <span className="home-vs">VS</span>
  </div>
 }
+
 function Confirm({onCancel,onConfirm}){
  const ref=useRef(null);
  useEffect(()=>{const dialog=ref.current;dialog.showModal();return ()=>dialog.close()},[]);
@@ -196,10 +195,9 @@ export default function Game(){
    {storageError&&<p className="notice" role="status">Este navegador no permite guardar el progreso. Mantené esta página abierta para conservar la partida.</p>}
    {view==='home'&&<section className="intro">
     <h1 ref={titleRef} tabIndex={-1}>¿Cuál será tu favorita?</h1>
-    <p className="description">Elegí entre dos películas. Tu favorita sigue en juego hasta encontrar a la campeona.</p>
+    <p className="description">Dos películas. Una sola campeona.</p>
     <HomePosters/>
-    <fieldset className="quick-duels"><legend>Duelos</legend>{[10,20,40].map(count=><button key={count} aria-pressed={config.duels===count} onClick={()=>update('duels',count)}>{count}</button>)}</fieldset>
-    <div className="home-actions">{active&&<button className="primary" onClick={()=>setView('play')}>CONTINUAR PARTIDA</button>}<button className={active?'secondary':'primary'} disabled={busy} onClick={()=>requestMatch()}>{busy?'PREPARANDO PARTIDA…':'JUGAR AHORA'}</button><button className="secondary" disabled={busy} onClick={()=>{setView('settings');setProblem(null)}}>PERSONALIZAR PARTIDA</button></div>
+    <div className="home-actions">{active&&<button className="primary" onClick={()=>setView('play')}>CONTINUAR PARTIDA</button>}<button className={active?'secondary':'primary'} disabled={busy} onClick={()=>requestMatch({...config,duels:20,difficulty:'normal'})}>{busy?'PREPARANDO PARTIDA…':'JUGAR AHORA'}</button><button className="secondary" disabled={busy} onClick={()=>{setView('settings');setProblem(null)}}>PERSONALIZAR PARTIDA</button></div>
    </section>}
    {view==='settings'&&<section className="settings">
     <button className="text-button" onClick={backHome}>← INICIO</button><h1 ref={titleRef} tabIndex={-1}>Personalizar partida</h1>

@@ -26,10 +26,6 @@ em{font-style:normal;color:var(--text)}
 .secondary:hover:enabled{background:#202225}
 .primary span{margin-left:28px}
 .home-actions{max-width:330px;margin:28px auto;display:grid;gap:10px}
-.quick-duels{border:0;margin:0 auto;padding:0;display:flex;justify-content:center;gap:8px}
-.quick-duels legend{text-align:center;font-size:11px;color:var(--muted);margin-bottom:12px}
-.quick-duels button{min-width:52px;min-height:44px;color:var(--muted);border:1px solid var(--border);background:transparent;border-radius:5px}
-.quick-duels button[aria-pressed=true]{color:var(--text);border-color:#a1ad7b;box-shadow:inset 0 -2px 0 var(--accent)}
 .cinema-line{display:flex;gap:16px;align-items:center;max-width:530px;margin:65px auto 15px;color:#6c6f71;font-size:9px;letter-spacing:2px}
 .cinema-line div{height:1px;background:var(--border);flex:1}
 .text-button{min-height:44px;background:transparent;border:0;color:var(--muted);font-size:10px;letter-spacing:1px;padding:8px 0}
@@ -177,8 +173,6 @@ h1 { font-weight: 600; }
 .secondary { background: transparent; }
 .result .secondary, dialog .secondary { background: var(--panel); }
 .primary:hover:enabled, .choose:hover:enabled, .result .secondary:hover:enabled, dialog .secondary:hover:enabled { background: #3b4145; }
-.quick-duels button[aria-pressed=true] { border-color: var(--border); color: var(--text); box-shadow: inset 0 -2px 0 var(--accent); }
-.quick-duels legend { margin-bottom: 9px; }
 .settings { margin-top: 16px; }
 .settings h1 { font-size: 30px; letter-spacing: -1px; margin: 10px 0 24px; }
 .form-grid { gap: 22px 20px; }
@@ -265,19 +259,17 @@ footer p { max-width: 510px; }
 .suggestions img { flex-shrink: 0; }
 
 /* Home decoration is independent from interactive match posters. */
-.home-posters { position: relative; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 36px; width: min(100%,396px); margin: 0 auto 24px; }
-.home-poster-pair { min-width: 0; }
-.home-poster-frame { aspect-ratio: 2/3; background: #191b1d; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+.intro { padding-top: 28px; }
+.intro .description { margin-bottom: 18px; }
+.home-duel { margin: 0 auto 16px; }
+.home-posters { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; width: min(100%,640px); margin: 0 auto 12px; }
+.home-poster-frame { min-width: 0; aspect-ratio: 2/3; background: #191b1d; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
 .home-poster-frame img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .home-poster-frame img[hidden] { display: none; }
-.home-vs { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font-size: 10px; letter-spacing: 1px; color: var(--muted); }
+.home-vs { display: block; font-size: 10px; letter-spacing: 1px; color: var(--muted); line-height: 1.4; }
+.intro .home-actions { margin-top: 0; }
 @media (max-width: 600px) {
- .home-posters { width: min(100%,264px); gap: 32px; margin-bottom: 20px; }
-}
-@media (max-height: 650px) and (max-width: 600px) {
- .intro { padding-top: 16px; }
- .intro h1 { margin-bottom: 12px; }
- .intro .description { margin-bottom: 12px; }
- .home-posters { width: 160px; margin-bottom: 12px; }
- .intro .home-actions { margin-top: 12px; }
+ .intro { padding-top: 24px; }
+ .intro .description { margin-bottom: 16px; }
+ .home-posters { width: min(100%,360px); gap: 16px; }
 }
