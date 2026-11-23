@@ -156,12 +156,30 @@ function Poster({movie,onReady,onFail,retry=0}){
 
 export default function Game(){
  const [mode,setMode]=useState('movie');
- return <GameMode key={mode} mode={mode} switchMode={setMode}/>;
+ const [tvPosters,setTvPosters]=useState([]);
+ // Start fetching AND warming both TV Home posters on initial page load,
+ // even while the movie Home is visible. Switching modes never restarts it.
+ useEffect(()=>{
+  const controller=new AbortController();
+  fetch('/api/tv/home',{signal:controller.signal})
+   .then(response=>response.ok?response.json():null)
+   .then(data=>{
+    if(controller.signal.aborted||!data?.posters?.length)return;
+    const posters=data.posters;
+    setTvPosters(posters);
+    for(const poster of posters){
+     const image=new Image();
+     image.decoding='async';
+     image.src=poster.poster;
+    }
+   }).catch(()=>{});
+  return ()=>controller.abort();
+ },[]);
+ return <GameMode key={mode} mode={mode} switchMode={setMode} tvPosters={tvPosters}/>;
 }
-function GameMode({mode,switchMode}){
+function GameMode({mode,switchMode,tvPosters}){
  const isTv=mode==='tv';
  const storageKey=isTv?TV_STORAGE_KEY:STORAGE_KEY;
- const [tvPosters,setTvPosters]=useState([]);
  const [config,setConfig]=useState({...DEFAULT_CONFIG});
  const [game,setGame]=useState(null);
  const [presentation,setPresentation]=useState({});
@@ -191,7 +209,6 @@ function GameMode({mode,switchMode}){
   setHydrated(true);
   const controller=new AbortController();
   fetch('/api/options'+(isTv?'?mode=tv':''),{signal:controller.signal}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(setOptions).catch(()=>{if(!controller.signal.aborted)setOptionsError(true)});
-  if(isTv)fetch('/api/tv/home',{signal:controller.signal}).then(r=>r.json()).then(d=>{if(!controller.signal.aborted)setTvPosters(d.posters||[])}).catch(()=>{});
   return ()=>controller.abort();
  },[]);
  useEffect(()=>{
