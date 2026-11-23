@@ -77,3 +77,20 @@ test('filtered drama 2010 series rotate without violating filters',async()=>{
   previous=ids;
  }
 });
+
+test('TV discovery rotates popular-page windows while retaining page one',async()=>{
+ const {tvDiscoveryPages}=await import('../lib/tv.mjs');
+ const first=tvDiscoveryPages([]);
+ assert.equal(first[0],1);
+ assert.equal(first.length,6);
+ assert.equal(new Set(first).size,first.length);
+ const windows=new Set(Array.from({length:15},(_,i)=>tvDiscoveryPages(Array.from({length:21},(_,j)=>i*21+j+1)).join(',')));
+ assert.ok(windows.size>=4,'different recent histories should explore different popularity pages');
+});
+test('general normal TV excludes niche titles without removing recognizable alternatives',async()=>{
+ const {selectTvSeries}=await import('../lib/selection.mjs');
+ const pool=Array.from({length:65},(_,i)=>({...movie(i+1),title:i===0?'Niche classic':'Famous series '+i,votes:i===0?50:10000-i*100,decades:[2010],audience:{anime:false,kids:false}}));
+ const r=selectTvSeries(pool,{...DEFAULT_CONFIG,duels:20},()=>.5,[]);
+ assert.equal(r.status,'ready');
+ assert.ok(!r.deck.some(m=>m.id===1));
+});
