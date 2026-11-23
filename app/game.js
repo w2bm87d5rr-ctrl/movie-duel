@@ -1,13 +1,14 @@
 'use client';
 import {useEffect,useId,useRef,useState} from 'react';
-import {DEFAULT_CONFIG,DECADES,GENRES,normalizeConfig,configIssue} from '../lib/config.mjs';
-import {choose,createGame,readSaved,replaceFailedPoster,STORAGE_KEY,undo} from '../lib/game.mjs';
+import {DEFAULT_CONFIG,DECADES,GENRES,TV_GENRES,normalizeConfig,configIssue} from '../lib/config.mjs';
+import {choose,createGame,readSaved,replaceFailedPoster,STORAGE_KEY,TV_STORAGE_KEY,undo} from '../lib/game.mjs';
 
 import {presentMovie,sanitizePresentation} from '../lib/localization.mjs';
 import {createPosterSession,preloadPoster} from '../lib/stable-poster.mjs';
 import {nextOpponent,presentationTargets} from '../lib/next-opponent.mjs';
+import {presentTv} from '../lib/tv-presentation.mjs';
 
-function Picker({label,options=[],value,onChange,placeholder='Buscar…',multiple=false,remote=false,disabled=false}) {
+function Picker({label,options=[],value,onChange,placeholder='Buscar…',multiple=false,remote=false,disabled=false,mode='movie'}) {
  const uid=useId();
  const [query,setQuery]=useState('');
  const [open,setOpen]=useState(false);
@@ -25,7 +26,7 @@ function Picker({label,options=[],value,onChange,placeholder='Buscar…',multipl
   setLoading(true);
   const timeout=setTimeout(async()=>{
    try {
-    const response=await fetch(`/api/people?q=${encodeURIComponent(query.trim())}`,{signal:controller.signal});
+    const response=await fetch(`/api/people?mode=${mode}&q=${encodeURIComponent(query.trim())}`,{signal:controller.signal});
     const data=await response.json();
     if(!response.ok) throw Error(data.error||'No pudimos buscar personas.');
     if(!controller.signal.aborted)setResults(data.people||[]);
@@ -33,7 +34,7 @@ function Picker({label,options=[],value,onChange,placeholder='Buscar…',multipl
    finally {if(!controller.signal.aborted)setLoading(false);}
   },300);
   return ()=>{clearTimeout(timeout);controller.abort()};
- },[query,remote]);
+ },[query,remote,mode]);
  useEffect(()=>{
   function close(event){if(!wrapper.current?.contains(event.target))setOpen(false)}
   document.addEventListener('pointerdown',close);
@@ -68,7 +69,8 @@ const HOME_POSTERS=[
  {id:165,path:'/hQq8xZe5uLjFzSBt4LanNP7SQjl.jpg'},
  {id:592,path:'/dHqVBwcv1SGymOpUueRoKzcmdes.jpg'},
 ];
-function HomePosters({presentation}){
+function HomePosters({presentation,mode='movie',tvPosters=[]}){
+ if(mode==='tv')return <div className="home-duel" aria-hidden="true"><div className="home-posters">{tvPosters.map(p=><div className="home-poster-frame" key={p.id}><DecorativePoster movie={p}/></div>)}</div><span className="home-vs">VS</span></div>;
  return <div className="home-duel" aria-hidden="true">
   <div className="home-posters">{HOME_POSTERS.map(poster=><div className="home-poster-frame" key={poster.id}><DecorativePoster movie={presentMovie({id:poster.id,poster:`https://image.tmdb.org/t/p/w500${poster.path}`},presentation)}/></div>)}</div>
   <span className="home-vs">VS</span>
@@ -153,6 +155,13 @@ function Poster({movie,onReady,onFail,retry=0}){
 }
 
 export default function Game(){
+ const [mode,setMode]=useState('movie');
+ return <GameMode key={mode} mode={mode} switchMode={setMode}/>;
+}
+function GameMode({mode,switchMode}){
+ const isTv=mode==='tv';
+ const storageKey=isTv?TV_STORAGE_KEY:STORAGE_KEY;
+ const [tvPosters,setTvPosters]=useState([]);
  const [config,setConfig]=useState({...DEFAULT_CONFIG});
  const [game,setGame]=useState(null);
  const [presentation,setPresentation]=useState({});
@@ -176,18 +185,19 @@ export default function Game(){
  latest.current={config,game,presentation};
  useEffect(()=>{
   try {
-   const restored=readSaved(localStorage.getItem(STORAGE_KEY));
+   const restored=readSaved(localStorage.getItem(storageKey),mode);
    if(restored){setConfig(restored.config);setGame(restored.game);setPresentation(restored.presentation||{});}
   }catch{setStorageError(true);}
   setHydrated(true);
   const controller=new AbortController();
-  fetch('/api/options',{signal:controller.signal}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(setOptions).catch(()=>{if(!controller.signal.aborted)setOptionsError(true)});
+  fetch('/api/options'+(isTv?'?mode=tv':''),{signal:controller.signal}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(setOptions).catch(()=>{if(!controller.signal.aborted)setOptionsError(true)});
+  if(isTv)fetch('/api/tv/home',{signal:controller.signal}).then(r=>r.json()).then(d=>{if(!controller.signal.aborted)setTvPosters(d.posters||[])}).catch(()=>{});
   return ()=>controller.abort();
  },[]);
  useEffect(()=>{
   if(!hydrated)return;
   function save(){
-   try{localStorage.setItem(STORAGE_KEY,JSON.stringify({version:2,...latest.current}));setStorageError(false)}catch{setStorageError(true)}
+   try{localStorage.setItem(storageKey,JSON.stringify({version:2,...latest.current}));setStorageError(false)}catch{setStorageError(true)}
   }
   function hidden(){if(document.visibilityState==='hidden')save()}
   save();window.addEventListener('pagehide',save);document.addEventListener('visibilitychange',hidden);
@@ -195,7 +205,7 @@ export default function Game(){
  },[config,game,presentation,hydrated]);
  // Only visible movies and the SINGLE immediate opponent are localized.
  // Requests already in flight are shared when the opponent becomes visible.
- const presentationIds=JSON.stringify(presentationTargets(game,view));
+ const presentationIds=JSON.stringify(presentationTargets(game,view,mode));
  useEffect(()=>{
   if(!hydrated)return;
   const targets=new Set(JSON.parse(presentationIds));
@@ -206,7 +216,7 @@ export default function Game(){
    if(sanitizePresentation({[id]:latest.current.presentation[id]})[id]||attempted.current.has(id))continue;
    attempted.current.add(id);
    const controller=new AbortController();localizationRequests.current.set(id,controller);
-   fetch('/api/presentation',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({ids:[id]}),signal:AbortSignal.any([controller.signal,AbortSignal.timeout(6000)])})
+   fetch('/api/presentation',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({ids:[id],mode}),signal:AbortSignal.any([controller.signal,AbortSignal.timeout(6000)])})
     .then(response=>response.ok?response.json():null)
     .then(body=>{if(body&&!controller.signal.aborted)setPresentation(previous=>sanitizePresentation({...previous,...body.presentation}))})
     .catch(()=>{})
@@ -214,10 +224,10 @@ export default function Game(){
   }
  },[presentationIds,hydrated]);
  useEffect(()=>()=>{for(const controller of localizationRequests.current.values())controller.abort()},[]);
- const displayMovie=movie=>({...presentMovie(movie,presentation),posterCache:posterCache.current});
+ const displayMovie=movie=>({...(isTv?presentTv(movie,presentation):presentMovie(movie,presentation)),posterCache:posterCache.current});
  const upcoming=view==='play'?nextOpponent(game):null;
  useEffect(()=>{if(hydrated)titleRef.current?.focus()},[view,hydrated]);
- function update(key,value){const next={...config,[key]:value};const message=configIssue(next);if(message&&!(key==='people'&&value.length<config.people.length)){setProblem({status:'invalid',message});return;}setConfig(normalizeConfig(next));setProblem(null)}
+ function update(key,value){const next={...config,[key]:value};const message=configIssue(next);if(message&&!(key==='people'&&value.length<config.people.length)){setProblem({status:'invalid',message});return;}setConfig(normalizeConfig(next,mode));setProblem(null)}
  const active=game&&game.history.length<game.config.duels;
  const finished=game&&game.history.length===game.config.duels;
  const advanced=config.people.length+Number(Boolean(config.country))+Number(Boolean(config.language));
@@ -226,7 +236,7 @@ export default function Game(){
   const issue=configIssue(settings);if(issue){setProblem({status:'invalid',message:issue});return;}
   inFlight.current=true;setBusy(true);setProblem(null);
   try {
-   const response=await fetch('/api/match',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(settings),signal:AbortSignal.timeout(25000)});
+   const response=await fetch('/api/match',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...settings,mode}),signal:AbortSignal.timeout(25000)});
    const data=await response.json();
    if(data.status==='error'||data.status==='invalid'){setProblem(data);return;}
    if(!response.ok)throw Error('No pudimos preparar la partida.');
@@ -242,6 +252,11 @@ export default function Game(){
  function handleReady(id){setLoaded(previous=>previous[id]?previous:{...previous,[id]:true})}
  function pick(id){setLoaded(previous=>({[id]:previous[id]}));setGame(previous=>choose(previous,id))}
  function rewind(){setLoaded({});setRetry(n=>n+1);setGame(previous=>undo(previous))}
+ function changeMode(next){
+  if(next===mode)return;
+  try{localStorage.setItem(storageKey,JSON.stringify({version:2,...latest.current}))}catch{}
+  switchMode(next);
+ }
  function backHome(){setView('home');setProblem(null);setLoaded({})}
  const playable=game?.pair.every(m=>loaded[m.id])&&!game.blocked;
  return <main className={view==='settings'?'customizing':undefined}>
@@ -251,19 +266,20 @@ export default function Game(){
    {storageError&&<p className="notice" role="status">Este navegador no permite guardar el progreso. Mantené esta página abierta para conservar la partida.</p>}
    {view==='home'&&<section className="intro">
     <h1 ref={titleRef} tabIndex={-1}>¿Cuál será tu favorita?</h1>
-    <p className="description">Dos películas. Una sola campeona.</p>
-    <HomePosters presentation={presentation}/>
+    <p className="description">{isTv?'Dos series. Una sola campeona.':'Dos películas. Una sola campeona.'}</p>
+    <div className="content-mode" role="group" aria-label="Tipo de duelo"><button type="button" aria-pressed={!isTv} onClick={()=>changeMode('movie')}>PELÍCULAS</button><button type="button" aria-pressed={isTv} onClick={()=>changeMode('tv')}>SERIES</button></div>
+    <HomePosters presentation={presentation} mode={mode} tvPosters={tvPosters}/>
     <div className="home-actions">{active&&<button className="primary" onClick={()=>setView('play')}>CONTINUAR PARTIDA</button>}<button className={active?'secondary':'primary'} disabled={busy} onClick={()=>requestMatch({...config,duels:20,difficulty:'normal'})}>{busy?'PREPARANDO PARTIDA…':'JUGAR AHORA'}</button><button className="secondary" disabled={busy} onClick={()=>{setView('settings');setProblem(null)}}>PERSONALIZAR PARTIDA</button></div>
    </section>}
    {view==='settings'&&<section className="settings">
     <button className="text-button" onClick={backHome}>← INICIO</button><h1 ref={titleRef} tabIndex={-1}>Personalizar partida</h1>
-    <div className="form-grid"><div className="field"><label htmlFor="genre">Género</label><select id="genre" value={config.genre} onChange={e=>update('genre',e.target.value)}><option value="">Todos</option>{(options.genres||GENRES).map(g=><option key={g.id} value={g.id}>{g.name}</option>)}</select></div>
+    <div className="form-grid"><div className="field"><label htmlFor="genre">Género</label><select id="genre" value={config.genre} onChange={e=>update('genre',e.target.value)}><option value="">Todos</option>{(options.genres||(isTv?TV_GENRES:GENRES)).map(g=><option key={g.id} value={g.id}>{g.name}</option>)}</select></div>
      <div className="field"><label htmlFor="decade">Década</label><select id="decade" value={config.decade} onChange={e=>update('decade',e.target.value)}><option value="">Todas</option>{DECADES.map(d=><option key={d} value={d}>{d}–{Number(d)+9}</option>)}</select></div>
      <div className="field duels-control"><label htmlFor="duels">Duelos <strong>{config.duels}</strong></label><div className="slider-row"><button className="step" aria-label="Menos duelos" disabled={config.duels<=5} onClick={()=>update('duels',config.duels-1)}>−</button><input id="duels" type="range" min="5" max="40" value={config.duels} onChange={e=>update('duels',Number(e.target.value))}/><button className="step" aria-label="Más duelos" disabled={config.duels>=40} onClick={()=>update('duels',config.duels+1)}>+</button></div><div className="range-values"><span>5 duelos</span><span>40 duelos</span></div></div>
      <fieldset className="field difficulty"><legend>Dificultad</legend><div className="segmented">{[['normal','Normal'],['expert','Experto']].map(([id,label])=><button key={id} aria-pressed={config.difficulty===id} onClick={()=>update('difficulty',id)}>{label}</button>)}</div><p>{config.difficulty==='normal'?'Historias reconocibles y representativas.':'Cine de autor, internacional y de culto. Menos conocido, no menos valioso.'}</p></fieldset>
     </div>
     <details className="advanced"><summary>Opciones avanzadas <span>{advanced?`${advanced} ${advanced===1?'filtro activo':'filtros activos'}`:'Sin filtros'}</span><b aria-hidden="true">+</b></summary><div className="advanced-fields">
-     <Picker label="Actor, actriz o director" value={config.people} multiple remote disabled={config.people.length>=5} onChange={people=>update('people',people)} placeholder="Buscar por nombre"/>
+     <Picker label={isTv?'Actor o actriz':'Actor, actriz o director'} mode={mode} value={config.people} multiple remote disabled={config.people.length>=5} onChange={people=>update('people',people)} placeholder="Buscar por nombre"/>
      <p className="field-hint">Hasta cinco personas sin país; con país, una sola persona.</p>
      <Picker label="País de origen o producción" options={options.countries} value={config.country} onChange={country=>update('country',country)} placeholder="Todos los países"/>
      <Picker label="Idioma original" options={options.languages} value={config.language} onChange={language=>update('language',language)} placeholder="Todos los idiomas"/>
@@ -276,9 +292,9 @@ export default function Game(){
    </section>}
    {upcoming&&<NextPoster key={`${upcoming.id}-${retry}`} movie={displayMovie(upcoming)}/>}
    {view==='play'&&game&&(finished?<section className="result">
-    <p className="trophy" aria-hidden="true">♛</p><h1 ref={titleRef} tabIndex={-1}>¡TENEMOS CAMPEONA!</h1><p className="champion-subtitle">Tu película favorita de esta partida</p>
+    <p className="trophy" aria-hidden="true">♛</p><h1 ref={titleRef} tabIndex={-1}>¡TENEMOS CAMPEONA!</h1><p className="champion-subtitle">{isTv?'Tu serie favorita de esta partida':'Tu película favorita de esta partida'}</p>
     <div className="winner-poster"><Poster key={`${game.pair[0].id}-${retry}`} movie={displayMovie(game.pair[0])} onReady={handleReady} onFail={handleFailure} retry={retry}/></div>
-    <h2>{presentMovie(game.pair[0],presentation).title}</h2><p className="winner-detail">{game.pair[0].year} <span>·</span> {game.history.length} duelos completados</p>
+    <h2>{(isTv?presentTv(game.pair[0],presentation):presentMovie(game.pair[0],presentation)).title}</h2><p className="winner-detail">{game.pair[0].year} <span>·</span> {game.history.length} duelos completados</p>
     <div className="actions"><button className="primary" disabled={busy} onClick={()=>requestMatch(game.config)}>{busy?'PREPARANDO…':'JUGAR OTRA VEZ'}</button><button className="secondary" disabled={busy} onClick={()=>{setConfig(game.config);setView('settings');setProblem(null)}}>NUEVA PARTIDA</button></div>
     <button className="text-button" onClick={rewind}>↶ DESHACER</button>
    </section>:<section className="arena">
@@ -286,7 +302,7 @@ export default function Game(){
     <div className="progress" role="progressbar" aria-label="Progreso de la partida" aria-valuetext={`Duelo ${game.history.length+1} de ${game.config.duels}`} aria-valuenow={game.history.length+1} aria-valuemin={0} aria-valuemax={game.config.duels}><div style={{width:`${(game.history.length+1)/game.config.duels*100}%`}}/></div>
     <h1 className="arena-title" ref={titleRef} tabIndex={-1}>¿Cuál se queda?</h1>
     <div className="duel">{game.pair.map(displayMovie).map((movie,index)=><article className="movie" key={movie.id}>
-     {game.history.length>0&&<p className="movie-label">{index===0?'SELECCIÓN ACTUAL':'NUEVA PELÍCULA'}</p>}
+     {game.history.length>0&&<p className="movie-label">{index===0?'SELECCIÓN ACTUAL':(isTv?'NUEVA SERIE':'NUEVA PELÍCULA')}</p>}
      <button className="poster-button" disabled={!playable} aria-label={`Elegir ${movie.title}`} onClick={()=>pick(movie.id)}><Poster key={`${movie.id}-${retry}`} movie={movie} onReady={handleReady} onFail={handleFailure} retry={retry}/></button>
      <div className="movie-info"><h2 title={movie.title}>{movie.title}</h2><p>{movie.year}</p></div>
      <button className="choose" disabled={!playable} aria-label={`Elegir ${movie.title}, botón`} onClick={()=>pick(movie.id)}>ELEGIR</button>
