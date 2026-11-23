@@ -70,7 +70,7 @@ const HOME_POSTERS=[
  {id:592,path:'/dHqVBwcv1SGymOpUueRoKzcmdes.jpg'},
 ];
 function HomePosters({presentation,mode='movie',tvPosters=[]}){
- if(mode==='tv')return <div className="home-duel" aria-hidden="true"><div className="home-posters">{tvPosters.map(p=><div className="home-poster-frame" key={p.id}><DecorativePoster movie={p}/></div>)}</div><span className="home-vs">VS</span></div>;
+ if(mode==='tv')return <div className="home-duel" aria-hidden="true"><div className="home-posters">{tvPosters.length?tvPosters.map(p=><div className="home-poster-frame" key={p.id}><DecorativePoster movie={p}/></div>):[1396,1398].map(id=><div className="home-poster-frame" key={id}><span className="home-poster-placeholder">✦</span></div>)}</div><span className="home-vs">VS</span></div>;
  return <div className="home-duel" aria-hidden="true">
   <div className="home-posters">{HOME_POSTERS.map(poster=><div className="home-poster-frame" key={poster.id}><DecorativePoster movie={presentMovie({id:poster.id,poster:`https://image.tmdb.org/t/p/w500${poster.path}`},presentation)}/></div>)}</div>
   <span className="home-vs">VS</span>
@@ -104,15 +104,15 @@ function Confirm({onCancel,onConfirm}){
  useEffect(()=>{const dialog=ref.current;dialog.showModal();return ()=>dialog.close()},[]);
  return <dialog ref={ref} onCancel={event=>{event.preventDefault();onCancel()}} aria-labelledby="confirm-title"><h2 id="confirm-title">¿Empezar otra partida?</h2><p>Tenés una partida en curso. Si empezás otra, perderás el progreso anterior.</p><div className="actions"><button className="primary" autoFocus onClick={onCancel}>SEGUIR JUGANDO</button><button className="secondary" onClick={onConfirm}>NUEVA PARTIDA</button></div></dialog>
 }
-function MatchProblem({problem,busy,onShorter,onModify,onRetry}){
+function MatchProblem({problem,busy,onShorter,onModify,onRetry,mode='movie'}){
  const ref=useRef(null);
  const heading=useRef(null);
  const uid=useId();
  const shorter=problem.status==='insufficient';
  const empty=problem.status==='empty';
  const invalid=problem.status==='invalid';
- const title=invalid?'Revisá la combinación de filtros':shorter?'Podés jugar menos duelos':empty?'No hay suficientes películas':'No pudimos preparar la partida';
- const description=shorter?`Encontramos películas suficientes para ${problem.available} duelos con tu selección.`:empty?'No encontramos suficientes películas para comenzar con los filtros seleccionados.':problem.message;
+ const title=invalid?'Revisá la combinación de filtros':shorter?'Podés jugar menos duelos':empty?(mode==='tv'?'No hay suficientes series':'No hay suficientes películas'):'No pudimos preparar la partida';
+ const description=shorter?`Encontramos ${mode==='tv'?'series':'películas'} suficientes para ${problem.available} duelos con tu selección.`:empty?`No encontramos suficientes ${mode==='tv'?'series':'películas'} para comenzar con los filtros seleccionados.`:problem.message;
  useEffect(()=>{
   const dialog=ref.current;
   const previousFocus=document.activeElement;
@@ -276,7 +276,7 @@ function GameMode({mode,switchMode}){
     <div className="form-grid"><div className="field"><label htmlFor="genre">Género</label><select id="genre" value={config.genre} onChange={e=>update('genre',e.target.value)}><option value="">Todos</option>{(options.genres||(isTv?TV_GENRES:GENRES)).map(g=><option key={g.id} value={g.id}>{g.name}</option>)}</select></div>
      <div className="field"><label htmlFor="decade">Década</label><select id="decade" value={config.decade} onChange={e=>update('decade',e.target.value)}><option value="">Todas</option>{DECADES.map(d=><option key={d} value={d}>{d}–{Number(d)+9}</option>)}</select></div>
      <div className="field duels-control"><label htmlFor="duels">Duelos <strong>{config.duels}</strong></label><div className="slider-row"><button className="step" aria-label="Menos duelos" disabled={config.duels<=5} onClick={()=>update('duels',config.duels-1)}>−</button><input id="duels" type="range" min="5" max="40" value={config.duels} onChange={e=>update('duels',Number(e.target.value))}/><button className="step" aria-label="Más duelos" disabled={config.duels>=40} onClick={()=>update('duels',config.duels+1)}>+</button></div><div className="range-values"><span>5 duelos</span><span>40 duelos</span></div></div>
-     <fieldset className="field difficulty"><legend>Dificultad</legend><div className="segmented">{[['normal','Normal'],['expert','Experto']].map(([id,label])=><button key={id} aria-pressed={config.difficulty===id} onClick={()=>update('difficulty',id)}>{label}</button>)}</div><p>{config.difficulty==='normal'?'Historias reconocibles y representativas.':'Cine de autor, internacional y de culto. Menos conocido, no menos valioso.'}</p></fieldset>
+     <fieldset className="field difficulty"><legend>Dificultad</legend><div className="segmented">{[['normal','Normal'],['expert','Experto']].map(([id,label])=><button key={id} aria-pressed={config.difficulty===id} onClick={()=>update('difficulty',id)}>{label}</button>)}</div><p>{config.difficulty==='normal'?'Historias reconocibles y representativas.':isTv?'Series internacionales y de culto. Menos conocidas, no menos valiosas.':'Cine de autor, internacional y de culto. Menos conocido, no menos valioso.'}</p></fieldset>
     </div>
     <details className="advanced"><summary>Opciones avanzadas <span>{advanced?`${advanced} ${advanced===1?'filtro activo':'filtros activos'}`:'Sin filtros'}</span><b aria-hidden="true">+</b></summary><div className="advanced-fields">
      <Picker label={isTv?'Actor o actriz':'Actor, actriz o director'} mode={mode} value={config.people} multiple remote disabled={config.people.length>=5} onChange={people=>update('people',people)} placeholder="Buscar por nombre"/>
@@ -310,7 +310,7 @@ function GameMode({mode,switchMode}){
     <div className="arena-bottom"><button className="secondary" disabled={!game.history.length} onClick={rewind}>↶ DESHACER</button></div>
    </section>)}
    {view==='play'&&game?.blocked&&<div className="problem" role="alert"><h2>No pudimos cargar un afiche</h2><p>No se descontó ningún duelo. Podés volver a intentar o modificar los filtros para preparar otra selección.</p><div className="actions"><button className="secondary" onClick={()=>{setLoaded({});setRetry(n=>n+1);setGame(previous=>({...previous,failedIds:[],blocked:false}))}}>REINTENTAR AFICHES</button><button className="secondary" onClick={()=>{setConfig(game.config);setView('settings')}}>MODIFICAR FILTROS</button></div></div>}
-   {problem&&<MatchProblem problem={problem} busy={busy} onShorter={()=>startMatch({...config,duels:problem.available})} onModify={closeProblem} onRetry={()=>startMatch(config)}/>}
+   {problem&&<MatchProblem mode={mode} problem={problem} busy={busy} onShorter={()=>startMatch({...config,duels:problem.available})} onModify={closeProblem} onRetry={()=>startMatch(config)}/>}
    {pending&&<Confirm onCancel={()=>{setPending(null);if(game)setView('play')}} onConfirm={()=>{const settings=pending;setPending(null);startMatch(settings)}}/>}
   </>}
   <footer>{view!=='play'&&<span>Hecho para quienes aman el cine.</span>}<p>Afiches y datos de <a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer">TMDB</a>. Este producto utiliza la API de TMDB, pero no está respaldado ni certificado por TMDB.</p></footer>
