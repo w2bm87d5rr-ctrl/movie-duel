@@ -61,3 +61,19 @@ test('rotation reuses famous titles instead of exhausting catalog',async()=>{
   history=[...history.filter(id=>!ids.includes(id)),...ids].slice(-180);
  }
 });
+
+test('filtered drama 2010 series rotate without violating filters',async()=>{
+ const {selectTvSeries}=await import('../lib/selection.mjs');
+ const pool=Array.from({length:62},(_,i)=>({...movie(i+1),year:2011,decades:[2010],votes:100000-i*500,genres:[18],audience:{anime:false,kids:false}}));
+ const config={...DEFAULT_CONFIG,genre:'18',decade:'2010',duels:20};
+ let history=[],previous=[];
+ for(let round=0;round<3;round++){
+  const result=selectTvSeries(pool,config,()=>.5,history);
+  assert.equal(result.status,'ready');
+  assert.ok(result.deck.every(m=>m.genres.includes(18)&&m.decades.includes(2010)));
+  const ids=result.deck.map(m=>m.id);
+  assert.equal(ids.filter(id=>previous.includes(id)).length,0,'avoid immediate repeats while enough alternatives exist');
+  history=[...history.filter(id=>!ids.includes(id)),...ids].slice(-180);
+  previous=ids;
+ }
+});
