@@ -33,3 +33,31 @@ test('rotation never blocks a small catalog',()=>{
  const c={...DEFAULT_CONFIG,duels:20};
  assert.equal(selectMovies(pool,c,Math.random,'movie',pool.map(m=>m.id)).status,'ready');
 });
+
+test('general TV rotation prevents three consecutive appearances with ample recognizable pool',async()=>{
+ const {selectTvSeries}=await import('../lib/selection.mjs');
+ const names=['The Flash','House','The Mentalist','Friends','Seinfeld','Breaking Bad'];
+ const pool=Array.from({length:95},(_,i)=>({...movie(i+1),title:names[i]||'Popular show '+i,votes:90000-i*350,score:8.5,decades:[2000],audience:{anime:false,kids:false}}));
+ let history=[],appearances=new Map(),previous=[];
+ for(let round=0;round<3;round++){
+  const r=selectTvSeries(pool,{...DEFAULT_CONFIG,duels:20},()=>.45,history);
+  assert.equal(r.status,'ready');
+  const ids=r.deck.map(m=>m.id);
+  assert.equal(ids.filter(id=>previous.includes(id)).length,0);
+  for(const id of ids)appearances.set(id,(appearances.get(id)||0)+1);
+  history=[...history.filter(id=>!ids.includes(id)),...ids].slice(-180);
+  previous=ids;
+ }
+ for(let id=1;id<=3;id++)assert.ok((appearances.get(id)||0)<=1);
+});
+test('rotation reuses famous titles instead of exhausting catalog',async()=>{
+ const {selectTvSeries}=await import('../lib/selection.mjs');
+ const pool=Array.from({length:28},(_,i)=>({...movie(i+1),votes:10000-i*100,decades:[2000],audience:{anime:false,kids:false}}));
+ let history=[];
+ for(let i=0;i<5;i++){
+  const r=selectTvSeries(pool,{...DEFAULT_CONFIG,duels:20},Math.random,history);
+  assert.equal(r.status,'ready');
+  const ids=r.deck.map(m=>m.id);
+  history=[...history.filter(id=>!ids.includes(id)),...ids].slice(-180);
+ }
+});
