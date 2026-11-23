@@ -1,8 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {normalizeConfig,TV_GENRES} from '../lib/config.mjs';
-import {normalizeSeries} from '../lib/tv.mjs';
+import {normalizeSeries,tvDiscoveryArgs,isFictionSeries} from '../lib/tv.mjs';
 import {tvPresentation} from '../lib/tv-localization.mjs';
+import {TV_VERIFIED_POSTERS} from '../lib/tv-localization-exceptions.mjs';
 import {selectMovies} from '../lib/selection.mjs';
 import {createGame,choose,undo,readSaved,STORAGE_KEY,TV_STORAGE_KEY} from '../lib/game.mjs';
 
@@ -37,4 +38,37 @@ test('TV LATAM translation takes priority over Spain and original title',()=>{
  const item=tvPresentation(1,{original_name:'Original',original_language:'en',translations:{translations:[{iso_639_1:'es',iso_3166_1:'ES',data:{name:'España'}},{iso_639_1:'es',iso_3166_1:'AR',data:{name:'Argentina'}}]},images:{posters:[]}});
  assert.equal(item.title,'Argentina');
  assert.equal(item.poster,null);
+});
+
+test('TV country search is opt-in and applies equally to every country',()=>{
+ const config={genre:'10765',decade:'2010',difficulty:'normal',language:''};
+ const global=tvDiscoveryArgs({...config,country:''});
+ assert.equal('with_origin_country' in global,false);
+ for(const country of ['AR','JP','ES','FR','KR']){
+  const filtered=tvDiscoveryArgs({...config,country});
+  assert.equal(filtered.with_origin_country,country);
+  assert.equal(filtered.with_genres,'10765');
+  assert.equal(filtered['first_air_date.gte'],'2010-01-01');
+  assert.equal(tvDiscoveryArgs({...config,country},0,true)['vote_count.gte'],0);
+ }
+});
+test('TV genre exclusions and scripted metadata protect fiction-only results',()=>{
+ const example=normalizeSeries({id:1,name:'Fiction',first_air_date:'2010-01-01',poster_path:'/p.jpg',genre_ids:[18],type:'Scripted'});
+ assert.equal(isFictionSeries(example),true);
+ assert.equal(isFictionSeries({...example,type:'Reality'}),false);
+ assert.equal(isFictionSeries({...example,genres:[99]}),false);
+});
+test('TV LATAM posters require verified regional paths, prefer AR then MX and fall back to original',()=>{
+ const input={original_name:'Original',original_language:'en',translations:{translations:[]},images:{posters:[
+  {file_path:'/en.jpg',iso_639_1:'en',width:500,height:750,aspect_ratio:.667},
+  {file_path:'/ar.jpg',iso_639_1:'es',width:500,height:750,aspect_ratio:.667},
+  {file_path:'/mx.jpg',iso_639_1:'es',width:500,height:750,aspect_ratio:.667}
+ ]}};
+ assert.equal(tvPresentation(888,input).posterSource,'original-language');
+ TV_VERIFIED_POSTERS[888]=[{country:'MX',path:'/mx.jpg'},{country:'AR',path:'/ar.jpg'}];
+ try{
+  const translated=tvPresentation(888,input);
+  assert.equal(translated.posterSource,'verified-AR');
+  assert.equal(translated.poster,'https://image.tmdb.org/t/p/w500/ar.jpg');
+ }finally{delete TV_VERIFIED_POSTERS[888]}
 });
