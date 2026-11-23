@@ -134,3 +134,7 @@ test('general TV comedy caps adult animation and excludes untagged kids cartoon'
  assert.equal(game.status,'ready');
  assert.ok(game.deck.filter(m=>m.genres.includes(16)).length<=5);
 });
+
+test('Kids-tagged live-action series stay out of general comedy duels',()=>{
+ assert.equal(tvAudience({id:502,genres:[10762,35],language:'en',originCountries:['US']}).kids,true);
+});
