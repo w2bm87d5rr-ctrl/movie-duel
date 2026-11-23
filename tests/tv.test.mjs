@@ -48,7 +48,7 @@ test('TV country search is opt-in and applies equally to every country',()=>{
   const filtered=tvDiscoveryArgs({...config,country});
   assert.equal(filtered.with_origin_country,country);
   assert.equal(filtered.with_genres,'10765');
-  assert.equal(filtered['first_air_date.gte'],'2010-01-01');
+  assert.equal(filtered['first_air_date.gte'],'2000-01-01');
   assert.equal(tvDiscoveryArgs({...config,country},0,true)['vote_count.gte'],0);
  }
 });
