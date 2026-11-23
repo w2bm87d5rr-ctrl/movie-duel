@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {normalizeConfig,TV_GENRES} from '../lib/config.mjs';
-import {normalizeSeries,tvDiscoveryArgs,isFictionSeries,seriesCountries,tvAudience,tvDecades} from '../lib/tv.mjs';
+import {normalizeSeries,tvDiscoveryArgs,isFictionSeries,seriesCountries,tvAudience,tvDecades,tvPrimaryDecade} from '../lib/tv.mjs';
 import {tvPresentation} from '../lib/tv-localization.mjs';
 import {TV_VERIFIED_POSTERS} from '../lib/tv-localization-exceptions.mjs';
 import {selectMovies} from '../lib/selection.mjs';
@@ -99,13 +99,30 @@ test('known professional wrestling programming cannot enter a fiction duel',()=>
  assert.equal(isFictionSeries(wrestling),false);
 });
 
-test('TV decade includes meaningful original-season years across premiere decade',()=>{
- const years=tvDecades({first_air_date:'1989-07-05',last_air_date:'1998-05-14',seasons:[
+test('TV decade reflects predominant original episodes, not every broadcast decade',()=>{
+ const seinfeld={first_air_date:'1989-07-05',last_air_date:'1998-05-14',seasons:[
   {season_number:1,episode_count:5,air_date:'1989-07-05'},
   {season_number:2,episode_count:13,air_date:'1990-01-01'},
-  {season_number:9,episode_count:22,air_date:'1997-09-01'}]});
- assert.deepEqual(years,[1980,1990]);
- assert.deepEqual(tvDecades({first_air_date:'1994-09-22',last_air_date:'2004-05-06',seasons:[]}),[1990,2000]);
+  {season_number:9,episode_count:22,air_date:'1997-09-01'}]};
+ assert.equal(tvPrimaryDecade(seinfeld),1990);
+ assert.deepEqual(tvDecades(seinfeld),[1990]);
+ const columbo={first_air_date:'1971-09-15',last_air_date:'2003-01-30',seasons:[
+  {season_number:1,episode_count:7,air_date:'1971-09-15'},
+  {season_number:2,episode_count:8,air_date:'1972-09-17'},
+  {season_number:3,episode_count:8,air_date:'1973-09-23'},
+  {season_number:4,episode_count:6,air_date:'1974-09-15'},
+  {season_number:5,episode_count:6,air_date:'1975-09-14'},
+  {season_number:6,episode_count:3,air_date:'1976-10-10'},
+  {season_number:7,episode_count:5,air_date:'1977-11-21'},
+  {season_number:8,episode_count:4,air_date:'1989-02-06'},
+  {season_number:9,episode_count:6,air_date:'1989-11-25'},
+  {season_number:10,episode_count:14,air_date:'1990-12-09'}]};
+ assert.deepEqual(tvDecades(columbo),[1970]);
+ assert.deepEqual(tvDecades({first_air_date:'1994-09-22',last_air_date:'2004-05-06',seasons:[]}),[1990]);
+ assert.deepEqual(tvDecades({first_air_date:'1999-01-10',last_air_date:'2007-06-10',seasons:[
+  {season_number:1,episode_count:13,air_date:'1999-01-10'},
+  {season_number:2,episode_count:13,air_date:'2000-01-16'},
+  {season_number:3,episode_count:13,air_date:'2001-03-04'}]}),[2000]);
 });
 test('TV anime and kids audience decisions keep adult western animation eligible',()=>{
  assert.deepEqual(tvAudience({id:456,genres:[16,35,10751],language:'en',originCountries:['US']}),{anime:false,kids:false});
