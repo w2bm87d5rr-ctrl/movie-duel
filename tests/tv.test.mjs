@@ -113,7 +113,7 @@ test('TV anime and kids audience decisions keep adult western animation eligible
  assert.deepEqual(tvAudience({id:4567,genres:[16,35],language:'ja',originCountries:['JP']}),{anime:true,kids:false});
 });
 test('TV normal excludes anime and kids, expert permits rare anime but not kids',()=>{
- const make=(id,audience)=>({id,title:'Show '+id,year:1996,decades:[1990],poster:'https://image.tmdb.org/t/p/w500/p.jpg',genres:[35,16],countries:['US'],language:'en',score:8,votes:1000+id,audience});
+ const make=(id,audience)=>({id,title:'Show '+id,year:1996,decades:[1990],poster:'https://image.tmdb.org/t/p/w500/p.jpg',genres:[35],countries:['US'],language:'en',score:8,votes:1000+id,audience});
  const mainstream=Array.from({length:12},(_,i)=>make(i+100,{anime:false,kids:false}));
  const anime=make(500,{anime:true,kids:false});
  const kids=make(501,{anime:false,kids:true});
