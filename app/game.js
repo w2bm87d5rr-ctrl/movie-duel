@@ -277,7 +277,7 @@ function GameMode({mode,switchMode,tvPosters}){
    if(data.status==='error'||data.status==='invalid'){setProblem(data);return;}
    if(!response.ok)throw Error('No pudimos preparar la partida.');
    if(data.status==='ready'){
-    if(general){try{const selected=data.deck.map(m=>m.id);localStorage.setItem(rotationKey,JSON.stringify([...recentIds.filter(id=>!selected.includes(id)),...selected].slice(-180))}catch{}}
+    if(general){try{const selected=data.deck.map(m=>m.id);localStorage.setItem(rotationKey,JSON.stringify([...recentIds.filter(id=>!selected.includes(id)),...selected].slice(-180)))}catch{}}
      posterCache.current=new Map();setGame(createGame(data));setConfig(data.config);setLoaded({});setView('play');
    }else setProblem(data);
   }catch(e){setProblem({status:'error',message:'No pudimos preparar la partida. Tu progreso y tus filtros se conservan. Intentá de nuevo en un momento.'});}
