@@ -93,3 +93,8 @@ test('international official TV translation is used for non-Latin originals only
  data.translations.translations=[];
  assert.equal(tvPresentation(777,data).title,'Οι Συμμαθητές');
 });
+
+test('known professional wrestling programming cannot enter a fiction duel',()=>{
+ const wrestling=normalizeSeries({id:67192,name:'New Japan Pro Wrestling',first_air_date:'2010-01-01',poster_path:'/p.jpg',genre_ids:[10759],type:'Scripted'});
+ assert.equal(isFictionSeries(wrestling),false);
+});
