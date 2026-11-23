@@ -70,7 +70,9 @@ const HOME_POSTERS=[
  {id:592,path:'/dHqVBwcv1SGymOpUueRoKzcmdes.jpg'},
 ];
 function HomePosters({presentation,mode='movie',tvPosters=[]}){
- if(mode==='tv')return <div className="home-duel" aria-hidden="true"><div className="home-posters">{tvPosters.length?tvPosters.map(p=><div className="home-poster-frame" key={p.id}><DecorativePoster movie={p}/></div>):[1396,1398].map(id=><div className="home-poster-frame" key={id}><span className="home-poster-placeholder">✦</span></div>)}</div><span className="home-vs">VS</span></div>;
+ // These two images have already decoded before TV mode becomes visible.
+ // Do not mount another poster-loading session after the mode switch.
+ if(mode==='tv')return <div className="home-duel" aria-hidden="true"><div className="home-posters">{tvPosters.map(p=><div className="home-poster-frame" key={p.id}><img src={p.poster} alt="" width="500" height="750" decoding="sync"/></div>)}</div><span className="home-vs">VS</span></div>;
  return <div className="home-duel" aria-hidden="true">
   <div className="home-posters">{HOME_POSTERS.map(poster=><div className="home-poster-frame" key={poster.id}><DecorativePoster movie={presentMovie({id:poster.id,poster:`https://image.tmdb.org/t/p/w500${poster.path}`},presentation)}/></div>)}</div>
   <span className="home-vs">VS</span>
@@ -157,25 +159,38 @@ function Poster({movie,onReady,onFail,retry=0}){
 export default function Game(){
  const [mode,setMode]=useState('movie');
  const [tvPosters,setTvPosters]=useState([]);
- // Start fetching AND warming both TV Home posters on initial page load,
- // even while the movie Home is visible. Switching modes never restarts it.
+ const [tvReady,setTvReady]=useState(false);
+ const [tvFailed,setTvFailed]=useState(false);
+ const [tvRequested,setTvRequested]=useState(false);
+ // Download and decode both TV Home posters while movie mode is visible.
+ // A quick tap on Series waits to swap the whole Home until both are ready;
+ // this prevents the empty frames seen on iPhone Safari.
  useEffect(()=>{
   const controller=new AbortController();
   fetch('/api/tv/home',{signal:controller.signal})
    .then(response=>response.ok?response.json():null)
-   .then(data=>{
-    if(controller.signal.aborted||!data?.posters?.length)return;
+   .then(async data=>{
+    if(controller.signal.aborted||data?.posters?.length!==2)throw Error('Incomplete TV Home posters');
     const posters=data.posters;
-    setTvPosters(posters);
-    for(const poster of posters){
+    await Promise.all(posters.map(p=>new Promise((resolve,reject)=>{
      const image=new Image();
-     image.decoding='async';
-     image.src=poster.poster;
-    }
-   }).catch(()=>{});
+     image.onload=()=>resolve();
+     image.onerror=()=>reject(Error('TV poster failed'));
+     image.src=p.poster;
+     if(image.complete&&image.naturalWidth>0)resolve();
+    })));
+    if(controller.signal.aborted)return;
+    setTvPosters(posters);
+    setTvReady(true);
+   }).catch(()=>{if(!controller.signal.aborted)setTvFailed(true)});
   return ()=>controller.abort();
  },[]);
- return <GameMode key={mode} mode={mode} switchMode={setMode} tvPosters={tvPosters}/>;
+ useEffect(()=>{if(tvRequested&&(tvReady||tvFailed)){setMode('tv');setTvRequested(false)}},[tvRequested,tvReady,tvFailed]);
+ function switchMode(next){
+  if(next==='tv'&&!tvReady&&!tvFailed){setTvRequested(true);return;}
+  setTvRequested(false);setMode(next);
+ }
+ return <GameMode key={mode} mode={mode} switchMode={switchMode} tvPosters={tvPosters}/>;
 }
 function GameMode({mode,switchMode,tvPosters}){
  const isTv=mode==='tv';
