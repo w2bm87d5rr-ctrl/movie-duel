@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {normalizeConfig,TV_GENRES} from '../lib/config.mjs';
-import {normalizeSeries,tvDiscoveryArgs,isFictionSeries,seriesCountries} from '../lib/tv.mjs';
+import {normalizeSeries,tvDiscoveryArgs,isFictionSeries,seriesCountries,tvAudience,tvDecades} from '../lib/tv.mjs';
 import {tvPresentation} from '../lib/tv-localization.mjs';
 import {TV_VERIFIED_POSTERS} from '../lib/tv-localization-exceptions.mjs';
 import {selectMovies} from '../lib/selection.mjs';
@@ -97,4 +97,31 @@ test('international official TV translation is used for non-Latin originals only
 test('known professional wrestling programming cannot enter a fiction duel',()=>{
  const wrestling=normalizeSeries({id:67192,name:'New Japan Pro Wrestling',first_air_date:'2010-01-01',poster_path:'/p.jpg',genre_ids:[10759],type:'Scripted'});
  assert.equal(isFictionSeries(wrestling),false);
+});
+
+test('TV decade includes meaningful original-season years across premiere decade',()=>{
+ const years=tvDecades({first_air_date:'1989-07-05',last_air_date:'1998-05-14',seasons:[
+  {season_number:1,episode_count:5,air_date:'1989-07-05'},
+  {season_number:2,episode_count:13,air_date:'1990-01-01'},
+  {season_number:9,episode_count:22,air_date:'1997-09-01'}]});
+ assert.deepEqual(years,[1980,1990]);
+ assert.deepEqual(tvDecades({first_air_date:'1994-09-22',last_air_date:'2004-05-06',seasons:[]}),[1990,2000]);
+});
+test('TV anime and kids audience decisions keep adult western animation eligible',()=>{
+ assert.deepEqual(tvAudience({id:456,genres:[16,35,10751],language:'en',originCountries:['US']}),{anime:false,kids:false});
+ assert.deepEqual(tvAudience({id:123,genres:[16,10762],language:'en',originCountries:['US']}),{anime:false,kids:true});
+ assert.deepEqual(tvAudience({id:4567,genres:[16,35],language:'ja',originCountries:['JP']}),{anime:true,kids:false});
+});
+test('TV normal excludes anime and kids, expert permits rare anime but not kids',()=>{
+ const make=(id,audience)=>({id,title:'Show '+id,year:1996,decades:[1990],poster:'https://image.tmdb.org/t/p/w500/p.jpg',genres:[35,16],countries:['US'],language:'en',score:8,votes:1000+id,audience});
+ const mainstream=Array.from({length:12},(_,i)=>make(i+100,{anime:false,kids:false}));
+ const anime=make(500,{anime:true,kids:false});
+ const kids=make(501,{anime:false,kids:true});
+ const normal=selectMovies([...mainstream,anime,kids],{genre:'35',decade:'1990',duels:5,difficulty:'normal'},()=>.5,'tv');
+ assert.equal(normal.status,'ready');
+ assert.ok(normal.deck.every(x=>!x.audience.anime&&!x.audience.kids));
+ const expert=selectMovies([...mainstream,anime,kids],{genre:'35',decade:'1990',duels:5,difficulty:'expert'},()=>.1,'tv');
+ assert.equal(expert.status,'ready');
+ assert.ok(expert.deck.every(x=>!x.audience.kids));
+ assert.ok(expert.deck.filter(x=>x.audience.anime).length<=1);
 });
