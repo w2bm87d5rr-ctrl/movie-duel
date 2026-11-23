@@ -268,12 +268,17 @@ function GameMode({mode,switchMode,tvPosters}){
   const issue=configIssue(settings);if(issue){setProblem({status:'invalid',message:issue});return;}
   inFlight.current=true;setBusy(true);setProblem(null);
   try {
-   const response=await fetch('/api/match',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...settings,mode}),signal:AbortSignal.timeout(25000)});
+   const general=!settings.genre&&!settings.decade&&!settings.country&&!settings.language&&!(settings.people||[]).length;
+   const rotationKey=`movie-duel:rotation:3.5:${mode}`;
+   let recentIds=[];
+   if(general){try{const stored=JSON.parse(localStorage.getItem(rotationKey)||'[]');if(Array.isArray(stored))recentIds=stored.filter(Number.isSafeInteger).slice(-180)}catch{}}
+   const response=await fetch('/api/match',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...settings,mode,...(general?{recentIds}:{})}),signal:AbortSignal.timeout(25000)});
    const data=await response.json();
    if(data.status==='error'||data.status==='invalid'){setProblem(data);return;}
    if(!response.ok)throw Error('No pudimos preparar la partida.');
    if(data.status==='ready'){
-    posterCache.current=new Map();setGame(createGame(data));setConfig(data.config);setLoaded({});setView('play');
+    if(general){try{const selected=data.deck.map(m=>m.id);localStorage.setItem(rotationKey,JSON.stringify([...recentIds.filter(id=>!selected.includes(id)),...selected].slice(-180))}catch{}}
+     posterCache.current=new Map();setGame(createGame(data));setConfig(data.config);setLoaded({});setView('play');
    }else setProblem(data);
   }catch(e){setProblem({status:'error',message:'No pudimos preparar la partida. Tu progreso y tus filtros se conservan. Intentá de nuevo en un momento.'});}
   finally{setBusy(false);inFlight.current=false;}
