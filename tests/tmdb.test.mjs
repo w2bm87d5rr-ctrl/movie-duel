@@ -14,7 +14,7 @@ test('live provider paginates, excludes documentary, deduplicates and preserves 
  try {
   const result=await prepareMatch({duels:20,country:'FR',language:'fr',genre:'35',decade:'1980'});
   assert.equal(result.status,'ready');assert.equal(calls.filter(u=>u.pathname.endsWith('/discover/movie')).length,2);
-  assert.ok(calls.filter(u=>u.pathname.endsWith('/discover/movie')).every(url=>!url.searchParams.has('with_origin_country')&&url.searchParams.get('with_original_language')==='fr'&&url.searchParams.get('without_genres')==='99'));
+  assert.ok(calls.filter(u=>u.pathname.endsWith('/discover/movie')).every(url=>url.searchParams.get('with_origin_country')==='FR'&&url.searchParams.get('with_original_language')==='fr'&&url.searchParams.get('without_genres')==='99'));
   assert.equal(new Set(result.deck.map(m=>m.id)).size,21);assert.ok(!result.deck.some(m=>[900,901].includes(m.id)));
  }finally{reset()}
 });
