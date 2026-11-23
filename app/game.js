@@ -332,7 +332,7 @@ function GameMode({mode,switchMode,tvPosters}){
     <p className="trophy" aria-hidden="true">♛</p><h1 ref={titleRef} tabIndex={-1}>¡TENEMOS CAMPEONA!</h1><p className="champion-subtitle">{isTv?'Tu serie favorita de esta partida':'Tu película favorita de esta partida'}</p>
     <div className="winner-poster"><Poster key={`${game.pair[0].id}-${retry}`} movie={displayMovie(game.pair[0])} onReady={handleReady} onFail={handleFailure} retry={retry}/></div>
     <h2>{(isTv?presentTv(game.pair[0],presentation):presentMovie(game.pair[0],presentation)).title}</h2><p className="winner-detail">{game.pair[0].year} <span>·</span> {game.history.length} duelos completados</p>
-    <div className="actions"><button className="primary" disabled={busy} onClick={()=>requestMatch(game.config)}>{busy?'PREPARANDO…':'JUGAR OTRA VEZ'}</button><button className="secondary" disabled={busy} onClick={()=>{setConfig(game.config);setView('settings');setProblem(null)}}>NUEVA PARTIDA</button></div>
+    <div className="actions"><button className="primary" disabled={busy} onClick={()=>requestMatch(game.config)}>{busy?'PREPARANDO…':'JUGAR OTRA VEZ'}</button><button className="secondary" disabled={busy} onClick={backHome}>VOLVER A INICIO</button></div>
     <button className="text-button" onClick={rewind}>↶ DESHACER</button>
    </section>:<section className="arena">
     <div className="round-info"><span className="eyebrow" aria-live="polite">DUELO {String(game.history.length+1).padStart(2,'0')} / {game.config.duels}</span><button className="text-button" onClick={backHome}>← INICIO</button></div>
