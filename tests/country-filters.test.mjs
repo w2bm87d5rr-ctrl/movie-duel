@@ -40,7 +40,7 @@ test('coproductions verified; origin alone accepted; absent/mismatching countrie
  const ids=Array.from({length:20},(_,i)=>300000+i);let calls=0;
  await mocked(async url=>{
   calls++;
-  if(url.includes('/discover/movie')){assert.ok(!new URL(url).searchParams.has('with_origin_country'));return Response.json({total_pages:1,results:ids.map(film)});}
+  if(url.includes('/discover/movie')){assert.equal(new URL(url).searchParams.get('with_origin_country'),'FR');return Response.json({total_pages:1,results:ids.map(film)});}
   const id=Number(new URL(url).pathname.split('/').at(-1)),i=id-300000;
   return Response.json({...film(id),origin_country:i<4?['FR']:['US'],production_countries:i>=4&&i<8?[{iso_3166_1:'FR'}]:[]});
  },async()=>{
