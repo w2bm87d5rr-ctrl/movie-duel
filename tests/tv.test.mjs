@@ -125,3 +125,12 @@ test('TV normal excludes anime and kids, expert permits rare anime but not kids'
  assert.ok(expert.deck.every(x=>!x.audience.kids));
  assert.ok(expert.deck.filter(x=>x.audience.anime).length<=1);
 });
+
+test('general TV comedy caps adult animation and excludes untagged kids cartoon',()=>{
+ assert.equal(tvAudience({id:4229,genres:[16,35,10765],language:'en',originCountries:['US']}).kids,true);
+ const make=(id,animated)=>({id,title:'Series '+id,year:1996,decades:[1990],poster:'https://image.tmdb.org/t/p/w500/p.jpg',genres:animated?[16,35]:[35],countries:['US'],language:'en',score:8,votes:1000+id,audience:{anime:false,kids:false}});
+ const pool=[...Array.from({length:20},(_,i)=>make(100+i,false)),...Array.from({length:12},(_,i)=>make(500+i,true))];
+ const game=selectMovies(pool,{genre:'35',decade:'1990',duels:20,difficulty:'normal'},()=>.5,'tv');
+ assert.equal(game.status,'ready');
+ assert.ok(game.deck.filter(m=>m.genres.includes(16)).length<=5);
+});
