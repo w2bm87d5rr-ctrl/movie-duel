@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {normalizeConfig,TV_GENRES} from '../lib/config.mjs';
-import {normalizeSeries,tvDiscoveryArgs,isFictionSeries} from '../lib/tv.mjs';
+import {normalizeSeries,tvDiscoveryArgs,isFictionSeries,seriesCountries} from '../lib/tv.mjs';
 import {tvPresentation} from '../lib/tv-localization.mjs';
 import {TV_VERIFIED_POSTERS} from '../lib/tv-localization-exceptions.mjs';
 import {selectMovies} from '../lib/selection.mjs';
@@ -71,4 +71,25 @@ test('TV LATAM posters require verified regional paths, prefer AR then MX and fa
   assert.equal(translated.posterSource,'verified-AR');
   assert.equal(translated.poster,'https://image.tmdb.org/t/p/w500/ar.jpg');
  }finally{delete TV_VERIFIED_POSTERS[888]}
+});
+
+test('country filtering trusts real production over format origin, preserving co-productions',()=>{
+ const greek={id:999,name:'Οι Συμμαθητές',original_name:'Οι Συμμαθητές',first_air_date:'2014-01-01',poster_path:'/p.jpg',origin_country:['AR'],production_countries:[{iso_3166_1:'GR'}],original_language:'el',genre_ids:[18],type:'Scripted'};
+ const foreign=normalizeSeries(greek);
+ assert.deepEqual(foreign.countries,['GR']);
+ assert.deepEqual(foreign.originCountries,['AR']);
+ assert.equal(selectMovies([foreign],{country:'AR',duels:5},()=>.5,'tv').available,0);
+ assert.deepEqual(seriesCountries({...greek,production_countries:[{iso_3166_1:'GR'},{iso_3166_1:'AR'}]}),['GR','AR']);
+ assert.deepEqual(seriesCountries({...greek,production_countries:[]}),['AR']);
+});
+test('international official TV translation is used for non-Latin originals only without LATAM title',()=>{
+ const data={original_name:'Οι Συμμαθητές',original_language:'el',translations:{translations:[
+  {iso_639_1:'en',iso_3166_1:'US',data:{name:'The Classmates'}},
+  {iso_639_1:'es',iso_3166_1:'ES',data:{name:'Los compañeros'}}
+ ]},images:{posters:[]}};
+ assert.equal(tvPresentation(777,data).title,'The Classmates');
+ data.translations.translations.push({iso_639_1:'es',iso_3166_1:'MX',data:{name:'Compañeros'}});
+ assert.equal(tvPresentation(777,data).title,'Compañeros');
+ data.translations.translations=[];
+ assert.equal(tvPresentation(777,data).title,'Οι Συμμαθητές');
 });
