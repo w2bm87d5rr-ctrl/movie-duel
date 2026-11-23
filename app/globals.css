@@ -277,6 +277,6 @@ footer p { max-width: 510px; }
 .home-poster-placeholder{display:grid;place-items:center;width:100%;height:100%;color:#777}
 
 /* TV selector is the only additional control on the existing home. */
-.content-mode{display:flex;justify-content:center;gap:8px;margin:0 auto 32px;max-width:330px}
+.content-mode{display:flex;justify-content:center;gap:8px;margin:0 auto 20px;max-width:330px}
 .content-mode button{flex:1;min-height:44px;background:#2e3236;border:1px solid var(--border);border-radius:6px;color:#fff;font-size:11px;letter-spacing:.6px;font-weight:600}
 .content-mode button[aria-pressed=true]{border-color:var(--accent);color:var(--accent)}
