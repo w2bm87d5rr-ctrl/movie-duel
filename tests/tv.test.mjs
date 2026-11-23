@@ -138,3 +138,8 @@ test('general TV comedy caps adult animation and excludes untagged kids cartoon'
 test('Kids-tagged live-action series stay out of general comedy duels',()=>{
  assert.equal(tvAudience({id:502,genres:[10762,35],language:'en',originCountries:['US']}).kids,true);
 });
+
+test('unclassified western cartoon is Kids-only unless verified adult animation',()=>{
+ assert.equal(tvAudience({id:999999,genres:[16,10759],language:'en',originCountries:['US']}).kids,true);
+ assert.equal(tvAudience({id:2122,genres:[16,35],language:'en',originCountries:['US']}).kids,false);
+});
